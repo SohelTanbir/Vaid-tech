@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container-fluid{
+    padding: 0;
+}
+a,a:hover{
+    text-decoration: none;
+    color: #000;
+}
+ul, li{
+    list-style-type: none;
+    padding: 0;
+}
+/*
+------------------------------------------------------------------------
+----------------------- Sidebar section style -----------------
+------------------------------------------------------------------------
+*/
+#sidebar{
+    min-height: 100vh;
+    background: #17B0C3;
+    padding: 15px 15px 0 20px;
+    padding-right: 0;
+}
+#main .col-lg-2{
+    padding-right: 0;
+}
+.brand-logo{
+    display: flex;
+    margin-bottom: 70px;
+    align-items: center;
+}
+.logo a {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 25px;
+    color: #fff;
+    position: relative;
+}
+.logo span {
+    font-size: 13px;
+    font-weight: 400;
+    color: #D0EFF3;
+    position: absolute;
+    top: 44px;
+}
+.logo-icon i {
+    padding-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    margin-left: 5px;
+}
+#sidebar ul li{
+    margin-bottom: 25px;
+}
+#sidebar ul li a{
+    color:#E5F6F8;
+}
+#main-content{
+    min-height: 100vh;
+    background: #F3F4FA;
+    padding: 10px;
+}
