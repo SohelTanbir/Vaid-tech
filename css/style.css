@@ -11,6 +11,9 @@ ul, li{
     list-style-type: none;
     padding: 0;
 }
+img{
+    max-width: 100%;
+}
 body{
     font-family: 'Poppins', sans-serif;
 }
@@ -20,7 +23,7 @@ body{
 ------------------------------------------------------------------------
 */
 #sidebar{
-    min-height: 100vh;
+    min-height: 100%;
     background: #17B0C3;
     padding: 15px 15px 0 20px;
     padding-right: 0;
@@ -116,6 +119,9 @@ body{
 .selection{
     border-radius: 10px;
 }
+.selection select{
+    font-size: 14px;
+}
 .select-item-category{
    position: relative;
    padding-right: 15px;
@@ -137,7 +143,7 @@ body{
 .discounts{
     background: #F5F5F5;
     margin-left: 14px;
-    font-size: 14px;
+    font-size: 13px;
 }
 .region{
     width:10%;
@@ -161,4 +167,13 @@ body{
 */
 .product-table{
     border-radius: 10px;
+    overflow-x: auto;
+}
+.product-table .table {
+    border-collapse: unset;
+    border-color:transparent
+}
+.product-table .table th,td{
+    font-weight: 400;
+    font-size: 12px;
 }
