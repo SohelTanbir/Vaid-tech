@@ -3,9 +3,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-.container-fluid{
-    padding: 0;
-}
 a,a:hover{
     text-decoration: none;
     color: #000;
@@ -13,6 +10,9 @@ a,a:hover{
 ul, li{
     list-style-type: none;
     padding: 0;
+}
+body{
+    font-family: 'Poppins', sans-serif;
 }
 /*
 ------------------------------------------------------------------------
@@ -67,6 +67,13 @@ ul, li{
 #sidebar ul li a{
     color:#E5F6F8;
 }
+
+/*
+------------------------------------------------------------------------
+----------------------- Main section style -----------------
+------------------------------------------------------------------------
+*/
+
 #main-content{
     min-height: 100vh;
     background: #F3F4FA;
@@ -83,7 +90,75 @@ ul, li{
 }
 .info i{
     font-size: 20px;
+    cursor: pointer;
 }
 .info  span{
     font-size:10px;
+}
+/*
+------------------------------------------------------------------------
+----------------------- Catalogue part style -----------------
+------------------------------------------------------------------------
+*/
+.catalogue-title p{
+    color: #8F8F8F;
+}
+.custom-hr{
+    width: 98%;
+    border: 1px solid #bdbbbb;
+    margin: 10px auto;
+}
+/*
+------------------------------------------------------------------------
+----------------------- Selection part style -------------------
+------------------------------------------------------------------------
+*/
+.selection{
+    border-radius: 10px;
+}
+.select-item-category{
+   position: relative;
+   padding-right: 15px;
+}
+.border::after{
+   position: absolute;
+   width: 20px;
+   background: red;
+    height: 50px;
+    left: 100%;
+    top: 0;
+    display:block;
+}
+.discount .discount-score{
+    width: 40%;
+}
+.region,
+.product-group,
+.discounts{
+    background: #F5F5F5;
+    margin-left: 14px;
+    font-size: 14px;
+}
+.region{
+    width:10%;
+}
+.product-group{
+    width:20%;
+}
+.discounts{
+    width:10%;
+}
+.reset-filter{
+    width:20%;
+    font-size: 14px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+/*
+------------------------------------------------------------------------
+----------------------- Product table part style -------------------
+------------------------------------------------------------------------
+*/
+.product-table{
+    border-radius: 10px;
 }
