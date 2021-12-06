@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--FontAwesome css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!--Bootstrap css-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--custom/main stylesheet-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--product item details stylesheet -->
+    <link rel="stylesheet" href="css/item-details.css">
+    <title>Item details</title>
+</head>
+
+<body>
+    <div id="main" class="container-fluid ps-0 pr-0">
+        <div class="row">
+            <div class="col-lg-2">
+                <aside id="sidebar">
+                    <div class="brand-logo">
+                        <div class="logo">
+                            <a href="#">MERIT</a><br>
+                            <span>Incentives</span>
+                        </div>
+                        <div class="logo-icon">
+                            <i class="fas fa-bars"></i>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                        <li><a href="#"><i class="fas fa-file-invoice"></i> Master Catalogue</a></li>
+                        <li><a href="#"><i class="fas fa-users"></i> Clients</a></li>
+                        <li><a href="#"><i class="fas fa-gift"></i> Suppliers</a></li>
+                        <li><a href="#"><i class="fas fa-cog"></i> Setting</a></li>
+                        <li><a href="#"><i class="fas fa-draw-polygon"></i> Report</a></li>
+                        <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                    </ul>
+
+
+
+                </aside>
+            </div>
+            <div class="col-lg-10 px-0">
+                <div id="main-content" class="px-4">
+
+                    <!--Header top with searchbar-->
+                    <div class="header-top pt-3 mb-5">
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="search">
+                                    <form action="">
+                                        <div class="form-group w-50">
+                                            <div class="input-group mb-3">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <div class="search-icon"> <i class="fas fa-search"></i></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="info">
+                                    <ul class="d-flex justify-content-end">
+                                        <li><i class="fas fa-bell position-relative"">
+                                            <span class=" badge bg-secondary position-absolute top-0
+                                                translate-middle">23</span>
+                                            </i></li>
+                                        <li><i class="fas fa-user-circle ms-4"></i></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Header top with searchbar End-->
+
+                    <!--Breadcrumb Start-->
+                    <div class="row align-items-end">
+                        <div class="col-lg-6">
+                            <div class="catalogue-title">
+                                <h3 class="fw-normal">Apple iPhone X</h3>
+                                <p class="fw-normal text-capitalize">Product detail</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="breadcrumb justify-content-end">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb mb-0">
+                                        <li class="breadcrumb-item active" aria-current="page">dashboard</li>
+                                        <li class="breadcrumb-item active" aria-current="page">Master Catalogue</li>
+                                        <li class="breadcrumb-item" aria-current="page">Apple iPhone X</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                        <hr class="custom-hr" />
+                    </div>
+                    <!--Breadcrumb End-->
+
+
+                    <!--single product details Start-->
+                    <div class="single-product-detail">
+                        <!--product image info Start-->
+                        <div class="product-img bg-white rounded p-5 mb-4">
+                            <div class="row align-items-center text-center">
+                                <div class="col-lg-8 after-border">
+                                    <img class="img-fluid" src="images/product-detail/apple-iphone-x.png"
+                                        alt="iphone x">
+                                </div>
+                                <div class="col-lg-4">
+                                    <h5 style="color: #15AFC2">Supplied By </h5>
+                                    <h2 class="mb-4">Ali Express</h2>
+                                    <img class="img-fluid" src="images/product-detail/aliexpress-logo.png"
+                                        alt="aliExpress">
+                                </div>
+                            </div>
+                        </div>
+                        <!--product image info End-->
+
+                        <!--product basic info Start-->
+                        <div class="product-basic-info bg-white rounded p-3 mb-4">
+                            <div class="product-basic-header mb-4">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-12">
+                                        <div class="product-info-title">
+                                            <h6 class="fw-bold text-uppercase">Product Basic Info <i
+                                                    class="fas fa-angle-down"></i></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-12">
+                                        <div class="product-info ">
+                                            <ul class="d-flex justify-content-between align-items-center flex-wrap">
+                                                <li>Clients: <span class="text-primary">45</span></li>
+                                                <li> <input type="checkbox"> <span>Discontinued</span></li>
+                                                <li>
+                                                    <div class="form-check form-switch">
+                                                        <input class="form-check-input" type="checkbox"
+                                                            id="flexSwitchCheckChecked" checked>
+                                                        <label class="form-check-label"
+                                                            for="flexSwitchCheckChecked">Enable</label>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>English</option>
+                                                        <option value="1">Bengali</option>
+                                                        <option value="2">Hindi</option>
+                                                    </select>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row product-info-table">
+                                <div class="col-lg-3 col-md-6">
+                                    <small>SKU ID</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>APL05-BLK-64</option>
+                                        <option selected>APL05-BLK-64</option>
+                                        <option selected>APL05-BLK-64</option>
+                                    </select>
+                                    <small>Product Name</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>iPhone XX</option>
+                                    </select>
+                                    <small>Model Name</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>iPhone XX</option>
+                                    </select>
+                                    <small>Color</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>Black</option>
+
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <small>Item Category</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>Physical</option>
+                                    </select>
+                                    <small>Product Group</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>Mobile</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <small>Brand Name</small>
+                                    <select class="form-select mb-3">
+                                        <option selected>Apple</option>
+                                    </select>
+                                    <small>UPC</small>
+                                    <input type="text" class="form-control mb-3" value="343 34355 4356">
+                                    <div class="row mb-3">
+                                        <div class="col">
+                                            <small>Creation Date</small>
+                                            <input type="text" class="form-control" value="01-01-2020">
+                                        </div>
+                                        <div class="col">
+                                            <small>Last Updated</small>
+                                            <input type="text" class="form-control" value="20-04-2020">
+                                        </div>
+                                    </div>
+                                    <small>Default Supplier</small>
+                                    <input type="text" class="form-control mb-3" value="aliExpress AEX77670">
+                                </div>
+                                <div class="col-lg-3 col-md-6 navigation">
+                                    <small>Navigation Category</small>
+                                    <select class="form-select">
+                                        <option selected>Men Fashion, Mobile Phones</option>
+                                    </select>
+                                    <div class="card shadow custom-border">
+                                        <a href="#" class="ps-2 pt-3"> <input type="checkbox"> Electronics - 001</a>
+                                        <div class="card-body">
+                                            <ul class="product-info-list">
+                                                <li> <input type="checkbox"> PC's and Laptop-001-01</li>
+                                                <li> <input type="checkbox"> PC's and Laptop-001-01</li>
+                                                <li> <input type="checkbox"> PC's and Laptop-001-01</li>
+                                                <li> <input type="checkbox"> PC's and Laptop-001-01</li>
+                                            </ul>
+
+                                        </div>
+                                        <hr>
+                                        <button
+                                            class="btn btn-sm w-25 mb-3 pr-3 ms-auto shadow text-white fw-normal">Save</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                        <!--product basic info End-->
+
+                        <!--product additional info Start-->
+                        <div class="product-additional-info bg-white rounded p-3 mb-4">
+                            <div class="product-info-title">
+                                <h6 class="fw-bold text-uppercase mb-4">Product Additional Info <i
+                                        class="fas fa-angle-down"></i>
+                                </h6>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-4 col-md-12">
+                                    <div class="row">
+                                        <div class="col">
+                                            <small>Model Year</small>
+                                            <input type="text" class="form-control mb-3" value="2018">
+                                        </div>
+                                        <div class="col">
+                                            <small>width</small>
+                                            <input type="text" class="form-control mb-3" value="IOS 11">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <small>Storage</small>
+                                            <input type="text" class="form-control mb-3" value="2018">
+                                        </div>
+                                        <div class="col">
+                                            <small>OS</small>
+                                            <input type="text" class="form-control mb-3" value="IOS 11">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <small>Length</small>
+                                            <input type="text" class="form-control mb-3" value="5.6">
+                                        </div>
+                                        <div class="col">
+                                            <small>width</small>
+                                            <input type="text" class="form-control mb-3" value="IOS 11">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <small>Camera MP</small>
+                                            <input type="text" class="form-control mb-3" value="16mp">
+                                        </div>
+                                        <div class="col">
+                                            <small>Volume</small>
+                                            <input type="text" class="form-control mb-3" value="">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <small>Memory</small>
+                                            <input type="text" class="form-control mb-3 w-50" value="4GB">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <small>Description</small>
+                                    <div class="description custom-border p-2">
+                                        <p>Terms of Use <br> Effective Date: apr 9, 2020</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur Ea dolorum laudantium obcaecati
+                                            corporis sunt! Dolorum sapiente corporis atque accusamus modi?
+                                        <p>
+                                            1. Practices
+                                            Lorem ipsum dolor sit, amet consectetur Sapiente quaerat explicabo velit
+                                            iusto voluptatibus illo suscipit quia, sequi nam consequuntur?
+                                        </p>
+                                        </p>
+                                    </div>
+                                    <div class="max-character text-end">
+                                        <small>2000 Characters max/500 left</small>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <small>Terms & Conditions</small>
+                                    <div class="description custom-border p-2">
+                                        <p>Terms of Use <br> Effective Date: apr 9, 2020</p>
+                                        <p>Lorem ipsum dolor sit amet consectetur Ea dolorum laudantium obcaecati
+                                            corporis sunt! Dolorum sapiente corporis atque accusamus modi?
+                                        <p>
+                                            1. Practices
+                                            Lorem ipsum dolor sit, amet consectetur Sapiente quaerat explicabo velit
+                                            iusto voluptatibus illo suscipit quia, sequi nam consequuntur?
+                                        </p>
+                                        </p>
+                                    </div>
+                                    <div class="max-character text-end">
+                                        <small>2000 Characters max/500 left</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--product additional info End-->
+
+                              <!--Supplier info Start-->
+                              <div class="supplier-info  bg-white rounded p-3 mb-4">
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-12">
+                                        <div class="product-info-title">
+                                            <h6 class="fw-bold text-uppercase mb-5">Supplier Info<i
+                                                class="fas fa-angle-down"></i></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-12">
+                                        <div class="product-info ">
+                                            <ul class="d-flex justify-content-end align-items-center flex-wrap">
+                                                <li>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>Sort By</option>
+                                                        <option value="1">option 1</option>
+                                                        <option value="1">option 2</option>
+                                                    </select>
+                                                </li>
+                                                <li> <button class="btn btn-dark btn-sm">Add New Supplier</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="supplier-info-table py-3 mb-4">
+                                    <table class="table table-reponsive-md text-center">
+                                        <thead>
+                                          <tr >
+                                            <th scope="col"  class="text-end">Supplier Logo</th>
+                                            <th scope="col">Supplier Name</th>
+                                            <th scope="col">Supplier SKU ID</th>
+                                            <th scope="col">Supplier Catalogue ID</th>
+                                            <th scope="col">Supplier Price</th>
+                                            <th scope="col">Supplier Currency</th>
+                                            <th scope="col">Region/Country</th>
+                                            <th scope="col">Client Price</th>
+                                            <th scope="col">Discount</th>
+                                            <th scope="col">VAT</th>
+                                            <th scope="col">Minimum Order Quantity</th>
+                                            <th scope="col">Estimate Delivery Time</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="images/product-detail/aliexpress-logo.png" width="60" alt=""></td>
+                                                <td><input type="text" class="form-control" value="AliExpress"></td>
+                                                <td><input type="text" class="form-control" value="APL05-BLK-64"></td>
+                                                <td><input type="text" class="form-control" value="ALE-BLK-64-8753"></td>
+                                                <td><input type="text" class="form-control" value="3200"></td>
+                                                <td>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>AED</option>
+                                                      </select>
+                                                </td>
+                                                <td>
+                                                    <select class="form-select" aria-label="Default select example">
+                                                        <option selected>U.A.E</option>
+                                                      </select>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="4000"></td>
+                                                <td><input type="text" class="form-control" value="5%"></td>
+                                                <td><input type="text" class="form-control" value="10%"></td>
+                                                <td><input type="text" class="form-control" value="200"></td>
+                                                <td><input type="text" class="form-control" value="2 Days"></td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                      <div class="supplier-check-box">
+                                          <input type="checkbox"> Default Supplier
+
+                                          <input type="checkbox"> Pre-Purchase
+                                      </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-5 col-md-12">
+                                        <div class="product-info-title">
+                                            <h6 class="fw-bold text-uppercase mb-5">Other Suppliers <i
+                                                class="fas fa-angle-down"></i></h6>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-7 col-md-12">
+                                        <div class="product-info ">
+                                            <ul class="d-flex justify-content-end align-items-center flex-wrap">
+                                                <li> <button class="btn btn-dark btn-sm">Advance</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="supplier-info-table py-3 mb-4">
+                                    <table class="table table-reponsive-md text-center">
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="images/product-detail/amazon-logo.png" width="60" alt=""></td>
+                                                <td>Amazon</td>
+                                                <td>APL05-BLK-64</td>
+                                                <td>ALE-BLK-64-8753</td>
+                                                <td>3200</td>
+                                                <td>AED</td>
+                                                <td> U.A.E</td>
+                                                <td>4000</td>
+                                                <td>5%</td>
+                                                <td>10%</td>
+                                                <td>200</td>
+                                                <td>2 Days</td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                      <div class="supplier-check-box">
+                                         <small> Default Supplier: No</small>
+                                         <small class="ms-4"> Pre-Purchase: Yes</small>
+
+                                      </div>
+                                </div>
+                                <div class="supplier-info-table py-3 mb-4">
+                                    <table class="table table-reponsive-md text-center">
+                                        <tbody>
+                                            <tr>
+                                                <td><img src="images/product-detail/amazon-logo.png" width="60" alt=""></td>
+                                                <td>Amazon</td>
+                                                <td>APL05-BLK-64</td>
+                                                <td>ALE-BLK-64-8753</td>
+                                                <td>3200</td>
+                                                <td>AED</td>
+                                                <td> U.A.E</td>
+                                                <td>4000</td>
+                                                <td>5%</td>
+                                                <td>10%</td>
+                                                <td>200</td>
+                                                <td>2 Days</td>
+                                            </tr>
+                                        </tbody>
+                                      </table>
+                                      <div class="supplier-check-box">
+                                         <small> Default Supplier: No</small>
+                                         <small class="ms-4"> Pre-Purchase: Yes</small>
+
+                                      </div>
+                                </div>
+                            </div>
+                            <!--Supplier info End-->
+    
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <!--single product details End-->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <script src="js/custom.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/popper.min.js"></script>
+</body>
+
+</html>

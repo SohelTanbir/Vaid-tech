@@ -1,0 +1,46 @@
+/*
+------------------------------------------------------------------------
+--------------- Style for item details page  -----------------
+------------------------------------------------------------------------
+*/
+
+.after-border{
+    position: relative;
+    padding-right: 10px;
+    border-right: 1px solid #EEEEEE;
+}
+.product-info ul li{
+    padding: 0 10px;
+    border-right: 1px solid #EEEEEE;
+}
+.product-info ul li:last-child{
+    border: 0;
+}
+.product-info ul li:first-child span{
+    text-decoration: underline;
+}
+.product-info ul li {
+    font-weight: 500;
+}
+.product-info-table small{
+    color: #12AEC2;
+}
+.product-info-list li{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 7px;
+}
+.navigation button{
+    background: #00B4B1;
+    margin-right: 10px;
+}
+.custom-border{
+    border: 2px solid #00B4B1;
+}
+.supplier-info-table .table tr, th, td{
+    font-size: 12px;
+    font-weight: 400;
+}
+.supplier-info-table {
+    border-bottom: 2px dashed #e4e3e3;
+}

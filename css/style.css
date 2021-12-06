@@ -10,12 +10,16 @@ a,a:hover{
 ul, li{
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 img{
     max-width: 100%;
 }
 body{
     font-family: 'Poppins', sans-serif;
+}
+.breadcrumb-item.active {
+    color: #24BFBC;
 }
 /*
 ------------------------------------------------------------------------
@@ -176,4 +180,28 @@ body{
 .product-table .table th,td{
     font-weight: 400;
     font-size: 12px;
+}
+
+.product-table .table tr:hover .option-icon{
+    visibility: visible!important;
+   cursor: pointer;
+}
+.option-icon{
+    position: relative;
+}
+.option-overlay {
+    position: absolute;
+    width: 150px;
+    padding: 15px;
+    left: -145px;
+    top: 14px;
+    background: #fff;
+    text-align: start;
+    visibility: hidden;
+}
+.show_hide{
+    visibility: visible;
+}
+.table {
+    border-color: #fff;
 }
