@@ -43,4 +43,5 @@
 }
 .supplier-info-table {
     border-bottom: 2px dashed #e4e3e3;
+    overflow-x: auto;
 }
