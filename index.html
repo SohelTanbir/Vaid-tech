@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Master Catalogue</title>
 </head>
+
 <body>
     <div id="main" class="container-fluid ps-0 pr-0">
         <div class="row">
@@ -162,374 +163,396 @@
                                     <div class="download">
                                         <span style="color: #24BFBC;">
                                             <i class="fas fa-minus-square"></i>
-                                            Download Product 
+                                            Download Product
                                             <i class="fas fa-download"></i></span>
                                     </div>
                                 </div>
                                 <div class="col-lg-6 ">
                                     <div class="add-product d-flex justify-content-end">
-                                        <button class="btn btn-dark btn-sm">Add Product</button>
+                                        <!--trigger add product modal-->
+                                        <button class="btn btn-dark btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#addProduct">Add Product</button>
                                         <button class="btn btn-dark btn-sm ms-3">Download Catalogue <i
                                                 class="fas fa-download"></i></button>
+                                    </div>
+                                    <!--add product modal-->
+                                    <!-- Modal -->
+                                    <div class="modal fade " id="addProduct" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Add New Product</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>all product info here</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-success">Save</button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <hr class="custom-hr"/>
+                        <hr class="custom-hr" />
                         <table class="table table-reponsive-md text-center">
                             <thead>
-                              <tr>
-                                <th scope="col" colspan="3" class="text-end">Item Category</th>
-                                <th scope="col">Product Name/Mode</th>
-                                <th scope="col">Product SKU ID</th>
-                                <th scope="col">Product Group</th>
-                                <th scope="col">Supplier Name</th>
-                                <th scope="col">Supplier Price</th>
-                                <th scope="col">Client Price</th>
-                                <th scope="col">Discount</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Pre Purchase</th>
-                              </tr>
+                                <tr>
+                                    <th scope="col" colspan="3" class="text-end">Item Category</th>
+                                    <th scope="col">Product Name/Mode</th>
+                                    <th scope="col">Product SKU ID</th>
+                                    <th scope="col">Product Group</th>
+                                    <th scope="col">Supplier Name</th>
+                                    <th scope="col">Supplier Price</th>
+                                    <th scope="col">Client Price</th>
+                                    <th scope="col">Discount</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Pre Purchase</th>
+                                </tr>
                             </thead>
                             <tbody>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
-                             <tr>
-                                 <td>
-                                    <input type="checkbox">
-                                 </td>
-                                 <td>
-                                    <img src="images/apple-logo.png" alt="apple logo" width="50">
-                                 </td>
-                                 <td>Physical</td>
-                                 <td>Apple iPhone X</td>
-                                 <td>APL05-BLK-64</td>
-                                 <td>Mobile Phone</td>
-                                 <td>Amazon <small>APL05-BLK-64</small></td>
-                                 <td>AED3500</td>
-                                 <td>AED3800</td>
-                                 <td>5%</td>
-                                 <td>Active</td>
-                                 <td>Yes</td>
-                                 <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
-                                    <div class="option-overlay shadow ">
-                                        <ul>
-                                            <li class="mb-2">Edit Product</li>
-                                            <li>Delete Product</li>
-                                        </ul>
-                                    </div>
-                                </td>
-                               
-                             </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td>
+                                        <img src="images/apple-logo.png" alt="apple logo" width="50">
+                                    </td>
+                                    <td>Physical</td>
+                                    <td>Apple iPhone X</td>
+                                    <td>APL05-BLK-64</td>
+                                    <td>Mobile Phone</td>
+                                    <td>Amazon <small>APL05-BLK-64</small></td>
+                                    <td>AED3500</td>
+                                    <td>AED3800</td>
+                                    <td>5%</td>
+                                    <td>Active</td>
+                                    <td>Yes</td>
+                                    <td class=" option-icon invisible"><i class="fas fa-ellipsis-v dot-icon"></i>
+                                        <div class="option-overlay shadow ">
+                                            <ul>
+                                                <li class="mb-2">Edit Product</li>
+                                                <li>Delete Product</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+
+                                </tr>
                             </tbody>
-                          </table>
+                        </table>
                     </div>
                     <!--Product Table End-->
                     <!--Pagination Start-->
                     <nav aria-label="Page navigation example" class="my-3">
                         <ul class="pagination justify-content-end">
-                          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
                         </ul>
-                      </nav>
+                    </nav>
                     <!--Pagination End-->
                 </div>
             </div>
@@ -540,4 +563,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
 </body>
+
 </html>
