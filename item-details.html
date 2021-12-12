@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/item-details.css">
     <title>Item details</title>
 </head>
+
 <body>
     <div id="main" class="container-fluid ps-0 pr-0">
         <div class="row">
@@ -322,35 +323,35 @@
                         </div>
                         <!--product additional info End-->
 
-                              <!--Supplier info Start-->
-                              <div class="supplier-info  bg-white rounded p-3 mb-4">
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-12">
-                                        <div class="product-info-title">
-                                            <h6 class="fw-bold text-uppercase mb-5">Supplier Info<i
+                        <!--Supplier info Start-->
+                        <div class="supplier-info  bg-white rounded p-3 mb-4">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="product-info-title">
+                                        <h6 class="fw-bold text-uppercase mb-5">Supplier Info<i
                                                 class="fas fa-angle-down"></i></h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-12">
-                                        <div class="product-info ">
-                                            <ul class="d-flex justify-content-end align-items-center flex-wrap">
-                                                <li>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>Sort By</option>
-                                                        <option value="1">option 1</option>
-                                                        <option value="1">option 2</option>
-                                                    </select>
-                                                </li>
-                                                <li> <button class="btn btn-dark btn-sm">Add New Supplier</button></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="supplier-info-table py-3 mb-4">
-                                    <table class="table table-reponsive-md text-center">
-                                        <thead>
-                                          <tr >
-                                            <th scope="col"  class="text-end">Supplier Logo</th>
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="product-info ">
+                                        <ul class="d-flex justify-content-end align-items-center flex-wrap">
+                                            <li>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>Sort By</option>
+                                                    <option value="1">option 1</option>
+                                                    <option value="1">option 2</option>
+                                                </select>
+                                            </li>
+                                            <li> <button class="btn btn-dark btn-sm">Add New Supplier</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="supplier-info-table py-3 mb-4">
+                                <table class="table table-reponsive-md text-center">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="text-end">Supplier Logo</th>
                                             <th scope="col">Supplier Name</th>
                                             <th scope="col">Supplier SKU ID</th>
                                             <th scope="col">Supplier Catalogue ID</th>
@@ -362,153 +363,174 @@
                                             <th scope="col">VAT</th>
                                             <th scope="col">Minimum Order Quantity</th>
                                             <th scope="col">Estimate Delivery Time</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><img src="images/product-detail/aliexpress-logo.png" width="60" alt=""></td>
-                                                <td><input type="text" class="form-control" value="AliExpress"></td>
-                                                <td><input type="text" class="form-control" value="APL05-BLK-64"></td>
-                                                <td><input type="text" class="form-control" value="ALE-BLK-64-8753"></td>
-                                                <td><input type="text" class="form-control" value="3200"></td>
-                                                <td>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>AED</option>
-                                                      </select>
-                                                </td>
-                                                <td>
-                                                    <select class="form-select" aria-label="Default select example">
-                                                        <option selected>U.A.E</option>
-                                                      </select>
-                                                </td>
-                                                <td><input type="text" class="form-control" value="4000"></td>
-                                                <td><input type="text" class="form-control" value="5%"></td>
-                                                <td><input type="text" class="form-control" value="10%"></td>
-                                                <td><input type="text" class="form-control" value="200"></td>
-                                                <td><input type="text" class="form-control" value="2 Days"></td>
-                                            </tr>
-                                        </tbody>
-                                      </table>
-                                      <div class="supplier-check-box">
-                                          <input type="checkbox"> Default Supplier
-                                          <input type="checkbox"> Pre-Purchase
-                                      </div>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="images/product-detail/aliexpress-logo.png" width="60" alt="">
+                                            </td>
+                                            <td><input type="text" class="form-control" value="AliExpress"></td>
+                                            <td><input type="text" class="form-control" value="APL05-BLK-64"></td>
+                                            <td><input type="text" class="form-control" value="ALE-BLK-64-8753"></td>
+                                            <td><input type="text" class="form-control" value="3200"></td>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>AED</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option selected>U.A.E</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="text" class="form-control" value="4000"></td>
+                                            <td><input type="text" class="form-control" value="5%"></td>
+                                            <td><input type="text" class="form-control" value="10%"></td>
+                                            <td><input type="text" class="form-control" value="200"></td>
+                                            <td><input type="text" class="form-control" value="2 Days"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="supplier-check-box">
+                                    <input type="checkbox"> Default Supplier
+                                    <input type="checkbox"> Pre-Purchase
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-5 col-md-12">
-                                        <div class="product-info-title">
-                                            <h6 class="fw-bold text-uppercase mb-5">Other Suppliers <i
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="product-info-title">
+                                        <h6 class="fw-bold text-uppercase mb-5">Other Suppliers <i
                                                 class="fas fa-angle-down"></i></h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-7 col-md-12">
-                                        <div class="product-info ">
-                                            <ul class="d-flex justify-content-end align-items-center flex-wrap">
-                                                <li> <button class="btn btn-dark btn-sm">Advance</button></li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="supplier-info-table py-3 mb-4">
-                                    <table class="table table-reponsive-md text-center">
-                                        <tbody>
-                                            <tr>
-                                                <td><img src="images/product-detail/amazon-logo.png" width="60" alt=""></td>
-                                                <td>Amazon</td>
-                                                <td>APL05-BLK-64</td>
-                                                <td>ALE-BLK-64-8753</td>
-                                                <td>3200</td>
-                                                <td>AED</td>
-                                                <td> U.A.E</td>
-                                                <td>4000</td>
-                                                <td>5%</td>
-                                                <td>10%</td>
-                                                <td>200</td>
-                                                <td>2 Days</td>
-                                            </tr>
-                                        </tbody>
-                                      </table>
-                                      <div class="supplier-check-box">
-                                         <small> Default Supplier: No</small>
-                                         <small class="ms-4"> Pre-Purchase: Yes</small>
-                                      </div>
-                                </div>
-                                <div class="supplier-info-table py-3 mb-4">
-                                    <table class="table table-reponsive-md text-center">
-                                        <tbody>
-                                            <tr>
-                                                <td><img src="images/product-detail/amazon-logo.png" width="60" alt=""></td>
-                                                <td>Amazon</td>
-                                                <td>APL05-BLK-64</td>
-                                                <td>ALE-BLK-64-8753</td>
-                                                <td>3200</td>
-                                                <td>AED</td>
-                                                <td> U.A.E</td>
-                                                <td>4000</td>
-                                                <td>5%</td>
-                                                <td>10%</td>
-                                                <td>200</td>
-                                                <td>2 Days</td>
-                                            </tr>
-                                        </tbody>
-                                      </table>
-                                      <div class="supplier-check-box">
-                                         <small> Default Supplier: No</small>
-                                         <small class="ms-4"> Pre-Purchase: Yes</small>
-                                      </div>
-                                </div>
-                            </div>
-                            <!--Supplier info End-->
-                            <!--Client  info Start-->
-                            <div class="client-info bg-white rounded mb-2 p-3">
-                                <div class="product-info-title">
-                                    <h6 class="fw-bold text-uppercase mb-5">Client<i
-                                        class="fas fa-angle-down"></i></h6>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-2">
-                                        <img src="images/product-detail/aliexpress.png" alt="">
-                                    </div>
-                                    <div class="col-lg-10">
-                                        <div class="client-name">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th scope="col">Client Name</th>
-                                                        <th scope="col">Selling Price</th>
-                                                        <th scope="col">Discount</th>
-                                                        <th scope="col">Client Name</th>
-                                                        <th scope="col">Selling Price</th>
-                                                        <th scope="col">Discount</th>
-                                                        <th scope="col">Client Name</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>Moshreq Bang</td>
-                                                        <td><input type="text" class="form-control" value="AED 3,000"></td>
-                                                        <td><input type="text" class="form-control" value="3%"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Standard Chartered </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Bayut</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Dubizzle</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Hassed</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="product-info ">
+                                        <ul class="d-flex justify-content-end align-items-center flex-wrap">
+                                            <li> <button class="btn btn-dark btn-sm">Advance</button></li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                            <!--Client  info End-->
+                            <div class="supplier-info-table py-3 mb-4">
+                                <table class="table table-reponsive-md text-center">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="images/product-detail/amazon-logo.png" width="60" alt=""></td>
+                                            <td>Amazon</td>
+                                            <td>APL05-BLK-64</td>
+                                            <td>ALE-BLK-64-8753</td>
+                                            <td>3200</td>
+                                            <td>AED</td>
+                                            <td> U.A.E</td>
+                                            <td>4000</td>
+                                            <td>5%</td>
+                                            <td>10%</td>
+                                            <td>200</td>
+                                            <td>2 Days</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="supplier-check-box">
+                                    <small> Default Supplier: No</small>
+                                    <small class="ms-4"> Pre-Purchase: Yes</small>
+                                </div>
+                            </div>
+                            <div class="supplier-info-table py-3 mb-4">
+                                <table class="table table-reponsive-md text-center">
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="images/product-detail/amazon-logo.png" width="60" alt=""></td>
+                                            <td>Amazon</td>
+                                            <td>APL05-BLK-64</td>
+                                            <td>ALE-BLK-64-8753</td>
+                                            <td>3200</td>
+                                            <td>AED</td>
+                                            <td> U.A.E</td>
+                                            <td>4000</td>
+                                            <td>5%</td>
+                                            <td>10%</td>
+                                            <td>200</td>
+                                            <td>2 Days</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div class="supplier-check-box">
+                                    <small> Default Supplier: No</small>
+                                    <small class="ms-4"> Pre-Purchase: Yes</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Supplier info End-->
+                        <!--Extra Costs Start-->
+                        <div class="extra-costs bg-white rounded p-4 my-4">
+                            <div class="row">
+                                <div class="col-lg-5 col-md-12">
+                                    <div class="product-info-title">
+                                        <h6 class="fw-bold text-uppercase mb-5">Extra Costs <i
+                                                class="fas fa-angle-down"></i></h6>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-12">
+                                    <div class="product-info ">
+                                        <ul class="d-flex justify-content-end align-items-center flex-wrap">
+                                            <li> <button class="btn btn-dark btn-sm">Add Cost</button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    <div class="add-costs">
+                                        <small class="text-primary">Cost Type</small>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control">
+                                                <option selected>Delivery</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="delivery-name">
+                                        <small class="text-primary">Delivery Name</small>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control">
+                                                <option selected>DHL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1">
+                                    <small class="text-primary">Fee</small>
+                                    <div class="discount d-flex justify-content-between align-items-center">
+                                        <input type="text" class="form-control" value="150">
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="delivery-name">
+                                        <small class="text-primary">Currency</small>
+                                        <div class="input-group mb-3">
+                                            <select class="form-control">
+                                                <option selected>AED</option>
+                                                <option>AED</option>
+                                                <option>AED</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-1">
+                                    <div class="product-type">
+                                        <small class="text-primary">VAT</small>
+                                      <input type="text" class="form-control" value="2.5%">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Extra Costs  End-->
                     </div>
+                   <div class="product-info-save-btn text-end">
+                    <button style="background: #00B4B1" class="btn btn-md text-white ">Save Changes</button>
+                   </div>
+                    
                     <!--single product details End-->
                 </div>
             </div>
@@ -518,4 +540,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/popper.min.js"></script>
 </body>
+
 </html>
