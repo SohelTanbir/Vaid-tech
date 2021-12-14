@@ -1,0 +1,52 @@
+/* 
+-------------------------------------------------------------------------------
+------------------------ Reset Default Style ---------------------------
+--------------------------------------------------------------------------------
+*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,
+h4,h5,h6{
+    padding: 0;
+    margin: 0;
+}
+html{
+    font-size:62.5% ;
+}
+body{
+    font-size: 1.6rem;
+}
+img{
+    max-width: 100%;
+}
+/* 
+-------------------------------------------------------------------------------
+----------------------- Header Section Style -------------------------
+--------------------------------------------------------------------------------
+*/
+#header-section{
+    background:#fff;
+    height: 7.1rem;
+    box-shadow: 2px 2px 5px #ddd5d5;
+    padding:3px 0 ;
+}
+.logo-text h3{
+    font-size: 2.5rem;
+    text-transform: capitalize;
+}
+.logo-text span{
+    color: #FCD12A;
+}
+.notification-icon{
+    color: #47A5CD;
+    font-size: 3rem;
+}
+.user-name{
+    margin:0 .8rem;
+}
+.user-name span.material-icons{
+    font-size: 1.8rem;
+}
