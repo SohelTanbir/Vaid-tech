@@ -1,0 +1,16 @@
+
+/* override bootstrap css */
+.nav-link, 
+.navbar a{
+    color: #fff;
+}
+.navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;..");
+}
+.banner-section img{
+    max-width: 100%;
+    height: 80vh;
+}
+.btn-success {
+    float: right;
+}
