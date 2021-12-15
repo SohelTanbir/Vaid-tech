@@ -24,6 +24,12 @@ img{
     max-width: 100%;
 }
 ul{list-style-type: none;}
+.container{
+    max-width: 1044px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
 /* 
 -------------------------------------------------------------------------------
 ----------------------- Header Section Style -------------------------
@@ -31,9 +37,8 @@ ul{list-style-type: none;}
 */
 #header-section{
     background:#fff;
-    height: 7.1rem;
     box-shadow: 2px 2px 5px #ddd5d5;
-    padding:3px 0 ;
+    padding:3px 0;
 }
 .logo-text h3{
     font-size: 2.5rem;
@@ -66,7 +71,7 @@ ul{list-style-type: none;}
    border:.2rem solid #d8d7d7;
 }
 .video-heading{
-    padding: .5rem 20rem;
+    padding: .5rem 1rem;
 }
 .video-heading h2{
     font-size: 2.6rem;
@@ -80,7 +85,9 @@ ul{list-style-type: none;}
     height: 30rem;
 }
 .video-content p {
-    padding: 1rem 35rem;
+    width: 50%;
+    margin: auto;
+    padding: 1rem;
 }
 .buy-btn{
     background: #FFDA27;
@@ -102,7 +109,7 @@ ul{list-style-type: none;}
 --------------------------------------------------------------------------------
 */
 .testimonial{
-    padding: 5rem 20rem 2rem;
+    padding: 5rem 0rem 2rem;
 }
 .testimonial h4{
     border-bottom: .2rem solid #FFDA27;
@@ -146,4 +153,24 @@ ul{list-style-type: none;}
 .footer-content{
     align-items: center;
     justify-content: center;
+}
+
+/* 
+-------------------------------------------------------------------------------
+-------------------- Style for Responsive View ---------------------
+-------------------------------------------------------------------------------
+*/
+@media all and (max-width:580px){
+    .video-content video {
+        height: inherit;
+    }
+    .video-content p {
+        width: 80%;
+    }
+    #header-section{
+        text-align: center!important;
+    }
+    .mdc-top-app-bar__section{
+        justify-content: flex-start;
+    }
 }
