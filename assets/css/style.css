@@ -23,6 +23,7 @@ body{
 img{
     max-width: 100%;
 }
+ul{list-style-type: none;}
 /* 
 -------------------------------------------------------------------------------
 ----------------------- Header Section Style -------------------------
@@ -72,7 +73,7 @@ img{
     font-weight: 700;
 }
 .video-content{
-    margin:0 auto 3rem;
+    margin:0 auto 1rem;
 }
 .video-content video{
     max-width: 50rem;
@@ -94,4 +95,55 @@ img{
     border-radius: 1rem;
     margin:.2rem;
     font-weight: 600;
+}
+/* 
+-------------------------------------------------------------------------------
+--------------------- Testimonial Section Style ---------------------
+--------------------------------------------------------------------------------
+*/
+.testimonial{
+    padding: 5rem 20rem 2rem;
+}
+.testimonial h4{
+    border-bottom: .2rem solid #FFDA27;
+    color: #47A5CD;
+    text-transform: capitalize;
+    padding-bottom: .5rem;
+}
+.testimonial p{
+    color: #29475D;
+    font-weight: 700;
+}
+.testimonial-video{
+    margin-bottom: 1rem;
+}
+.counter-timer{
+    padding:1rem 0;
+}
+/* 
+-------------------------------------------------------------------------------
+--------------------- Footer Section Style ---------------------
+--------------------------------------------------------------------------------
+*/
+#footer-section{
+    background: #FFDA27;
+}
+.social-icon li{
+    margin-left: 1rem;
+}
+.social-icon li img{
+    width: 80%;
+}
+.copyright p{
+    color: #000000;
+}
+.copyright p span{
+    font-weight: 600;
+}
+.copyright p span .brand{
+    color: #405BA3;
+}
+.footer-content{
+    align-items: center;
+    justify-content: center;
 }
