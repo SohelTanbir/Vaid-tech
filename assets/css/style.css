@@ -170,7 +170,10 @@ ul{list-style-type: none;}
     #header-section{
         text-align: center!important;
     }
-    .mdc-top-app-bar__section{
-        justify-content: flex-start;
+    .logo img {
+        width: 3rem;
+    }
+    .logo-text img {
+        width: 15rem;
     }
 }
