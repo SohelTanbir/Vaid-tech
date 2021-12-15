@@ -1,0 +1,31 @@
+.timer-down{
+    width: 13%;
+    margin: 0 auto;
+    border-radius: .6rem;
+    background: #27AAE1;
+    color: #fff;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding:.4rem;
+    margin-bottom: 3rem;
+}
+.statistic-section{
+    width: 60%;
+}
+.circle-wrapper{
+    justify-content: space-between;
+}
+.circle-wrapper .circle {
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    border: .5rem solid #FFDA27;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.circle-wrapper .circle p {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 3.4rem 0 .5rem;
+    color: #FFDA27;
+}
