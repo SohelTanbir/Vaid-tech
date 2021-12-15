@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <!--Material-Design lite css -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.min.css">
     <!-- material Design css -->
     <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <!-- material Design js -->
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
     <!--material-icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <!-- main stylesheet -->
+    <!-- main stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
-<!--Header Start-->
-<header id="header-section">
-    <div class="mdc-top-app-bar__row">
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-        <div class="logo">
-            <img src="assets/images/logo/logo.png" alt="">
-        </div>
-        <div class="logo-text">
-            <img src="assets/images/logo/logo-text.png" alt="">
-            <!-- if you want to use text for logo text uncomment h3 -->
-            <!-- <h3 class="mdc-theme--primary">Auto<span>Duplication</span></h3> -->
-        </div>
-      </section>
-      <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
-        <span class="material-icons notification-icon">
-            notifications
-            </span>
-            <div class="user-name">
-                <h3>Abdul kamal</h3>
-                 <span class="material-icons">
-                    keyboard_arrow_down
+    <!--Header Start-->
+    <header id="header-section">
+        <div class="mdc-top-app-bar__row">
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                <div class="logo">
+                    <img src="assets/images/logo/logo.png" alt="">
+                </div>
+                <div class="logo-text">
+                    <img src="assets/images/logo/logo-text.png" alt="">
+                    <!-- if you want to use text for logo text uncomment h3 -->
+                    <!-- <h3 class="mdc-theme--primary">Auto<span>Duplication</span></h3> -->
+                </div>
+            </section>
+            <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                <span class="material-icons notification-icon">
+                    notifications
+                </span>
+                <div class="user-name">
+                    <h3>Abdul kamal</h3>
+                    <span class="material-icons">
+                        keyboard_arrow_down
                     </span>
                     <span>Membership</span>
+                </div>
+                <div class="user-profile">
+                    <img src="assets/images/user/user.png" alt="user">
+                </div>
+            </section>
+        </div>
+    </header>
+    <!--Header End-->
+<div class="content-wrapper">
+    <!--Banner Video Start-->
+    <div id="banner-video">
+        <div class="video-heading mdl-typography--text-center android-be-together-section">
+            <h2 class="mdc-headline2">It is a long established fact that a reader will be distracted by ...</h2>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content</p>
+        </div>
+        <div class="video-content mdl-typography--text-center">
+            <!-- <img src="assets/images/video/video.png" alt="video"> -->
+            <video  controls>
+                <source src="https://youtu.be/FwmuhNTrJO4" type="video/mp4">
+            </video>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is th....</p>
+            <div class="mdl-button mdl-js-button buy-btn">Buy Now For $230 yearly</div>
+        </div>
+        <div class="counter-timer">
+            <div class="mdl-grid mdl-typography--text-center flex-grid">
+                <div class="mdl-cell mdl-cell--1-col counter mdl-color-text--accent-contrast">12 days</div>
+                <div class="mdl-cell mdl-cell--1-col counter mdl-color-text--accent-contrast">12 Hr</div>
+                <div class="mdl-cell mdl-cell--1-col counter mdl-color-text--accent-contrast">12 Min</div>
+                <div class="mdl-cell mdl-cell--1-col counter mdl-color-text--accent-contrast">12 Sec</div>
             </div>
-            <div class="user-profile">
-                <img src="assets/images/user/user.png" alt="user">
-            </div>
-      </section>
+        </div>
     </div>
-  </header>
-<!--Header End-->
 
-
-
-
+    <!--Banner Video End-->
+</div>
 
 </body>
+
 </html>
