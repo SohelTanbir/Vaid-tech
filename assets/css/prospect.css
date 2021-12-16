@@ -37,3 +37,66 @@
     border-bottom: .2rem solid #FFFFFF;
     padding-bottom:.5rem;
 }
+.prospect-info input, textarea, select{
+    width: 100%;
+    border: .2rem solid #FFDA27;
+    outline: none;
+    padding: 1.2rem ;
+    margin: .3rem 0 2rem;
+    border-radius: .5rem;
+}
+::placeholder{
+    color: #595959;
+    font-weight: 400;
+}
+.prospect-info label{
+    color: #7D7D7D;
+    font-weight: 700;
+}
+.prospect-info textarea{
+    height: 8rem;
+}
+ .remove-project-btn{
+    background: #FF0000;
+    color: #FFFFFF;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    border-radius: .5rem;
+    margin: 2rem;
+}
+.footer-btn{
+    display: flex;
+    justify-content: flex-end;
+}
+.save-btn{
+    background: #FFDA27;
+    border: none;
+    outline: none;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    color: #595959;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.cancel-btn{
+    background: transparent;
+    border:.2rem solid #FFDA27 ;
+    outline: none;
+    padding: 1rem 2rem;
+    border-radius: .5rem;
+    color: #595959;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+.prospect-btn{
+    text-align:right;
+}
+
+
+/*Responsive sty le*/
+@media all and (max-width:840px){
+    .border_dashed_right::after {
+        width: 0%;
+    }
+}
