@@ -1,0 +1,39 @@
+.add-prospect{
+    justify-content: space-between;
+}
+.add-prospect button{
+    border-radius: 1rem;
+}
+.border_dashed_right{
+    position: relative;
+}
+.border_dashed_right::after {
+    content: "";
+    position: absolute;
+    left: 65%;
+    top: 1.5rem;
+    width: 100%;
+    border-bottom: 3px dashed #ACACAC;
+}
+.square-wrap {
+    text-align: center;
+}
+.btn-common{
+    background: #FFFFFF;
+    border-radius: 1rem;
+    color: #595959;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    padding:0 .6rem ;
+}
+.square-content {
+    height: auto;
+}
+.prospect-info{
+    padding: .5rem 2rem;
+}
+.prospect-info h5{
+    border-top: .2rem solid #FFFFFF;
+    border-bottom: .2rem solid #FFFFFF;
+    padding-bottom:.5rem;
+}
