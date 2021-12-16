@@ -100,13 +100,55 @@
     background: #FFDA27;
     color: #FFFFFF;
 }
-
-
-
-
-
-
-
+.content-wrapper {
+    border: 0rem solid #d8d7d7;
+}
+.team-section .add-prospect{
+    margin-top: 1.5rem;
+}
+/* 
+-------------------------------------------------------------------------------
+---------------- Team Member Section Style  --------------------
+-------------------------------------------------------------------------------
+*/
+.team-member table{
+    border-collapse: collapse;
+    margin: auto;
+}
+.team-member table td, th{
+    padding: .5rem;
+    font-size: 1.3rem;
+}
+.team-member  tr{
+    border:.2rem solid #FFDA27;
+}
+.team-member table tr td button:first-child{
+    background: #FFDA27;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    color: #fff;
+    border-radius: 1rem;
+}
+.team-member table tr td button:last-child{
+    background: #FF0000;
+    border: none;
+    outline: none;
+    padding: .5rem;
+    color: #fff;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+}
+.team-section{
+    text-align: right;
+    overflow-x: auto;
+}
+.team-section .add-btn {
+    margin: 1rem 1.5rem 1rem 0rem;
+    background: #FFDA27;
+    color: #FFFFFF;
+    border-radius: .5rem;
+}
 
 
 
