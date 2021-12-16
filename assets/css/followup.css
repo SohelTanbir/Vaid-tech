@@ -40,7 +40,88 @@
     text-transform: uppercase;
     font-size: 1.8rem;
 }
+.square-wrap{
+    justify-content: space-between;
+    padding: 3rem 0;
+}
 .copyright p,
 .copyright p span .brand {
     color: #FFFFFF;
+}
+.prospects .single-square1,
+.prospects .single-square2,
+.prospects .single-square3,
+.prospects .single-square4,
+.prospects .single-square5{
+    padding: 3rem .5rem;
+    text-align: center;
+}
+.prospects .single-square1{
+    background-image: linear-gradient(to right, #6178B7, #CAD2E7);
+}
+.prospects .single-square2{
+    background-image: linear-gradient(to right, #2BC4FA, #BDEDFD);
+}
+.prospects .single-square3{
+    background-image: linear-gradient(to right, #98DE88, #E1F6DD);
+}
+.prospects .single-square4{
+    background-image: linear-gradient(to right, #F87B49, #FCD7C8);
+}
+.prospects .single-square5{
+    background-image: linear-gradient(to right, #158FFF, #D2E9FF);
+}
+.prospects p{
+    font-size: 3rem;
+    font-weight: 400;
+    color: #fff;
+}
+.square-info span{
+    color: #fff;
+}
+.square-content{
+    background: #F3F7F9;
+    padding: 1rem 0 2rem;
+    height: 30rem;
+}
+.square-content h6{
+    margin-top: 10rem;
+    color: #ACACAC;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+.add-prospect {
+    text-align: right;
+    border-bottom: .2rem solid #FFFFFF;
+    padding-bottom: 1rem;
+}
+.add-prospect button{
+    margin-right: 1.5rem;
+    background: #FFDA27;
+    color: #FFFFFF;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+-------------------------------------------------------------------------------
+----------------------- Responsive CSS -------------------------------
+-------------------------------------------------------------------------------
+*/
+
+@media all and (max-width:500px){
+    .square-wrap {
+        justify-content: center;
+    }
+    .mdl-cell--2-col, .mdl-cell--2-col-phone.mdl-cell--2-col-phone {
+        width: calc(100% - 16px);
+    }
 }
