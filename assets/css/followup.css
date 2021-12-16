@@ -1,0 +1,33 @@
+/* 
+-------------------------------------------------------------------------------
+----------------------- Header Section Style -------------------------
+--------------------------------------------------------------------------------
+*/
+.logo img{
+    max-width: 100%;
+    width:7rem;
+}
+/* 
+-------------------------------------------------------------------------------
+----------------- Training video Section Style ---------------------
+--------------------------------------------------------------------------------
+*/
+.training-video{
+    padding:1rem 0;
+}
+.training-video video{
+    height: 20rem;
+}
+.training-video h4 {
+    border-bottom: .2rem solid #FFDA27;
+    color: #47A5CD;
+    text-transform: capitalize;
+    padding-bottom: .5rem;
+}
+.btn-watched-video{
+    text-transform: capitalize;
+    background: #FFDA27;
+    color: #FFFFFF;
+    margin-top: 1rem;
+    border-radius: .5rem;
+}
