@@ -31,3 +31,16 @@
     margin-top: 1rem;
     border-radius: .5rem;
 }
+/* 
+-------------------------------------------------------------------------------
+--------------------- Prospect Section Style -------------------------
+--------------------------------------------------------------------------------
+*/
+.prospects h4{
+    text-transform: uppercase;
+    font-size: 1.8rem;
+}
+.copyright p,
+.copyright p span .brand {
+    color: #FFFFFF;
+}
