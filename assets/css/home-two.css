@@ -26,6 +26,9 @@
 .circle-wrapper .circle p {
     font-size: 3rem;
     font-weight: 700;
-    margin: 3.4rem 0 .5rem;
+    margin: 3.4rem 0 1rem;
     color: #FFDA27;
+}
+.circle-info span{
+    font-weight:600;
 }
