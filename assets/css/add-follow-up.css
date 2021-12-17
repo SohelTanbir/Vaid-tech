@@ -1,0 +1,35 @@
+/* 
+-------------------------------------------------------------------------------
+-------- This styleSheet only add follow up page -------------
+--------------------------------------------------------------------------------
+*/
+.add-follow-btn{
+    display: inherit;
+    margin: 1rem auto 2rem;
+}
+.single-follow-up {
+    background: #fff;
+    padding: 2rem;
+}
+.single-follow-up h5{
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #595959;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.single-follow-up p{
+    font-size: 1.4rem;
+    color: #595959;
+}
+.single-follow-up textarea{
+    width: 100%;
+    height:20rem
+}
+.single-follow-up .date{
+    text-align: right;
+    display: block;
+    color: #FFDA27;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
