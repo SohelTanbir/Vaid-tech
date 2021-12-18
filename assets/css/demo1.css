@@ -1,0 +1,29 @@
+/* 
+-------------------------------------------------------------------------------
+-------------The styleSheet only for demo1 page  -------------
+--------------------------------------------------------------------------------
+*/
+.buy-btn{
+    color: #fff;
+    margin-top: 2rem;
+    border-radius: 1rem;
+    text-transform:  capitalize;
+}
+.margin-left-auto{
+    margin-left: auto;
+}
+.single-team-member h5{
+    margin-bottom: 1rem;
+}
+.single-team-member p{
+    color: #8B8B8B;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+.add-follow-up{
+    background: #F3F7F9;
+}
+.add-follow-up textarea{
+    border: none;
+    min-height: 23.4rem;
+}
