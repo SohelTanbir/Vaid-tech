@@ -1,0 +1,84 @@
+/* 
+-------------------------------------------------------------------------------
+-------- This styleSheet only  Team Member page -------------
+--------------------------------------------------------------------------------
+*/
+
+/*Team member section */
+.team-members .single-member{
+    background: #fff;
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+}
+.team-member-info{
+    position: relative;
+}
+.team-member-info .name {
+    margin-bottom: 3rem;
+}
+.team-member-info .name span{
+    margin-left: 6rem;
+    font-weight: 700;
+   
+}
+.member-photo {
+    position: absolute;
+    top: -52%;
+    left: -7%;
+}
+.member-photo img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    display: block;
+}
+.member-icon img{
+    width: 1.8rem;
+}
+.square-content{
+    height: auto;
+}
+.team-member-title h4{
+    font-size: 1.8rem;
+}
+.member-pagination{
+    text-align: left;
+    padding: 1rem 2rem;
+}
+.member-pagination ul li {
+    background: #FFDA27;
+
+    padding: 1rem 2rem;
+    font-weight: 700;
+    color: #fff;
+    clip-path: polygon(82% 0%, 100% 50%, 82% 100%, 0% 100%, 14% 50%, 0% 0%);
+}
+.member-pagination ul li:first-child {
+    clip-path: polygon(82% 0%, 100% 50%, 82% 100%, 0% 100%, 0% 50%, 0% 0%);
+}
+.member-pagination ul li:last-child {
+    background: #FFF0AA;
+    color: #556069;
+}
+.single-team-member-info{
+    text-align:left;
+}
+.single-team-member-info img{
+    width: 24rem;
+    height: 20rem;
+}
+.single-team-member-info button{
+    background: #FF0000;
+    margin-top: 5rem;
+}
+.single-team-member-info p{
+    margin:0;
+    color: #697E8E;
+}
+.single-team-member-info p span{
+    color: #697E8E;
+    font-weight: bold;
+}
+.single-team-member-info tr td, th{
+    padding: 1.5rem 0;
+}
