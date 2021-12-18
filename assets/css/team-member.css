@@ -82,3 +82,14 @@
 .single-team-member-info tr td, th{
     padding: 1.5rem 0;
 }
+.more-btn{
+    background: #FFDA27!important;
+    border: none;
+    outline: none;
+    padding: 1rem!important;
+    color: #fff;
+    border-radius: 1rem;
+}
+.team-member table {
+    width: 100%;
+}
