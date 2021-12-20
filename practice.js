@@ -168,4 +168,73 @@ text+= "</ul>";
 
 // console.log(names.concat(numbers))
 // console.log(names.splice(0,0,{name:'Rasel',p:'developer'}));
-// console.log(names)
+// console.log(names.push("rasel"))
+// console.log(names.slice(0,4));
+// console.log(Math.max.apply(null, numbers));
+// console.log(Math.min.apply(null, numbers));
+
+// forEach method
+
+// numbers.forEach(function(item, index,array){
+//     console.log('item = '+ item)
+//     console.log('index number = ',index)
+// })
+
+// map method
+// numbers.map(function(item, index,array){
+//     console.log('array item = '+ item)
+// })
+// filter method
+// const result = numbers.filter(function(item, index,array){
+//     if(item < 3){
+//        return item
+//     }
+// })
+// const result = numbers.reduce(function(total, item, index,array){
+//     return total+item
+// })
+// console.log(result)
+// console.log(names.indexOf("sohel Rana"))
+// var arr = [1,2,3]
+// var arr = [4,5,6]
+// console.log(arr)
+
+// 12. JavaScript Date Objects
+// date object get methods
+const d = new Date();
+// console.log(d.getFullYear())
+// const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// console.log(months[d.getMonth()])
+// console.log(d.getDate())
+// console.log(d.getHours())
+// console.log(d.getMinutes())
+// console.log(d.getSeconds())
+// console.log(d.getMilliseconds())
+// console.log(d.getDay())
+
+// date object set methods
+// console.log(d.setFullYear(2020))
+
+
+//JavaScript Math Object
+const num = 11
+// console.log(Math.PI)
+// console.log(Math.round(num))
+// console.log(Math.floor(num))
+// console.log(Math.trunc(num))
+// console.log(Math.sqrt(num))
+console.log(Math.round(Math.random()*10))
+
+//13.JavaScript Loops
+// const message2 = "I love my family"
+// let i = 3
+// for(; i<=100; i++){
+//     console.log('Hi',message2)
+// }
+// for in loop
+
+const persons = {name:'sohelrana', age:21}
+const count = [1,2,3,4,5,6,7,8,9]
+for(let i in count){
+    console.log(person)
+}
