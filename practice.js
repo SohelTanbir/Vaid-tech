@@ -96,7 +96,7 @@ function decrementUser(){
 
 // 8.  JavaScript String
 let txt = "We Love Bangladesh ";
-console.log('length = ', txt.length)
+// console.log('length = ', txt.length)
 // 8.  JavaScript String Methods
 const sliceString = txt.substring(7,0);
 const newTxt = txt.replace(/bangladesh/i,"JavaScript");
@@ -105,4 +105,67 @@ const newTxt = txt.replace(/bangladesh/i,"JavaScript");
 // console.log(newTxt.charAt())
 // split method
 let splitArray = txt.trim().split(" ");
-console.log(splitArray)
+// console.log(splitArray)
+
+// indexOf method 
+const str = 'I Love JavaScript Programming Language';
+// console.log(str.indexOf('Love'))
+// console.log(str.lastIndexOf('JavaScript'))
+let str2 = "Please locate where 'locate' occurs!";
+// console.log(str.lastIndexOf("Programming", 20));
+
+// console.log(str.includes('Programming'));
+// console.log(str.startsWith('I'));
+// console.log(str.startsWith('Love', 2));
+
+// 9. JavaScript Template Literals
+let template = `
+name: sohelrana,
+profession:web developer
+`// console.log(isNaN(10))
+
+// 10. JavaScript Number Methods
+const number1 = 1234.111;
+// console.log( typeof number1.toString())
+// console.log( number1.toFixed(1))
+// console.log( number1.valueOf())
+// console.log( number1.valueOf())
+// console.log(Number(true))
+// console.log( typeof parseInt("10.10"))
+// console.log( parseInt("10.10"))
+// console.log( parseFloat("10.10"))
+// console.log( typeof Number("10"))
+// console.log( Number.MAX_VALUE)
+
+// 11. JavaScript Arrays
+// An array is a special variable,which can hold more than one value
+const numbers = [1,2,3,4,5,6,7,8,9];
+const names = ["sohel Rana","Shakil Ahmed", "Al mamun"]
+// console.log('initial array',numbers)
+// // numbers[0]= 'Sohel Rana';
+// numbers.push(10)
+// console.log('add item in  end ', numbers);
+// numbers.pop()
+// console.log('remove item from  end ', numbers);
+// numbers.shift()
+// console.log('remove item from  front ', numbers);
+// numbers.unshift(0,1)
+// console.log('add  in front ', numbers);
+// console.log('total array element= ', numbers.length);
+let text = "<ul>"
+for(let i=0; i<=names.length; i++){
+    text = text + "<li>" + names[i] + "</li>";
+     document.querySelector(".demo").innerHTML = text
+}
+text+= "</ul>";
+// const arr = new Array("sohel", "rana");
+// console.log(arr)
+// document.querySelector(".demo").innerHTML =names.join('-');
+// console.log(names)
+// console.log(names)
+// console.log(names.splice(1,2,"added", "added2"));
+// console.log(names.concat(numbers))
+
+// console.log(names.concat(numbers))
+// console.log(names.splice(0,0,{name:'Rasel',p:'developer'}));
+// console.log(names)
