@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.greeting{
+    text-align: center;
+    background: rgb(4, 163, 44);
+    color: #fff;
+    padding: 15px;
+}
+.js-world{
+    text-align: center;
+    background: #131311;
+    color: #cae066;
+    padding: 10px;
+}

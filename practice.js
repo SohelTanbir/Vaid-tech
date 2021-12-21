@@ -3,15 +3,15 @@
 // 1. output in javaScript
 const message = 'I am a simple text message';
 
- // document.write(message);
+// document.write(message);
 // console.log('output by console.log method');
 // window.alert("output by window.alert method");
 // window.print("output by window.print method");
 
 // 2. JavaScript Statements
-const statement = 10+5-5*2;
+const statement = 10 + 5 - 5 * 2;
 // console.log(statement);
-var firstName ="Sohel";
+var firstName = "Sohel";
 var lastName = "Rana";
 // console.log('fullName is = ', firstName +' '+lastName);
 
@@ -27,13 +27,12 @@ var one = 'declare variable with var  that is a global scope variable';
 let two = 'declare variable with let keyword that is a block scope variable';
 const three = 'declare variable with const keyword that is a block constant scope variable';
 
- var age = 21;
- var age  // it will not lose it's value
+var age = 21;
+var age  // it will not lose it's value
+const PI = 3.1416;
 
- const PI =3.1416;
-
- // use of const array
-const array1 = ['name1', 'name2','name3', 'name4'];
+// use of const array
+const array1 = ['name1', 'name2', 'name3', 'name4'];
 array1.name5;
 // console.log(array1);
 array1['name4'] = 'name5'
@@ -42,10 +41,10 @@ array1['name4'] = 'name5'
 // arithmetic operator
 const a = 10;
 const b = 20;
-const sum = a+b;
-const sub = a-b;
-const divide = a/b;
-const remainder = a%b;
+const sum = a + b;
+const sub = a - b;
+const divide = a / b;
+const remainder = a % b;
 
 // increment operator
 let number = 10;
@@ -58,48 +57,48 @@ number++
 // console.log(x.length?'welcome':y)
 // console.log('remainder is = ', x%y)
 let x = 5;
-let z = x ** 2;   
+let z = x ** 2;
 // console.log('exponentiation = ', z)
 // console.log(Math.pow(x, 2))
 
 // 6. JavaScript Functions
 
-function greeting(name){
-    console.log('Welcome '+ name)
+function greeting(name) {
+    console.log('Welcome ' + name)
     return 0
-    console.log('Welcome '+ name)
+    console.log('Welcome ' + name)
 }
 
 
 // 7. JavaScript Object
 const person = {
-    name:'sohelrana',
-    height:'5.2" ',
-    weight:58,
-    eyeColor:'Black',
-    age:function(age){
-        return typeof(age) == 'number'?age:'not number'
+    name: 'sohelrana',
+    height: '5.2" ',
+    weight: 58,
+    eyeColor: 'Black',
+    age: function (age) {
+        return typeof (age) == 'number' ? age : 'not number'
     }
 }
 // console.log(person.age(50))
 
 // 7. JavaScript Event
-function IncrementUser(){
+function IncrementUser() {
     let countUser = parseInt(document.querySelector('.add-user').innerText);
-    document.querySelector('.add-user').innerText = countUser+1
+    document.querySelector('.add-user').innerText = countUser + 1
 }
-function decrementUser(){
+function decrementUser() {
     let countUser = parseInt(document.querySelector('.add-user').innerText);
-    if(countUser!=0)
-        document.querySelector('.add-user').innerText = countUser-1
+    if (countUser != 0)
+        document.querySelector('.add-user').innerText = countUser - 1
 }
 
 // 8.  JavaScript String
 let txt = "We Love Bangladesh ";
 // console.log('length = ', txt.length)
 // 8.  JavaScript String Methods
-const sliceString = txt.substring(7,0);
-const newTxt = txt.replace(/bangladesh/i,"JavaScript");
+const sliceString = txt.substring(7, 0);
+const newTxt = txt.replace(/bangladesh/i, "JavaScript");
 
 // console.log(newTxt.toUpperCase())
 // console.log(newTxt.charAt())
@@ -139,8 +138,8 @@ const number1 = 1234.111;
 
 // 11. JavaScript Arrays
 // An array is a special variable,which can hold more than one value
-const numbers = [1,2,3,4,5,6,7,8,9];
-const names = ["sohel Rana","Shakil Ahmed", "Al mamun"]
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const names = ["sohel Rana", "Shakil Ahmed", "Al mamun"]
 // console.log('initial array',numbers)
 // // numbers[0]= 'Sohel Rana';
 // numbers.push(10)
@@ -153,11 +152,11 @@ const names = ["sohel Rana","Shakil Ahmed", "Al mamun"]
 // console.log('add  in front ', numbers);
 // console.log('total array element= ', numbers.length);
 let text = "<ul>"
-for(let i=0; i<=names.length; i++){
+for (let i = 0; i <= names.length; i++) {
     text = text + "<li>" + names[i] + "</li>";
-     document.querySelector(".demo").innerHTML = text
+    document.querySelector(".demo").innerHTML = text
 }
-text+= "</ul>";
+text += "</ul>";
 // const arr = new Array("sohel", "rana");
 // console.log(arr)
 // document.querySelector(".demo").innerHTML =names.join('-');
@@ -217,13 +216,13 @@ const d = new Date();
 
 
 //JavaScript Math Object
-const num = 11
+// const num = 11
 // console.log(Math.PI)
 // console.log(Math.round(num))
 // console.log(Math.floor(num))
 // console.log(Math.trunc(num))
 // console.log(Math.sqrt(num))
-console.log(Math.round(Math.random()*10))
+// console.log(Math.round(Math.random()*10))
 
 //13.JavaScript Loops
 // const message2 = "I love my family"
@@ -231,10 +230,132 @@ console.log(Math.round(Math.random()*10))
 // for(; i<=100; i++){
 //     console.log('Hi',message2)
 // }
-// for in loop
 
-const persons = {name:'sohelrana', age:21}
-const count = [1,2,3,4,5,6,7,8,9]
-for(let i in count){
-    console.log(person)
+// for in loop
+// const persons = {name:'sohelrana', age:21}
+const count = [1, 2, 3, 4, 5, 6, 7, 8]
+// for(let i in count){
+//     console.log(count[i])
+// }
+// for of loop
+const language = 'JavaScript';
+// for(let l of language){
+//     console.log(l)
+// }
+// for(let i= 0; i<=language.length; i++){
+//     console.log(language[i])
+// }
+
+// JavaScript While Loop
+let i = 0;
+// while(i<=count.length){
+//     console.log('count  = ',i);
+//     i++
+// }
+// JavaScript Do While Loop
+// do{
+//     console.log("do while loop is executed");
+//     console.log("Loop is working stop because condition is false");
+//     i++;
+// }while(i>10)
+
+// JavaScript Break and Continue
+// for(let i = 0; i<=10; i++){
+//     if(i===11){
+//         console.log('loop break')
+//         continue;
+//         // break;
+//     }
+//     console.log('loop continue')
+//     console.log(i)
+// }
+// console.log(typeof null)
+// console.log(typeof undefined)
+let stn = '22';
+let nts = 25;
+// console.log('string ', stn, typeof stn)
+// console.log('string to number convert ',stn,  typeof Number(stn))
+// console.log(' number to string convert ',nts,  typeof nts.toString());
+
+// 14. JavaScript Regular Expressions
+// let txt1 = "Javascript Language";
+// console.log(txt1.search("Javascript"))
+// let text1 = "Visit W3Schools!";
+// console.log(text1.search("W3Schools"))
+// console.log(text1.search(/w3Schools/i))
+
+// 15. JavaScript Errors - Throw and Try to Catch
+const p='1111';
+try {
+    if(p == "") throw "is empty";
+    if(isNaN(p)) throw "is not a number";
+    x = Number(x);
+    if(p > 10) throw "is too high";
+    if(p < 5) throw "is too low";
+
+  }
+  catch(err) {
+    // console.log(err)
+  }
+// 16.JavaScript Scope
+/*
+JavaScript has 3 types of scope:
+Block scope
+Function scope
+Global scope
+*/
+// block scope
+{
+    let name1 = "sohel"; // block scope variable
 }
+
+// function scope / local scope
+function fnScope(){
+    let team = 'Bangladesh'; //local variable
+    // console.log(name)
+}
+fnScope()
+
+// global scope variable
+ team = 'I am global scope variable value';
+ var team;
+
+
+//  carName = "Volvo";  // throw ReferenceError
+//  let carName;
+//  carName = "Volvo";  // throw SyntaxError
+//  const carName;           
+// "use strict";
+// myFunction();
+// console.log(public)
+// function myFunction() {
+//  var public=  3.14;   // This will also cause an error because y is not declared
+// }
+// 17. JavaScript this keyword
+const obj = {
+    name:'car',
+    color:'blue',
+    weight:110,
+    display:function(){
+        console.log(this.weight)
+    }
+}
+
+
+function show(){
+    // "use strict"
+    console.log(this)
+}
+
+// console.log(this)
+
+const person1 = {
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  const person2 = {
+    firstName:"John",
+    lastName: "Doe",
+  }
+console.log(  person1.fullName.call(person2));  // Will return "John Doe"
