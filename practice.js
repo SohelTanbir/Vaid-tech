@@ -341,14 +341,12 @@ const obj = {
     }
 }
 
-
 function show(){
     // "use strict"
     console.log(this)
 }
 
 // console.log(this)
-
 const person1 = {
     fullName: function() {
       return this.firstName + " " + this.lastName;
@@ -358,4 +356,33 @@ const person1 = {
     firstName:"John",
     lastName: "Doe",
   }
-console.log(  person1.fullName.call(person2));  // Will return "John Doe"
+// console.log(  person1.fullName.call(person2));  // Will return "John Doe"
+
+// check array or not 
+// console.log(Array.isArray(count))
+
+// Javascript arrow function
+// const sums = (x, y)=> x+y;
+// console.log(sums(10, 20))
+
+// JavaScript Classes
+class Student {
+    constructor(fname, lname){
+        this.fname = fname;
+        this.lname = lname;
+    }
+    sayName(f){
+        return this.fname + " " + this.lname + " " +f
+    }
+}
+// const Student1 = new Student("sagor", "ahmed");
+// const Student2 = new Student("Jamal ", "kamal");
+// console.log(Student2.sayName( "sohel"))
+
+// JavaScript Promise
+// const myPromise = new Promise(function(myResolve, myReject){
+//     setTimeout(function(){ myResolve("I Love Js")},2000)
+// });
+// myPromise.then(function(val, err){
+//     console.log(val, err)
+// })
