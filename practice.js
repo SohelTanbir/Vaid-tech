@@ -501,10 +501,17 @@ const li = document.createElement("li");
   li.innerText ="Second element";
   container.appendChild(ul);
   ul.appendChild(li);
-
-container.onmouseover = function(){
-    container.style.background = 'blue';
-    container.style.color = '#fff'
-}
+console.log(container.children);
+container.removeChild(ul)
+console.log(container.children[0].style.color= 'yellow')
+// container.onmouseover = function(){
+//     container.style.background = 'blue';
+//     container.style.color = '#fff'
+// }
 
 // console.log(document.getElementsByTagName("h3"))
+// console.log(document.getElementById("container").firstChild)
+let span = document.createElement("span");
+const textNode = document.createTextNode("text node");
+span.appendChild(textNode)
+ul.appendChild(span)
