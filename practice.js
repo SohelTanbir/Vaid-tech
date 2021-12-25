@@ -386,3 +386,125 @@ class Student {
 // myPromise.then(function(val, err){
 //     console.log(val, err)
 // })
+// Default Parameter Values
+function defaultParameter(x, y= 10){
+    // console.log(x+y)
+}
+defaultParameter(10);
+// Function Rest Parameter
+function restParameter(...age){
+    let sum = 0;
+    age.map(item =>{
+        sum+=item
+    })
+}
+restParameter(10, 20, 30, 40);
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+// async function myDisplay() {
+//     let myPromise = new Promise(function(myResolve, myReject) {
+//       setTimeout(function() { myResolve("Welcome to async function"); }, 3000);
+//     });
+//     document.getElementById("demo").innerHTML = await myPromise;
+//   }
+// javascript object
+const ob = {};
+ob.firstName = 'Sohel';
+ob.lastName = "Rana";
+// const json = JSON.stringify(ob);
+// console.log(json)
+// console.log('object ', JSON.parse(json))
+// const obj2 = new Object();
+// obj2.name="sohel";
+// console.log(obj2)
+// fns(10, 20)
+// const fns = (x, y) => x * y; 
+
+// JavaScript arguments object
+
+// function arguments(){
+// console.log(arguments)
+// }
+// arguments(10,20,30,40)
+// const maxs = [1,2,3,4]
+// console.log(Math.max(1,2,3));  
+// console.log(Math.max.apply(null, maxs));  
+function checkGlobal(){
+    ag = 'i am inside in a function but I am global variable because I am declared without keyword';
+}
+// checkGlobal()
+// console.log (ag)
+// javascript inheritance
+class Car{
+    constructor(name){
+        this.name = name;
+    }
+    show(){
+        console.log(this.name)
+    }
+}
+class Model extends Car {
+    constructor(name){
+        super();
+    }
+    show(name){
+        console.log('inherited',this.name)
+    }
+}
+
+// let myCar = new Model("BMW");
+// myCar.show();
+
+function myDisplayer(some) {
+    console.log(some);
+  }
+  
+  function myFirst() {
+    myDisplayer("Hello");
+  }
+  
+  function mySecond() {
+    myDisplayer("Goodbye");
+  }
+
+
+  // javascript callback function
+  function displayResult(result){
+      console.log(result);
+  }
+
+  function sum1 (a, b, callback){
+      console.log("called main function")
+        let sum = a + b;
+        callback(sum)
+  }
+//   sum1(10, 10, displayResult)
+// synchronous js
+// console.log("1");
+// setTimeout(()=>{
+//     console.log("2");
+// },2000);
+// console.log("4")
+
+// HTML DOM-- Document Object Model
+
+document.getElementById("demo").style.background = 'red';
+document.getElementById("demo").style.padding = '10px';
+document.getElementById("demo").style.fontSize = '30px';
+document.getElementById("demo").style.textAlign = 'center';
+
+
+const container = document.getElementById("container");
+const ul = document.createElement("ul");
+const li = document.createElement("li");
+  li.innerText ="I am created by DOM" + "<br>";
+  li.innerText ="Second element";
+  container.appendChild(ul);
+  ul.appendChild(li);
+
+container.onmouseover = function(){
+    container.style.background = 'blue';
+    container.style.color = '#fff'
+}
+
+// console.log(document.getElementsByTagName("h3"))
