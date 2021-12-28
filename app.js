@@ -34,13 +34,8 @@ function displayData (inputDate){
     // get final output from calculation method
     const api_data=  calculation();
 
-    // create date object 
-    const date  = new Date();
-    // pass data to countdown method 
-    let  output =  countDown(userData, api_data)
-//    setInterval(()=>{
-//      output =  countDown(userData, api_data)
-//    }, date.getSeconds())
+    // pass data to countdown method
+    const output =  countDown(userData, api_data);
 
     // select table id to show output in table
     const table = document.getElementById("table");
@@ -58,7 +53,7 @@ function displayData (inputDate){
         <td>${apiData()[i]?.name}</td>
         <td>${apiData()[i].date}</td>
         <td>${inputDate}</td>
-        <td> ${output.days} days ${output.hours} hours ${output.minutes} min</td>
+        <td> ${output?.days} days ${output?.hours} hours ${output?.minutes} min</td>
         </tr>
     `
     }
@@ -68,37 +63,63 @@ function displayData (inputDate){
 
 // count down date
 function countDown(inputData ,api_data ){
-    let days, hours , minutes = '';
-    if(inputData.date >= api_data.date){
-        days = inputData.date - api_data.date;
-        console.log('days = ',days)
-    }else{
-        alert("invalid date!");
+    let  days =2;
+    let hours =Math.abs( inputData.hours - api_data.hours) + 1;
+    let minutes = inputData.minutes - api_data.minutes
+   const stopCount = setInterval(()=>{
+    let days = '';
+let hours = Math.abs(userData.hours - api_data.hours);
+let minutes = userData.minutes - api_data.minutes;
+let seconds = 59;
+const stopCount = setInterval(() => {
+    if (userData.month > 1 && userData.month > api_data.month) {
+        days = (userData.date - api_data.date);
+        days += (userData.month - api_data.month) * 30;
+    } else {
+        days = userData.date - api_data.date;
     }
-    if(inputData.hours < 12){
-        hours = inputData.hours;
-        console.log('hours = ',hours)
-    }else{
-        alert("invalid hours!");
+    if(seconds > 0){
+        seconds = seconds-1
+    }else if( seconds == 0){
+        seconds = 59;
+        if (minutes > 1) {
+            if (minutes == 1) {
+                minutes = 59;
+            } else {
+                minutes = minutes - 1;
+            }
+        } else if (minutes == 1) {
+            if (days >= 0 && hours > 0) {
+                minutes = 59;
+                minutes = minutes - 1;
+            } else {
+                minutes = 0
+            }
+            if (hours > 1) {
+                hours = hours - 1;
+            } else if (hours == 1) {
+                if (days > 0 && hours == 1) {
+                    hours = 23
+                } else {
+                    hours = 0
+                }
+                if (days > 0) {
+                    days = days - 1;
+                }
+            }
+        }
     }
-    if(inputData.minutes > 0){
-        minutes = 60 - inputData.minutes;
-        console.log('minutes = ',minutes)
-    }else{
-        alert("invalid minutes!");
-    }
-    
-return {days, hours, minutes}
-
-}
-
+    document.getElementById("demo").innerHTML = `${days} Days  ${hours} Hours ${minutes} Minutes`;
+},10)
+   return {days, hours, minutes}
+})}
 // calculation date and time 
 function calculation(){
     const apiDate = {
         date:'',
         month:'',
         year:'',
-        hours:'12',
+        hours:'24',
         minutes:'00'
     }
     const trimDate = apiData()[0].date.toString().split("-");
