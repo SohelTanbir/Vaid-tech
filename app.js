@@ -53,7 +53,7 @@ function displayData (inputDate){
         <td>${apiData()[i]?.name}</td>
         <td>${apiData()[i].date}</td>
         <td>${inputDate}</td>
-        <td> ${output?.days} days ${output?.hours} hours ${output?.minutes} min</td>
+        <td> ${output?.days} days ${output?.hours} hours ${output?.minutes} min ${output?.seconds} Second</td>
         </tr>
     `
     }
@@ -63,20 +63,16 @@ function displayData (inputDate){
 
 // count down date
 function countDown(inputData ,api_data ){
-    let  days =2;
-    let hours =Math.abs( inputData.hours - api_data.hours) + 1;
-    let minutes = inputData.minutes - api_data.minutes
-   const stopCount = setInterval(()=>{
-    let days = '';
-let hours = Math.abs(userData.hours - api_data.hours);
-let minutes = userData.minutes - api_data.minutes;
-let seconds = 59;
+
+    let hours = Math.abs(inputData.hours - api_data.hours);
+    let minutes = inputData.minutes - api_data.minutes;
+    let seconds = 59;
 const stopCount = setInterval(() => {
-    if (userData.month > 1 && userData.month > api_data.month) {
-        days = (userData.date - api_data.date);
-        days += (userData.month - api_data.month) * 30;
+    if (inputData.month > 1 && inputData.month > api_data.month) {
+        days = (inputData.date - api_data.date);
+        days += (inputData.month - api_data.month) * 30;
     } else {
-        days = userData.date - api_data.date;
+        days = inputData.date - api_data.date;
     }
     if(seconds > 0){
         seconds = seconds-1
@@ -95,24 +91,31 @@ const stopCount = setInterval(() => {
             } else {
                 minutes = 0
             }
+
             if (hours > 1) {
                 hours = hours - 1;
             } else if (hours == 1) {
-                if (days > 0 && hours == 1) {
+                if (days > 1 && hours == 1) {
                     hours = 23
                 } else {
-                    hours = 0
+                    hours = 0;
+                    days = days - 1;
+                    console.log('1', days)
                 }
-                if (days > 0) {
+                if (days > 0 && hours == 1) {
                     days = days - 1;
                 }
             }
         }
     }
-    document.getElementById("demo").innerHTML = `${days} Days  ${hours} Hours ${minutes} Minutes`;
-},10)
-   return {days, hours, minutes}
-})}
+    document.getElementById("demo").innerHTML = ` ${days} days ${hours} hours ${minutes} min ${seconds} Second`
+}, 1); 
+
+
+return {days, hours, minutes, seconds}
+}
+
+
 // calculation date and time 
 function calculation(){
     const apiDate = {
