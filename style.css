@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #d1d2d3;
+}
+.container{
+    width: 100%;
+    margin:5% auto;
+    padding: 10px;
+}
+.input-box{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.input-box input, button{
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.input-box input{
+    width: 50%;
+    background: #fff;
+}
+.input-box button{
+    background: blue;
+    color: #fff;
+    font-size:14px;
+    font-weight: bold;
+}
+/* style for table */
+.info-table h3{
+    text-align: center;
+    margin:40px 0  10px;
+}
+.info-table table {
+    text-align: center;
+    border-collapse: collapse;
+    margin:0 auto;
+    width: 80%;
+}
+.info-table table tr, th, td{
+    padding: 15px ;
+    font-weight: 400;
+}
+.info-table table th{
+    font-weight: 700;
+    font-size: 22px;
+    background: #786262;
+    color: #e5e5e5;
+}
+.info-table table tr:nth-child(even){
+    background: #bebebe;
+}
