@@ -73,9 +73,7 @@ function countDown(inputData, api_data) {
     } else {
         days = inputData.date - api_data.date;
     }
-
-    const stopCount = setInterval(() => {
-        if (seconds > 0) {
+        if (seconds >= 1) {
             seconds = seconds - 1
         } else if (seconds == 0) {
             if (hours == 0 && minutes == 0) {
@@ -95,24 +93,23 @@ function countDown(inputData, api_data) {
                     minutes = 59;
                     minutes = minutes - 1;
                 } else {
-                    minutes = 0
+                    minutes = 0;
                 }
-                if (hours >= 1) {
-                    hours = hours - 1
-                    if (days > 0 && hours == 1) {
+                if (hours >=1) {
+                    hours = hours - 1;
+                    if (days > 0 && hours == 0) {
                         hours = 23;
+                        days = days -1;
                     }
                 }
                 if(days > 0 && hours == 0){
                     days = days -1;
-                    hours = 23;
+                   
                 }
             }
         }
         document.getElementById("demo").innerHTML = ` ${days} days ${hours} hours ${minutes} min ${seconds} Second`
-    }, 1);
-
-    console.log(days)
+    
     return { days, hours, minutes, seconds }
 }
 
