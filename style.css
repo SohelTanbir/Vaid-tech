@@ -10,9 +10,17 @@ body{
     width: 100%;
     margin:5% auto;
 }
+.container #title {
+    text-align: center;
+    margin-bottom: 33px;
+    color: #00559f;
+    font-size: 27px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
 .input-box{
     width: 70%;
-    margin: auto;
+    margin:20px  auto;
     text-align: center;
 }
 .input-box input, .input-box  button{
@@ -61,9 +69,9 @@ body{
 
 /*style for birthday remiander app*/
 .barthday-remainder{
-    padding: 20px 0;
+    padding: 90px 0 10px;
     background-color: #efefef;
-    margin-top: 30px;
+    margin-top: 50px;
     height: 100vh;
     display: none;
 }
@@ -73,27 +81,32 @@ body{
     font-size: 35px;
     padding: 20px 0;
 }
+.barthday-remainder h4{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 .birthday-counter{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .birthday-counter
-.days, 
-.hours,
-.minutes {
+.days, .hours, .minutes {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100px;
-    height:50px;
-    background: blue;
-    color: #fff;
-    margin: 10px;
+    height: 40px;
+    background: transparent;
+    color: #302b85;
+    margin: 10px 10px  30px;
     border-radius: 10px;
-    padding:5px;
+    padding: 5px;
     font-weight: 700;
     font-size: 20px;
+    border: 3px solid #302b85;
 }
 .check-btn {
     margin: 30px auto 0;
@@ -107,4 +120,26 @@ body{
     outline: none;
     border-radius: 10px;
     cursor: pointer;
+    display: none;
+}
+.app-control-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 17%;
+}
+.app-control-btn button{
+    margin: 10px;
+    border: none;
+    padding:10px 20px;
+    border-radius: 5px;
+    color:#fff;
+    cursor: pointer;
+}
+.app-control-btn button.start{
+    background: #3bb33f;
+}
+.app-control-btn button.puse{
+    background: #aa0a0a;
 }

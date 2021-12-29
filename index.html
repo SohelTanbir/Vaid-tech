@@ -8,11 +8,10 @@
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
   <div class="container">
-    <h2 id="demo2"></h2>
+    <h2 id="title">Select date and time to view Holydays in America</h2>
     <div class="input-box">
       <form>
         <input type="datetime-local" id="date" name="date" placeholder="select date" required>
@@ -20,21 +19,22 @@
       </form>
     </div>
     <div class="info-table">
-
-      <h2 id="demo">Holydays in America </h2>
-
       <table border="1" id="table"></table>
       <button class="check-btn">Check Birthday</button>
     </div>
-    
+
     <!--BirthDay Reminder Start -->
     <div class="barthday-remainder">
-      <h2>Birthday Remainder Application</h2>
-        <div class="birthday-counter">
-            <div class="days">15 Days</div>
-            <div class="hours">15 Hours</div>
-            <div class="minutes">15 Minutes</div>
-        </div>
+      <h2>Your Birthday Will be After </h2>
+      <div class="birthday-counter">
+        <div class="days">0 days</div>
+        <div class="hours">0 hours</div>
+        <div class="minutes">0 minutes</div>
+      </div>
+      <div class="app-control-btn">
+        <button class="puse">Puse</button>
+        <button class="start">Start</button>
+      </div>
     </div>
     <!--BirthDay Reminder End-->
 
