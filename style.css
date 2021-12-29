@@ -4,18 +4,18 @@
 }
 body{
     background: #d1d2d3;
+    overflow-x: hidden;
 }
 .container{
     width: 100%;
     margin:5% auto;
-    padding: 10px;
 }
 .input-box{
     width: 70%;
     margin: auto;
     text-align: center;
 }
-.input-box input, button{
+.input-box input, .input-box  button{
     border: none;
     outline: none;
     padding: 15px;
@@ -33,9 +33,11 @@ body{
     font-weight: bold;
 }
 /* style for table */
-.info-table h3{
+.info-table h2{
     text-align: center;
     margin:40px 0  10px;
+    color: #171ba5;
+    font-size: 25px;
 }
 .info-table table {
     text-align: center;
@@ -55,4 +57,54 @@ body{
 }
 .info-table table tr:nth-child(even){
     background: #bebebe;
+}
+
+/*style for birthday remiander app*/
+.barthday-remainder{
+    padding: 20px 0;
+    background-color: #efefef;
+    margin-top: 30px;
+    height: 100vh;
+    display: none;
+}
+.barthday-remainder h2{
+    text-align: center;
+    color: #1a9503;
+    font-size: 35px;
+    padding: 20px 0;
+}
+.birthday-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.birthday-counter
+.days, 
+.hours,
+.minutes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height:50px;
+    background: blue;
+    color: #fff;
+    margin: 10px;
+    border-radius: 10px;
+    padding:5px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.check-btn {
+    margin: 30px auto 0;
+    background: #3bb33f;
+    color: #e7e7e7;
+    font-weight: bold;
+    font-size: 16px;
+    display: inherit;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
 }

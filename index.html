@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-        <div class="container">
-          <div class="input-box">
-            <form>
-                <input type="datetime-local" id="date" name="date" placeholder="select date" required>
-                <button id="submit-btn">Submit</button>
-              </form>
-          </div>
-         <div class="info-table">
-          <h3 id="demo">Holydays in USA</h3>
-          <table border="1" id="table">
-          
-          </table>
-         </div>
+
+  <div class="container">
+    <h2 id="demo2"></h2>
+    <div class="input-box">
+      <form>
+        <input type="datetime-local" id="date" name="date" placeholder="select date" required>
+        <button id="submit-btn">Submit</button>
+      </form>
+    </div>
+    <div class="info-table">
+
+      <h2 id="demo">Holydays in America </h2>
+
+      <table border="1" id="table"></table>
+      <button class="check-btn">Check Birthday</button>
+    </div>
+    
+    <!--BirthDay Reminder Start -->
+    <div class="barthday-remainder">
+      <h2>Birthday Remainder Application</h2>
+        <div class="birthday-counter">
+            <div class="days">15 Days</div>
+            <div class="hours">15 Hours</div>
+            <div class="minutes">15 Minutes</div>
         </div>
-<script src="app.js"></script>
+    </div>
+    <!--BirthDay Reminder End-->
+
+
+
+
+
+
+
+
+
+  </div>
+  <script src="app.js"></script>
 </body>
+
 </html>
