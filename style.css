@@ -141,3 +141,7 @@ body{
 .app-control-btn button.pause{
     background: #aa0a0a;
 }
+.disable{
+    background: #a3b9a4!important;
+    cursor: default!important;
+}

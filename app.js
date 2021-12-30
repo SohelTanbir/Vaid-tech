@@ -147,14 +147,8 @@ function birthdayCounter() {
 
     let days = 0;
     let hours = Math.abs(23 - userData.hours);
-    let minutes = 59 - cMinutes
+    let minutes = 59 - cMinutes;
 
-    // check date/days
-    // if (userData.date >= cDate) {
-    //     days = userData.date - cDate;
-    // } else if (userData.date < cDate) {
-    //     days = 30 - (cDate - userData.date);
-    // }
     // calculation month 
     if (userData.month >=cMonth && userData.date > cDate) {
         days = ((userData.month - cMonth) * 30) - (30 - userData.date);
@@ -167,7 +161,11 @@ function birthdayCounter() {
             days =365 - ((30 - userData.date) + parseInt((12-userData.month)*30))
         }
     }
-    setInterval(function () {
+    document.querySelector(".pause").addEventListener("click", function(){
+        clearInterval(stp);
+     
+    })
+  var stp =  setInterval(function () {
 
         if (minutes > 1) {
             if (minutes == 1) {
@@ -198,7 +196,8 @@ function birthdayCounter() {
         document.querySelector(".days").innerHTML = `${days} days`;
         document.querySelector(".hours").innerHTML = `${hours} hours`;
         document.querySelector(".minutes").innerHTML = `${minutes} minutes`;
-    }, 1)
+    }, 1000)
+  
    
 }
 // start birthday counter
@@ -207,6 +206,8 @@ function startBirthdayCounter(){
     birthdayCounter();
     // disable start button
     document.querySelector(".start").disabled = true;
+    document.querySelector(".start").classList.add("disable");
+    document.querySelector(".pause").classList.remove("disable");
 }
 
 
