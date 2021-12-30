@@ -73,7 +73,6 @@ body{
     background-color: #efefef;
     margin-top: 50px;
     height: 100vh;
-    display: none;
 }
 .barthday-remainder h2{
     text-align: center;
@@ -120,7 +119,6 @@ body{
     outline: none;
     border-radius: 10px;
     cursor: pointer;
-    display: none;
 }
 .app-control-btn {
     display: flex;
@@ -140,6 +138,6 @@ body{
 .app-control-btn button.start{
     background: #3bb33f;
 }
-.app-control-btn button.puse{
+.app-control-btn button.pause{
     background: #aa0a0a;
 }

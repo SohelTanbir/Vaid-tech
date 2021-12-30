@@ -87,8 +87,7 @@ function displayData(inputDate) {
         let tr = `
  <tr>
      <th>Event Name</th>
-     <th>Date</th>
-     <th>Present Date</th>
+     <th>API Date </th>
      <th>Event left</th>
  </tr>
  `;
@@ -97,7 +96,6 @@ function displayData(inputDate) {
      <tr>
      <td>${apiData()[i]?.name}</td>
      <td>${apiData()[i].date}</td>
-     <td>${inputDate}</td>
      <td> ${days} days ${hours} hours ${minutes} min ${seconds} Second</td>
      
      </tr>
@@ -129,24 +127,13 @@ document.getElementById("submit-btn").addEventListener("click", function (e) {
     const userDate = document.getElementById("date").value;
     if (userDate) {
         displayData(userDate.split("-"));
-        // show birthd check btn when click submi btn
-        setTimeout(function () {
-            document.querySelector(".check-btn").style.display = 'block'
-        }, 1000)
+        document.querySelector(".start").addEventListener("click", startBirthdayCounter );
     } else {
-        alert("Please Select a Date!")
+        alert("Must be select a date and time !");
     }
-    document.getElementById("date").value = '';
-
+    // document.getElementById("date").value = '';
+    document.getElementById("submit-btn").disabled = true;
 })
-
-// check birthday 
-document.querySelector(".check-btn").addEventListener("click", checkBirthDay)
-function checkBirthDay() {
-    document.querySelector(".barthday-remainder").style.display = 'block';
-    document.querySelector(".check-btn").style.display = 'none';
-
-}
 
 // start calculation of 
 // 25-7 || 29-2
@@ -158,24 +145,27 @@ function birthdayCounter() {
     const cHours = d.getHours();
     const cMinutes = d.getMinutes();
 
-    let days = '';
+    let days = 0;
     let hours = Math.abs(23 - userData.hours);
     let minutes = 59 - cMinutes
 
     // check date/days
-    if (userData.date >= cDate) {
-        days = userData.date - cDate;
-    } else if (userData.date < cDate) {
-        25 - 29
-        days = 30 - (cDate - userData.date);
-    }
+    // if (userData.date >= cDate) {
+    //     days = userData.date - cDate;
+    // } else if (userData.date < cDate) {
+    //     days = 30 - (cDate - userData.date);
+    // }
     // calculation month 
-    if (userData.month >= cMonth) {
-        days += (userData.month - cMonth) * 30;
+    if (userData.month >=cMonth && userData.date > cDate) {
+        days = ((userData.month - cMonth) * 30) - (30 - userData.date);
 
-    } else if (userData.month <= cMonth) {
-        days += (cMonth - userData.month) * 30
-
+    } else if (userData.month <= cMonth && userData.date <= cDate) {
+        if(userData.month == cMonth){
+            days =365 -( cDate-userData.date);
+            console.log(365 -( cDate-userData.date))
+        }else if(userData.month < cMonth){
+            days =365 - ((30 - userData.date) + parseInt((12-userData.month)*30))
+        }
     }
     setInterval(function () {
 
@@ -208,8 +198,16 @@ function birthdayCounter() {
         document.querySelector(".days").innerHTML = `${days} days`;
         document.querySelector(".hours").innerHTML = `${hours} hours`;
         document.querySelector(".minutes").innerHTML = `${minutes} minutes`;
-    }, 100)
-
+    }, 1)
+   
 }
 // start birthday counter
-document.querySelector(".start").addEventListener("click", birthdayCounter )
+function startBirthdayCounter(){
+    // start counting
+    birthdayCounter();
+    // disable start button
+    document.querySelector(".start").disabled = true;
+}
+
+
+
