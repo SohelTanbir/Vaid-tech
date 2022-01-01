@@ -18,6 +18,7 @@ const userData = {
     hours: '',
     minutes: ''
 }
+const dateArr = [];
 // show final output in UI 
 function displayData(inputDate) {
 
@@ -32,21 +33,164 @@ function displayData(inputDate) {
     userData.month = inputDate[1];
     userData.date = splitDate[0]
 
-    // get final output from calculation method
-    const api_data = calculation();
-    // pass data to countdown method
+    // api data 
 
-    let days = userData.date - api_data.date;
-    let hours = Math.abs(userData.hours - api_data.hours);
-    let minutes = userData.minutes - api_data.minutes;
-    let seconds = 59;
-    if (userData.month > 1 && userData.month > api_data.month) {
-        days = (userData.date - api_data.date);
-        days += (userData.month - api_data.month) * 30;
-    } else {
-        days = userData.date - api_data.date;
+    for (let i = 0; i < apiData().length; i++) {
+        let dateObj = {
+            date: '',
+            month: '',
+            year: '',
+            hours: '24',
+            minutes: '00'
+        }
+        let trimDate = apiData()[i].date.toString().split("-");
+        dateObj.year = trimDate[0];
+        dateObj.month = trimDate[1];
+        dateObj.date = trimDate[2];
+        dateArr.push(dateObj);
+
+
+
     }
-    setInterval(function () {
+}
+
+
+function countDown() {
+    let tr = `
+    <tr>
+        <th>Event Name</th>
+        <th>API Date </th>
+        <th>Event left</th>
+    </tr>
+    `;
+    for (let i = 0; i < dateArr.length; i++) {
+        let days = ''
+        let hours = Math.abs(userData.hours - dateArr[i].hours);
+        let minutes = userData.minutes - dateArr[i].minutes;
+        let seconds = 59;
+        const table = document.getElementById("table");
+
+        if (userData.month > 1 && userData.month > dateArr[i].month) {
+            days = Math.abs((userData.date - dateArr[i].date));
+            days += Math.abs((userData.month - dateArr[i].month) * 30);
+        } else {
+            days = Math.abs(userData.date - dateArr[i].date);
+        }
+        let h3 = document.createElement("h3");
+        // let tr = document.createElement("tr");
+        // let td= document.createElement("td");
+        // td.innerText = 'welcome'
+        // tr.appendChild(td);
+        tr += `
+        <tr>
+            <td>Birthday </td>
+            <td>${dateArr[i].date}-${dateArr[i].month}-${dateArr[i].year}</td>
+            <td>
+                ${days} days ${hours} hours ${minutes} minutes ${seconds}
+            </td>
+        </tr>
+    `;
+
+
+
+        setInterval(function () {
+
+            if (seconds >= 1) {
+                seconds = seconds - 1
+            } else if (seconds == 0) {
+                if (hours == 0 && minutes == 0) {
+                    seconds = 0;
+                } else {
+                    seconds = 59;
+                }
+
+                if (minutes > 1) {
+                    if (minutes == 1) {
+                        minutes = 59;
+                    } else {
+                        minutes = minutes - 1;
+                    }
+                } else if (minutes == 1) {
+                    if (days >= 0 && hours > 0) {
+                        minutes = 59;
+                        minutes = minutes - 1;
+                    } else {
+                        minutes = 0;
+                    }
+                    if (hours >= 1) {
+                        hours = hours - 1;
+                        if (days > 0 && hours == 0) {
+                            hours = 23;
+                            days = days - 1;
+                        }
+                    }
+                    if (days > 0 && hours == 0) {
+                        days = days - 1;
+
+                    }
+                }
+            }
+        table.innerHTML = tr;
+       
+       h3.innerHTML = ` ${days} days ${hours} hours ${minutes} minutes ${seconds} seconds`;
+       document.querySelector(".output").appendChild(h3)
+        }, 1000);
+       
+    }
+
+}
+
+
+
+// submit action  btn
+document.getElementById("submit-btn").addEventListener("click", function (e) {
+    e.preventDefault();
+    const userDate = document.getElementById("date").value;
+    if (userDate) {
+        displayData(userDate.split("-"));
+        countDown();
+        document.querySelector(".start").addEventListener("click", startBirthdayCounter);
+    } else {
+        alert("Must be select a date and time !");
+    }
+    // document.getElementById("date").value = '';
+    document.getElementById("submit-btn").disabled = true;
+
+})
+
+// start calculation of 
+// 25-7 || 29-2
+function birthdayCounter() {
+    // create date 
+    const d = new Date();
+    const cDate = d.getDate();
+    const cMonth = d.getMonth() + 1;
+    const cHours = d.getHours();
+    const cMinutes = d.getMinutes();
+
+    let days = 0;
+    let hours = Math.abs(23 - userData.hours);
+    let minutes = 59 - cMinutes;
+    let seconds = 59;
+
+    // calculation month 
+    if (userData.month >= cMonth && userData.date > cDate) {
+        days = ((userData.month - cMonth) * 30) - (30 - userData.date);
+        if(days < 0){
+            alert("sorry your date of birth is not valid!");
+        }
+    } else if (userData.month <= cMonth && userData.date <= cDate) {
+        if (userData.month == cMonth) {
+            days = 365 - (cDate - userData.date);
+        } else if (userData.month < cMonth) {
+            days = 365 - ((30 - userData.date) + parseInt((12 - userData.month) * 30))
+        }
+    }
+    document.querySelector(".pause").addEventListener("click", function () {
+        clearInterval(stp);
+
+    })
+    var stp = setInterval(function () {
         if (seconds >= 1) {
             seconds = seconds - 1
         } else if (seconds == 0) {
@@ -55,7 +199,7 @@ function displayData(inputDate) {
             } else {
                 seconds = 59;
             }
-
+    
             if (minutes > 1) {
                 if (minutes == 1) {
                     minutes = 59;
@@ -78,137 +222,32 @@ function displayData(inputDate) {
                 }
                 if (days > 0 && hours == 0) {
                     days = days - 1;
-
+    
                 }
             }
         }
-        // select table id to show output in table
-        const table = document.getElementById("table");
-        let tr = `
- <tr>
-     <th>Event Name</th>
-     <th>API Date </th>
-     <th>Event left</th>
- </tr>
- `;
-        for (let i = 0; i < apiData().length; i++) {
-            tr += innerHTML = `
-     <tr>
-     <td>${apiData()[i]?.name}</td>
-     <td>${apiData()[i].date}</td>
-     <td> ${days} days ${hours} hours ${minutes} min ${seconds} Second</td>
-     
-     </tr>
- `
-        }
-        table.innerHTML = tr;
-    }, 1000)
-}
-
-// calculation date and time 
-function calculation() {
-    const apiDate = {
-        date: '',
-        month: '',
-        year: '',
-        hours: '24',
-        minutes: '00'
-    }
-    const trimDate = apiData()[0].date.toString().split("-");
-    apiDate.year = trimDate[0];
-    apiDate.month = trimDate[1];
-    apiDate.date = trimDate[2];
-    return apiDate
-}
-
-// submit action  btn
-document.getElementById("submit-btn").addEventListener("click", function (e) {
-    e.preventDefault();
-    const userDate = document.getElementById("date").value;
-    if (userDate) {
-        displayData(userDate.split("-"));
-        document.querySelector(".start").addEventListener("click", startBirthdayCounter );
-    } else {
-        alert("Must be select a date and time !");
-    }
-    // document.getElementById("date").value = '';
-    document.getElementById("submit-btn").disabled = true;
-})
-
-// start calculation of 
-// 25-7 || 29-2
-function birthdayCounter() {
-    // create date 
-    const d = new Date();
-    const cDate = d.getDate();
-    const cMonth = d.getMonth() + 1;
-    const cHours = d.getHours();
-    const cMinutes = d.getMinutes();
-
-    let days = 0;
-    let hours = Math.abs(23 - userData.hours);
-    let minutes = 59 - cMinutes;
-
-    // calculation month 
-    if (userData.month >=cMonth && userData.date > cDate) {
-        days = ((userData.month - cMonth) * 30) - (30 - userData.date);
-
-    } else if (userData.month <= cMonth && userData.date <= cDate) {
-        if(userData.month == cMonth){
-            days =365 -( cDate-userData.date);
-            console.log(365 -( cDate-userData.date))
-        }else if(userData.month < cMonth){
-            days =365 - ((30 - userData.date) + parseInt((12-userData.month)*30))
-        }
-    }
-    document.querySelector(".pause").addEventListener("click", function(){
-        clearInterval(stp);
-     
-    })
-  var stp =  setInterval(function () {
-
-        if (minutes > 1) {
-            if (minutes == 1) {
-                minutes = 59;
-            } else {
-                minutes = minutes - 1;
-            }
-        } else if (minutes == 1) {
-            if (days >= 0 && hours > 0) {
-                minutes = 59;
-                minutes = minutes - 1;
-            } else {
-                minutes = 0;
-            }
-            if (hours >= 1) {
-                hours = hours - 1;
-                if (days > 0 && hours == 0) {
-                    hours = 23;
-                    days = days - 1;
-                }
-            }
-            if (days > 0 && hours == 0) {
-                days = days - 1;
-
-            }
-        }
+       
         // display output in UI
         document.querySelector(".days").innerHTML = `${days} days`;
         document.querySelector(".hours").innerHTML = `${hours} hours`;
         document.querySelector(".minutes").innerHTML = `${minutes} minutes`;
+        document.querySelector(".seconds").innerHTML = `${seconds} seconds`;
+    
     }, 1000)
-  
-   
+    
+
 }
 // start birthday counter
-function startBirthdayCounter(){
+function startBirthdayCounter() {
     // start counting
     birthdayCounter();
     // disable start button
     document.querySelector(".start").disabled = true;
     document.querySelector(".start").classList.add("disable");
     document.querySelector(".pause").classList.remove("disable");
+    document.querySelector(".pause").addEventListener("click", function(){
+        document.querySelector(".pause").classList.add("disable");
+    })
 }
-
 
 

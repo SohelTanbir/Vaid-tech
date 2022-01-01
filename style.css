@@ -92,17 +92,16 @@ body{
     justify-content: center;
 }
 .birthday-counter
-.days, .hours, .minutes {
+.days, .hours, .minutes, .seconds {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100px;
-    height: 40px;
     background: transparent;
     color: #302b85;
     margin: 10px 10px  30px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 10px 5px;
     font-weight: 700;
     font-size: 20px;
     border: 3px solid #302b85;
@@ -144,4 +143,9 @@ body{
 .disable{
     background: #a3b9a4!important;
     cursor: default!important;
+}
+.output h3{
+    font-weight: 600;
+    color: #3f0d53;
+    margin: 10px;
 }
