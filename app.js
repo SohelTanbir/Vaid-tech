@@ -26,7 +26,7 @@ function displayData(inputDate) {
     // split user input data
     const splitDate = inputDate[2].split("T");
     const splitTime = splitDate[1].split(":");
-    
+
     // set user input data in a userData object
     userData.hours = splitTime[0]
     userData.minutes = splitTime[1]
@@ -105,7 +105,7 @@ function countDown() {
             <td>${apiData()[i].date}</td>
             <td>${days} days ${hours} hours ${minutes} minutes ${seconds} seconds</td>`
        table.appendChild(tr);
-        }, 1000);
+        }, 10);
     }
 }
 // submit action  btn
@@ -132,14 +132,17 @@ function birthdayCounter() {
     const cMinutes = d.getMinutes();
 
     let days = 0;
-    let hours = Math.abs(23 - userData.hours);
+    let hours = 24 - cHours;
     let minutes = 59 - cMinutes;
     let seconds = 59;
-
     // calculation month 
-    if (userData.month >= cMonth && userData.date > cDate) {
+    if (userData.month > cMonth && userData.date > cDate) {
         days = ((userData.month - cMonth) * 30) - (30 - userData.date);
-    } else if (userData.month <= cMonth && userData.date <= cDate) {
+    } else if(userData.month == cMonth && userData.date > cDate){
+        days = userData.date - cDate;
+    }else if(userData.month > cMonth && userData.date <= cDate){
+        days = ((userData.month - cMonth) * 30) + (30 - cDate);
+    }else if (userData.month <= cMonth && userData.date <= cDate) {
         if (userData.month == cMonth) {
             days = 365 - (cDate - userData.date);
         } else if (userData.month < cMonth) {
@@ -188,7 +191,7 @@ function birthdayCounter() {
         document.querySelector(".hours").innerHTML = `${hours} hours`;
         document.querySelector(".minutes").innerHTML = `${minutes} minutes`;
         document.querySelector(".seconds").innerHTML = `${seconds} seconds`;
-    }, 1000)
+    }, 1)
 }
 // start birthday counter
 function startBirthdayCounter() {
