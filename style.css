@@ -144,8 +144,17 @@ body{
     background: #a3b9a4!important;
     cursor: default!important;
 }
+.output{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
 .output h3{
     font-weight: 600;
     color: #3f0d53;
     margin: 10px;
+    border: 1px solid #6718ce;
+    padding: 10px;
+    text-align: center;
 }
