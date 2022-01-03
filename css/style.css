@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+h2{
+    text-align: center;
+    color: blue;
+    font-weight: 700;
+    padding: 20px 0;
+}
+.slider-wrapper{
+    position: relative;
+}
+.slider-item{
+    padding: 10px;
+}
+.control-slider{
+
+    font-size: 50px;
+}
+.slider-item img{
+    width: 100%;
+    height: 420px;
+}
+.control-slider 
+.prev-icon, .next-icon{
+    position: absolute;
+    top: 45%;
+    color: #d6d0d0;
+    padding:0 10px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .5);
+}
+.control-slider .prev-icon{
+    left: 2%;
+}
+.next-icon{
+    position: absolute;
+    right:2%;
+}
