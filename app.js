@@ -105,7 +105,7 @@ function countDown() {
             <td>${apiData()[i].date}</td>
             <td>${days} days ${hours} hours ${minutes} minutes ${seconds} seconds</td>`
        table.appendChild(tr);
-        }, 10);
+        }, 1000);
     }
 }
 // submit action  btn
@@ -191,7 +191,7 @@ function birthdayCounter() {
         document.querySelector(".hours").innerHTML = `${hours} hours`;
         document.querySelector(".minutes").innerHTML = `${minutes} minutes`;
         document.querySelector(".seconds").innerHTML = `${seconds} seconds`;
-    }, 1)
+    }, 1000)
 }
 // start birthday counter
 function startBirthdayCounter() {
