@@ -42,3 +42,14 @@ h2{
     background: #64647e;
     display: none;
 }
+.styles{
+    color: #fff;
+    font-size: 30px;
+    background: blue;
+}
+.checkdimension{
+    width: 200px;
+    height: 100px;
+    background: yellow;
+    padding: 10px;
+}

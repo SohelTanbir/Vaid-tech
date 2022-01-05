@@ -131,13 +131,58 @@ $("#setattr").click(function(){
    $("img").attr('src', 'https://images.unsplash.com/photo-1520209759809-a9bcb6cb3241?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aW1nfGVufDB8fDB8fA%3D%3D&w=1000&q=80');
 })
 
-
-
+// append and prepend method
+$(".btn1").click(function(){
+    $("#apnd").append(" <b> appended text</b>")
+})
+$(".btn2").click(function(){
+    $("#prepend").prepend(" <b> prepend text</b>")
+})
+$(".btn3").click(function(){
+    $("#afbf").after(" <b> after text</b>")
+})
+$(".btn4").click(function(){
+    $("#afbf").before(" <b> before text</b>")
 })
 
-//  shorten styntex of ready document function
-$(function(){
+$(".btn5").click(function(){
+    $("p").remove(".remo");
+})
+$(".btn6").click(function(){
+    $(".removes").empty();
+})
 
-    // jquery code will be here
+$(".btn7").click(function(){
+    $(".addclass").addClass("styles")
+})
 
+$(".btn8").click(function(){
+    $(".addclass").removeClass("styles")
+})
+$(".btn9").click(function(){
+    $(".addclass").toggleClass("styles")
+})
+$(".btn10").click(function(){
+    $("#styles1").css({
+        "background":"yellow",
+        "color":"red",
+        "padding":"10px"
+
+    })
+})
+
+// check dimension
+$(".btn11").click(function(){
+    alert("width = " + $(".checkdimension").innerWidth() +" " + "height = " + $(".checkdimension").height())
+})
+
+// traverse jquery dom up and down 
+// var parent =$(".chile").parent().css({"background-color": "red", "border": "2px solid yellow"})
+// console.log(parent);
+// $(".container").children("p.chile").css("color","blue")
+$(".container p").siblings().css("color","skyblue")
+
+
+
+// end line
 })
