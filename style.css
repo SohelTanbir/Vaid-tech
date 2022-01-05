@@ -1,9 +1,44 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
 }
 h2{
     color: red;
     background: yellow;
     text-align: center;
     padding: 10px;
+}
+.div1,
+.div2{
+    width: 150px;
+    height: 100px;
+    margin: 10px;
+
+}
+.div1{
+    background: red;
+    display: none;
+}
+.div2{
+    background: blue;
+    position: relative; 
+}
+.slide1,
+.slide2,
+.slide3{
+    padding: 10px;
+    background: #9e9a9a;
+    cursor: pointer;
+    margin-bottom:5px;
+}
+.panel1{
+    display: block;
+    height: 200px;
+    background: #64647e;
+}
+.panel2,
+.panel3{
+    height: 200px;
+    background: #64647e;
+    display: none;
 }
