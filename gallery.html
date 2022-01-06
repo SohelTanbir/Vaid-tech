@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <!--jquery cdn-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+   <!--main css-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h2>Image Gallery</h2>
+    <div class="gallery-container">
+        <div class="small-view-img">
+            <div class="item">
+                <img src="images/img-5.jpg" alt="image">
+            </div>
+            <div class="item">
+                <img src="images/img-4.jpg" alt="image">
+            </div>
+            <div class="item">
+                <img src="images/img-3.jpg" alt="image">
+            </div>
+            <div class="item">
+                <img src="images/img-2.jpg" alt="image">
+            </div>
+            <div class="item">
+                <img src="images/img-1.jpg" alt="image">
+            </div>
+            <div class="item">
+                <img src="images/img-6.jpg" alt="image">
+            </div>
+            <div class="item">
+                <img src="images/img-7.jpg" alt="image">
+            </div>
+        </div>
+        <!--large image view-->
+        <div class="image-large-view">
+            <img  alt="img">
+        </div>
+
+    </div>
+
+
+<!--javascript and JQuery here-->
+<script>
+$(document).ready(function(){
+
+$(".small-view-img .item img").click(function(){
+   var imgSrc=  $(this).attr("src");
+    $(".image-large-view img").attr("src", imgSrc).css("display","block");
+})
+
+
+
+
+
+
+
+
+
+
+});
+</script>
+</body>
+</html>
