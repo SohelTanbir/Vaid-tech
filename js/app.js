@@ -202,12 +202,11 @@ function startBirthdayCounter() {
     // start counting
     birthdayCounter();
     // disable start button
-    document.querySelector(".start").disabled = true;
-    document.querySelector(".start").classList.add("disable");
-    document.querySelector(".pause").classList.remove("disable");
-    document.querySelector(".pause").addEventListener("click", function(){
-        document.querySelector(".pause").classList.add("disable");
-    })
+    $(".start").prop("disabled", true);
+    $(".start").addClass("disable");
+    $(".pause").removeClass("disable");
+    $(".pause").click(function(){
+        $(".pause").addClass("disable");
+    });
 }
-
-})
+});
