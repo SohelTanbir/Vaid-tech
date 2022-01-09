@@ -1,16 +1,15 @@
 $(document).ready(function(){
     
 // load data from api 
+let apiData;
 function fetchData() {
-    const http = new XMLHttpRequest();
-    http.open("get", "https://date.nager.at/api/v2/publicholidays/2020/US");
-    http.send();
-    return http.onload = function () {
-        return JSON.parse(http.responseText)
-    }
-}
-let apiData = fetchData();
 
+    $.get("https://date.nager.at/api/v2/publicholidays/2020/US", function(data, status){
+        apiData = data
+     
+    });
+}
+fetchData();
 //jquery end
 // store user input data
 const userData = {
@@ -21,10 +20,9 @@ const userData = {
     minutes: ''
 }
 const dateArr = [];
-const update_data = [];
 // show final output in UI 
 function displayData(inputDate) {
-
+    console.log(apiData)
     // split user input data
     const splitDate = inputDate[2].split("T");
     const splitTime = splitDate[1].split(":");
@@ -37,7 +35,7 @@ function displayData(inputDate) {
     userData.date = splitDate[0]
 
 // api data 
-    for (let i = 0; i < apiData().length; i++) {
+    for (let i = 0; i < apiData?.length; i++) {
         let dateObj = {
             date: '',
             month: '',
@@ -45,7 +43,7 @@ function displayData(inputDate) {
             hours: '24',
             minutes: '00'
         }
-        let trimDate = apiData()[i].date.toString().split("-");
+        let trimDate = apiData[i].date.toString().split("-");
         dateObj.year = trimDate[0];
         dateObj.month = trimDate[1];
         dateObj.date = trimDate[2];
@@ -102,8 +100,8 @@ function countDown() {
                 }
             }
             tr.innerHTML = `  
-            <td>${apiData()[i]?.name}</td>
-            <td>${apiData()[i].date}</td>
+            <td>${apiData[i]?.name}</td>
+            <td>${apiData[i].date}</td>
             <td>${days} days ${hours} hours ${minutes} minutes ${seconds} seconds</td>`
        $("#table").append(tr)
         }, 1000);
@@ -122,8 +120,7 @@ $("#submit-btn").click(function (e) {
     } else {
         alert("Must be select a date and time !");
     }
-   
-})
+});
 // start calculation of birthday reminder application
 // 25-7 || 29-2
 function birthdayCounter() {
