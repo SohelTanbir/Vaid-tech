@@ -58,11 +58,20 @@ function countDown() {
         let minutes = userData.minutes - dateArr[i].minutes;
         let seconds = 59;
         const table = document.getElementById("table");
-        if (userData.month > 1 && userData.month > dateArr[i].month) {
-            days = Math.abs((userData.date - dateArr[i].date));
-            days += Math.abs((userData.month - dateArr[i].month) * 30);
-        } else {
-            days = Math.abs(userData.date - dateArr[i].date);
+        if(dateArr[i].month > userData.month && dateArr[i] >= userData.date){
+            days = parseInt(dateArr[i].date - userData.date);
+            days += parseInt((dateArr[i].month - userData.month) * 30);
+
+        }else if(dateArr[i].month < userData.month && dateArr[i].date <= userData.date){
+            days = parseInt(userData.date - dateArr[i].date);
+            days +=parseInt(( userData.month - dateArr[i].month) * 30);
+        }else if(dateArr[i].month == userData.month && dateArr[i].date >= userData.date){
+            days =parseInt( dateArr[i].date - userData.date);
+        }else if(dateArr[i].month == userData.month && dateArr[i].date <= userData.date){
+            days =  ((12- userData.month) * 30) + (30 - userData.date);
+
+        }else{
+            days = dateArr[i].date - userData.date
         }
         let tr = document.createElement("tr");
 
@@ -158,6 +167,7 @@ function birthdayCounter() {
         } else if (seconds == 0) {
             if (hours == 0 && minutes == 0) {
                 seconds = 0;
+                alert("Happy Birtday to You!")
             } else {
                 seconds = 59;
             }
@@ -191,7 +201,7 @@ function birthdayCounter() {
         document.querySelector(".hours").innerHTML = `${hours} hours`;
         document.querySelector(".minutes").innerHTML = `${minutes} minutes`;
         document.querySelector(".seconds").innerHTML = `${seconds} seconds`;
-    }, 1000)
+    }, 1)
 }
 // start birthday counter
 function startBirthdayCounter() {
