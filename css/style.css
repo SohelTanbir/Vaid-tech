@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #d1d2d3;
+    overflow-x: hidden;
+}
+.container{
+    width: 100%;
+    margin:5% auto;
+}
+.container #title {
+    text-align: center;
+    margin-bottom: 33px;
+    color: #00559f;
+    font-size: 27px;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+.input-box{
+    width: 70%;
+    margin:20px  auto;
+    text-align: center;
+}
+.input-box input, .input-box  button{
+    border: none;
+    outline: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.input-box input{
+    width: 50%;
+    background: #ededed;
+}
+.input-box button{
+    background: blue;
+    color: #fff;
+    font-size:14px;
+    font-weight: bold;
+}
+/* style for table */
+.info-table h2{
+    text-align: center;
+    margin:40px 0  10px;
+    color: #171ba5;
+    font-size: 25px;
+}
+.info-table table {
+    text-align: center;
+    border-collapse: collapse;
+    margin:0 auto;
+    width: 80%;
+}
+.info-table table tr, th, td{
+    padding: 15px ;
+    font-weight: 400;
+}
+.info-table table th{
+    font-weight: 700;
+    font-size: 22px;
+    background: #786262;
+    color: #e5e5e5;
+}
+.info-table table tr:nth-child(even){
+    background: #bebebe;
+}
+
+/*style for birthday remiander app*/
+.barthday-remainder{
+    padding: 90px 0 10px;
+    background-color: #efefef;
+    margin-top: 50px;
+    height: 100vh;
+}
+.barthday-remainder h2{
+    text-align: center;
+    color: #1a9503;
+    font-size: 35px;
+    padding: 20px 0;
+}
+.barthday-remainder h4{
+    text-align: center;
+    color: red;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.birthday-counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.birthday-counter
+.days, .hours, .minutes, .seconds {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    background: transparent;
+    color: #302b85;
+    margin: 10px 10px  30px;
+    border-radius: 10px;
+    padding: 10px 5px;
+    font-weight: 700;
+    font-size: 20px;
+    border: 3px solid #302b85;
+}
+.check-btn {
+    margin: 30px auto 0;
+    background: #3bb33f;
+    color: #e7e7e7;
+    font-weight: bold;
+    font-size: 16px;
+    display: inherit;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.app-control-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    margin-left: 17%;
+}
+.app-control-btn button{
+    margin: 10px;
+    border: none;
+    padding:10px 20px;
+    border-radius: 5px;
+    color:#fff;
+    cursor: pointer;
+}
+.app-control-btn button.start{
+    background: #3bb33f;
+}
+.app-control-btn button.pause{
+    background: #aa0a0a;
+}
+.disable{
+    background: #a3b9a4!important;
+    cursor: default!important;
+}
+.output{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.output h3{
+    font-weight: 600;
+    color: #3f0d53;
+    margin: 10px;
+    border: 1px solid #6718ce;
+    padding: 10px;
+    text-align: center;
+}

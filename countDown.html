@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter Down with Jquery</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h3 id="demo"></h3>
+    <h2 id="title">Select date and time to view Holydays in America</h2>
+    <div class="input-box">
+      <form>
+        <input type="datetime-local" id="date" name="date" placeholder="select date" required>
+        <button id="submit-btn">Submit</button>
+      </form>
+    </div>
+    <div class="info-table">
+      <table border="1" id="table">
+        <tr>
+          <th>Event Name</th>
+          <th>API Date </th>
+          <th>Event left</th>
+        </tr>
+
+      </table>
+    </div>
+    <div class="output" style="text-align: center;">
+    </div>
+    <!--BirthDay Reminder Start -->
+    <div class="barthday-remainder">
+      <h2>Birthday Reminder Application </h2>
+      <div class="birthday-counter">
+        <div class="days">00 days</div>
+        <div class="hours">00 hours</div>
+        <div class="minutes">00 minutes</div>
+        <div class="seconds">00 seconds</div>
+      </div>
+      <div class="app-control-btn">
+        <button class="pause disable">Pause</button>
+        <button class="start">Start</button>
+      </div>
+    </div>
+    <!--BirthDay Reminder End-->
+
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
