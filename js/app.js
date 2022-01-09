@@ -14,7 +14,7 @@ fetchData();
 // store user input data
 const userData = {
     date: '',
-    month: '',
+    month: '5',
     year: '',
     hours: '',
     minutes: ''
@@ -22,7 +22,6 @@ const userData = {
 const dateArr = [];
 // show final output in UI 
 function displayData(inputDate) {
-    console.log(apiData)
     // split user input data
     const splitDate = inputDate[2].split("T");
     const splitTime = splitDate[1].split(":");
@@ -51,20 +50,38 @@ function displayData(inputDate) {
     }
 }
 function countDown() {
-
+    console.log(dateArr)
     for (let i = 0; i < dateArr.length; i++) {
         let days = ''
         let hours = Math.abs(userData.hours - dateArr[i].hours);
         let minutes = userData.minutes - dateArr[i].minutes;
         let seconds = 59;
-        if (userData.month > 1 && userData.month > dateArr[i].month) {
-            days = Math.abs((userData.date - dateArr[i].date));
-            days += Math.abs((userData.month - dateArr[i].month) * 30);
-        } else {
-            days = Math.abs(userData.date - dateArr[i].date);
-        }
-        let tr = document.createElement("tr");
 
+        if(dateArr[i].month > userData.month && dateArr[i] >= userData.date){
+            days = parseInt(dateArr[i].date - userData.date);
+            days += parseInt((dateArr[i].month - userData.month) * 30);
+
+        }else if(dateArr[i].month < userData.month && dateArr[i].date <= userData.date){
+            days = parseInt(userData.date - dateArr[i].date);
+            days +=parseInt(( userData.month - dateArr[i].month) * 30);
+        }else if(dateArr[i].month == userData.month && dateArr[i].date >= userData.date){
+            days =parseInt( dateArr[i].date - userData.date);
+        }else if(dateArr[i].month == userData.month && dateArr[i].date <= userData.date){
+            days =  ((12- userData.month) * 30) + (30 - userData.date);
+
+        }else{
+            days = dateArr[i].date - userData.date
+        }
+
+
+
+
+
+
+
+
+       
+        let tr = document.createElement("tr");
         setInterval(function () {
             if (seconds >= 1) {
                 seconds = seconds - 1
