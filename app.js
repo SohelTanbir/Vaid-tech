@@ -122,12 +122,13 @@ document.getElementById("submit-btn").addEventListener("click", function (e) {
     const userDate = document.getElementById("date").value;
     if (userDate) {
         displayData(userDate.split("-"));
+        (this).classList.add("disable")
         countDown();
         document.querySelector(".start").addEventListener("click", startBirthdayCounter);
     } else {
         alert("Must be select a date and time !");
     }
-    document.getElementById("submit-btn").disabled = true;
+   
 })
 // start calculation of birthday reminder application
 // 25-7 || 29-2
