@@ -120,8 +120,9 @@ function countDown() {
             <td>${apiData[i]?.name}</td>
             <td>${apiData[i].date}</td>
             <td>${days} days ${hours} hours ${minutes} minutes ${seconds} seconds</td>`
-       $("#table").append(tr)
+      
         }, 1000);
+         $("#table").append(tr)
     }
 }
 // submit action  btn
