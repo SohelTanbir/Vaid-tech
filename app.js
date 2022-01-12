@@ -19,10 +19,9 @@ const userData = {
     minutes: ''
 }
 const dateArr = [];
-const update_data = [];
+
 // show final output in UI 
 function displayData(inputDate) {
-
     // split user input data
     const splitDate = inputDate[2].split("T");
     const splitTime = splitDate[1].split(":");
@@ -52,7 +51,7 @@ function displayData(inputDate) {
 }
 function countDown() {
 
-    for (let i = 0; i < dateArr.length; i++) {
+    for (let i = 0; i< dateArr.length; i++) {
         let days = ''
         let hours = Math.abs(userData.hours - dateArr[i].hours);
         let minutes = userData.minutes - dateArr[i].minutes;
@@ -110,11 +109,11 @@ function countDown() {
                 }
             }
             tr.innerHTML = `  
-            <td>${apiData()[i]?.name}</td>
+            <td>${apiData()[i].name}</td>
             <td>${apiData()[i].date}</td>
             <td>${days} days ${hours} hours ${minutes} minutes ${seconds} seconds</td>`
-       table.appendChild(tr);
-        }, 1000);
+        },1000);
+        table.appendChild(tr);
     }
 }
 // submit action  btn
