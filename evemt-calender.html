@@ -1,14 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Event Calender</title>
+    <!--bootstrap CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!--main css-->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h2>Event Calender 2022</h2>
+    <h2 class="title bg-dark p-2">Event Calender 2022</h2>
+
+    <div class="event pt-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- Button trigger modal -->
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal">&#43; Add
+                        Event</button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header ">
+                                    <h5 class="modal-title t" id="exampleModalLabel">Event Calender</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <div class="mb-3">
+                                          <label for="eventTitle" class="form-label">Title</label>
+                                          <input type="text" class="form-control" id="eventTitle">
+                                        </div>
+
+                                        <div class="mb-3">
+                                          <label for="eventDescription" class="form-label">Description</label>
+                                          <input type="text" class="form-control" id="eventDescription">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="eventDate" class="form-label">Date</label>
+                                          <input type="date" class="form-control" id="eventDate">
+                                        </div>
+
+                                      </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <h4 class="text-center text-primary">Event List</h4>
+
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--main js -->
+    <script src="js/index.js"></script>
+    <!--bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
