@@ -18,6 +18,12 @@ body{
 .no-event-msg{
     text-align: center;
     padding-top: 15%;
-    color: #f04f4f;
+    color: #999999;
     font-weight: 700;
+}
+#calender .cld-main{
+    display: none;
+}
+#calender .cld-main:first-child{
+    display: block!important;
 }

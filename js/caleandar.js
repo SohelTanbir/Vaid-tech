@@ -126,8 +126,8 @@ function createCalendar(calendar, element, adjuster){
 
   function AddDateTime(){
       var datetime = document.createElement('div');
-      datetime.className += "cld-datetime";
-      if(calendar.Options.NavShow && !calendar.Options.NavVertical){
+    datetime.className += "cld-datetime";
+    if(calendar.Options.NavShow && !calendar.Options.NavVertical){
         var rwd = document.createElement('div');
         rwd.className += " cld-rwd cld-nav";
         rwd.addEventListener('click', function(){createCalendar(calendar, element, -1);} );
