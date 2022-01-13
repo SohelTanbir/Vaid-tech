@@ -29,10 +29,11 @@
         <hr>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-10">
+                <div class="col-lg-10 ">
                     <!--calender -->
                     <div id="calender">
                     </div>
+                    <h4 class="no-event-msg">There is no events available!!</h4>
                 </div>
                 <div class="col-lg-2">
                     <ul class="list-group text-center">
@@ -64,16 +65,16 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="eventTitle" class="form-label">Title</label>
-                            <input type="text" name="title" class="form-control" id="eventTitle" required>
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" name="title" class="form-control" id="title" required>
                         </div>
                         <div class="mb-3">
-                            <label for="eventDescription" class="form-label">Description</label>
-                            <input type="text" name="description" class="form-control" id="eventDescription" required>
+                            <label for="description" class="form-label">Description</label>
+                            <input type="text" name="description" class="form-control" id="description" required>
                         </div>
                         <div class="mb-3">
-                            <label for="eventDate" class="form-label">Date</label>
-                            <input type="date" name="date" class="form-control" id="eventDate" required>
+                            <label for="date" class="form-label">Date</label>
+                            <input type="date" name="date" class="form-control" id="date" required>
                         </div>
                         <button id="subBtn" type="submit" class="btn btn-primary ms-auto d-flex justify-content-end">Add Now</button>
                     </form>

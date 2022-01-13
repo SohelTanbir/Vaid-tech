@@ -15,3 +15,9 @@ body{
     margin:0 0 10px;
     font-size: 30px;
 }
+.no-event-msg{
+    text-align: center;
+    padding-top: 15%;
+    color: #f04f4f;
+    font-weight: 700;
+}
