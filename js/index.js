@@ -19,7 +19,7 @@ function handleInput() {
     }
 }
 const events = [];
-let settings ={};
+let settings = {};
 submitBtn.addEventListener("click", function (e) {
     e.preventDefault();
     const event = handleInput();
@@ -33,6 +33,9 @@ submitBtn.addEventListener("click", function (e) {
         caleandar(calenderElement, events, settings), 1000
         document.querySelector(".no-event-msg").style.display = "none";
         alert("Event Added Successfully");
+        document.getElementById("title").value = '';
+        document.getElementById("description").value = '';
+        document.getElementById("date").value = '';
     }
 });
 
