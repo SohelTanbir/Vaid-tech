@@ -30,7 +30,7 @@ submitBtn.addEventListener("click", function (e) {
 
 
     if (event) {
-        setInterval(caleandar(calenderElement, events, settings), 1000)
+        caleandar(calenderElement, events, settings), 1000
         document.querySelector(".no-event-msg").style.display = "none";
         alert("Event Added Successfully");
     }

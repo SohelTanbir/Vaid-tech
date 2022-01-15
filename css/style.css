@@ -21,9 +21,12 @@ body{
     color: #999999;
     font-weight: 700;
 }
+#calender{
+    text-align: center;
+}
 #calender .cld-main{
     display: none;
 }
-#calender .cld-main:first-child{
+#calender .cld-main:last-child{
     display: block!important;
 }
