@@ -39,7 +39,7 @@
     float: right;
   }
     .cld-nav svg:hover{
-
+      background: red;
     }
 .cld-labels, .cld-days{
   padding-left: 0;
@@ -104,7 +104,7 @@
       }
       .cld-number.eventday:hover{
         cursor: pointer;
-        background: #eee;
+        background: #d31313;
       }
       .today .cld-number.eventday:hover{
         background: #888;

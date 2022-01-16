@@ -30,12 +30,26 @@ submitBtn.addEventListener("click", function (e) {
 
 
     if (event) {
-        caleandar(calenderElement, events, settings), 1000
+        caleandar(calenderElement, events, settings);
+        console.log(events);
         document.querySelector(".no-event-msg").style.display = "none";
         alert("Event Added Successfully");
-        document.getElementById("title").value = '';
-        document.getElementById("description").value = '';
-        document.getElementById("date").value = '';
-    }
+        // clear input field
+        // document.getElementById("title").value = '';
+        // document.getElementById("description").value = '';
+        // document.getElementById("date").value = '';
+
+        // delete event 
+        const eventElement = document.querySelectorAll(".cld-days li p.eventday span");
+
+       for(let i = 0; i<eventElement.length; i++){
+           eventElement[i].addEventListener("click", function(){
+               eventElement[i].style.display = "none";
+               events.pop(i);
+               eventElement[i].parentElement.classList.remove("eventday")
+             alert("Event Deleted Succefully!")
+           })
+       }
+    } 
 });
 
