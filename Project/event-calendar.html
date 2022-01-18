@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Calendar</title>
+  <!--bootstrap CSS-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <!---Calender js-->
+  <script src="js/index.js"></script>
+  <script src="js/main.js"></script>
+  <!---Calender css-->
+  <link rel="stylesheet" href="css/main.css">
+  <!--main css-->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <h2 class="title bg-dark p-2">Event Calendar</h2>
+  <div class="event pt-2 container-fluid">
+    <div class="events-header d-flex justify-content-between">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal">&#43; Add
+        Event</button>
+      <h4 class="text-primary pr-5">Event List</h4>
+    </div>
+    <hr>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-10 offset-1 ">
+          <!--calender -->
+          <div id="calendar">
+          </div>
+        </div>
+        <div class="no-event-msg">
+          <img src="image/no-event.png" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Button trigger modal -->
+  <!-- Modal -->
+  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h5 class="modal-title t">Event Calendar</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" name="title" class="form-control" id="title" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description</label>
+              <input type="text" name="description" class="form-control" id="description" required>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" name="date" class="form-control" id="date" required>
+            </div>
+            <button id="subBtn" type="submit" class="btn btn-primary ms-auto d-flex justify-content-end">Add
+              Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--main js -->
+
+  <!--bootstrap js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
