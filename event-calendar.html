@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Event Calendar</title>
+  <!--jquery cdn-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <!--bootstrap CSS-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -17,12 +19,11 @@
   <!--main css-->
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
   <h2 class="title bg-dark p-2">Event Calendar</h2>
   <div class="event pt-2 container-fluid">
     <div class="events-header d-flex justify-content-between">
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#eventModal">&#43; Add
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">&#43; Add
         Event</button>
       <h4 class="text-primary pr-5">Event List</h4>
     </div>
@@ -40,10 +41,8 @@
       </div>
     </div>
   </div>
-
-  <!-- Button trigger modal -->
-  <!-- Modal -->
-  <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal to add new event -->
+  <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header ">
@@ -72,6 +71,41 @@
     </div>
   </div>
   <!--main js -->
+  <!--update event data by this modal-->
+  <div class="modal fade" id="update">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header ">
+          <h5 class="modal-title t">Your Event</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" name="title" class="form-control" id="utitle" required>
+            </div>
+            <div class="mb-3">
+              <label for="description" class="form-label">Description (optional)</label>
+              <input type="text" name="description" class="form-control" id="udescription" required>
+            </div>
+            <div class="mb-3">
+              <label for="date" class="form-label">Date</label>
+              <input type="date" name="date" class="form-control" id="udate" required>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button id="delete" type="submit" class="btn btn-danger ">Delete
+              </button>
+              <button id="update" type="submit" class="btn btn-success ms-2">Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
 
   <!--bootstrap js -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
