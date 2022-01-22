@@ -20,17 +20,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let id = 1;
     let publicId = ''
     submitBtn.addEventListener("click", function (e) {
+        id += localStorage.length;
         e.preventDefault();
         const inputData = handleInput();
         if (inputData) {
-            // hide no event msg 
-            document.querySelector('.no-event-msg').style.display = "none";
             // call add event method to add new event
-            addEvents({
-                'id': id++,
+            storeEvent(id, {
+                'id': id,
                 'title': `${inputData.title}`,
                 'start': new Date(`${inputData.year}`, `${inputData.month}`, `${inputData.date}`)
-            })
+            });
+
             // clear input field
             document.getElementById("title").value = '';
             document.getElementById("description").value = '';
@@ -72,10 +72,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         title: Utitle,
                         start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
                     });
-
                     if (publicId) {
                         const delEvent = calendar.getEventById(publicId);
                         delEvent?.remove();
+                        localStorage.removeItem(publicId);
+                        window.location.reload();
                     }
                     document.getElementById("utitle").value = '';
                     document.getElementById("udescription").value = '';
@@ -86,23 +87,42 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-
-// delete event
-document.getElementById("delete").addEventListener("click", function (e) {
+    // event show in UI from localStorage
+    for (let i = 1; i <= localStorage.length; i++) {
+        let evnt = JSON.parse(localStorage.getItem(i));
+        if (evnt) {
+            addEvents(evnt);
+        }
+    }
+    // delete event
+    document.getElementById("delete").addEventListener("click", function (e) {
         e.preventDefault();
         if (publicId) {
             const delEvent = calendar.getEventById(publicId);
             delEvent?.remove();
+            localStorage.removeItem(publicId);
             document.getElementById("utitle").value = '';
             document.getElementById("udescription").value = '';
             document.getElementById("updateDate").value = '';
             $("#update").modal("hide");
+            window.location.reload();
         }
-});
-// add new event 
-function addEvents(event) {
+    });
+    // add new event 
+    function addEvents(event) {
         calendar.addEvent(event, true)
         calendar.render();
-        alert("Event Added Successfully");
     }
 });
+
+// store event in localStorage
+function storeEvent(id, event) {
+    const eventJson = JSON.stringify(event)
+    if (id > 0 && event) {
+        localStorage.setItem(id, eventJson);
+        alert("Event Stored Successfully");
+        window.location.reload()
+    } else {
+        alert("Event add Failed!")
+    }
+}
