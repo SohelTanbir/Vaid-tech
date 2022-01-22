@@ -21,3 +21,7 @@ body{
    align-items: center;
    justify-content: center;
 }
+.disable{
+    background: #e9dada!important;
+    cursor:text!important;
+}
