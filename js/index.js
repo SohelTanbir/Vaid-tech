@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const year = dateArr[0];
         const month = dateArr[1] - 1;
         const date = dateArr[2];
-        if (title.length > 0 && dateArr.length > 2 && description.length > 0) {
+        if (title.length > 0 && dateArr.length > 2) {
             return { title, description, year, month, date }
         } else {
             alert("All Field is Required!")
@@ -67,17 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 const Udate = UdateArr[2];
 
                 if (Utitle.length > 0 && UdateArr.length > 0) {
-                    calendar.addEvent({
+                    // if you want to add event in calendar app without localStorage you must uncomment addEvent method
+                    // calendar.addEvent({
+                    //     id: publicId,
+                    //     title: Utitle,
+                    //     start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
+                    // });
+                    updateEvent(publicId,{
                         id: publicId,
                         title: Utitle,
                         start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
-                    });
-                    if (publicId) {
-                        const delEvent = calendar.getEventById(publicId);
-                        delEvent?.remove();
-                        localStorage.removeItem(publicId);
-                        window.location.reload();
-                    }
+                    } )
+                     // if you want to remove event in  calendar app without localStorage you must uncomment if condition
+                    // if (publicId) {
+                    //     const delEvent = calendar.getEventById(publicId);
+                    //     delEvent?.remove();
+                    // }
                     document.getElementById("utitle").value = '';
                     document.getElementById("udescription").value = '';
                     document.getElementById("updateDate").value = '';
@@ -124,5 +129,15 @@ function storeEvent(id, event) {
         window.location.reload()
     } else {
         alert("Event add Failed!")
+    }
+}
+
+// update event in localStorage
+function updateEvent(id, event){
+    const eventJson = JSON.stringify(event);
+    if(id > 0 && event){
+        localStorage.setItem(id, eventJson);
+        alert("Event Updated Successfully");
+        window.location.reload();
     }
 }
