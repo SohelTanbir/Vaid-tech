@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const eventLengths = localStorage.length
     // show total events amount in the UI
-    document.getElementById("total-event").innerHTML = `(${eventLengths})`
+    document.getElementById("total-event").innerHTML = `(${eventLengths <10? '0' +eventLengths: eventLengths })`
 
     // hide no event message if found event in localStorage
     if (eventLengths) {
