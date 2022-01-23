@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // show total events amount in the UI
+    document.getElementById("total-event").innerHTML = `(${localStorage.length})`
+
     // handle get user input value
     const submitBtn = document.getElementById("subBtn");
     const calenderElement = document.getElementById("calender");
@@ -41,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         // include any option here by fullcalendar rules
+        editable:true,
         eventClick: function (eventId) {
             $("#update").modal('show');
             // select a specific event by id and show in the update modal
