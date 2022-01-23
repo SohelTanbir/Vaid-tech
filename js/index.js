@@ -1,15 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
-
+    const eventLengths = localStorage.length
     // show total events amount in the UI
-    document.getElementById("total-event").innerHTML = `(${localStorage.length})`
+    document.getElementById("total-event").innerHTML = `(${eventLengths})`
 
     // hide no event message if found event in localStorage
-    if (localStorage.length) {
+    if (eventLengths) {
         document.querySelector(".no-event-msg").style.display = "none"
     }
     // handle get user input value
     const submitBtn = document.getElementById("subBtn");
-    const calenderElement = document.getElementById("calender");
     // handle input value
     function handleInput() {
         const title = document.getElementById("title").value.trim();
@@ -27,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let id = 1;
     let publicId = ''
     submitBtn.addEventListener("click", function (e) {
-        id += localStorage.length;
+        id += eventLengths;
         e.preventDefault();
         const inputData = handleInput();
         if (inputData) {
@@ -48,7 +47,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         // include any option here by fullcalendar rules
+        droppable: true,
         editable: true,
+        eventDrop:function(eventInfo){
+            const event = eventInfo.event;
+            const dateString = event._instance.range.start;
+            const date = dateString.toLocaleString().split(",");
+            const udate = date[0].split("/");
+            const stringDate = `${udate[2]}-${udate[0] < 10 ? '0' + udate[0] : udate[0]}-${udate[1] < 10 ? '0' + udate[1] : udate[1]}`;
+            console.log(stringDate);
+            const updateEvent = {
+                id:event._def.publicId,
+                title:event._def.title,
+                start: new Date(stringDate)
+            }
+            storeEvent(event._def.publicId, updateEvent)
+        },
         eventClick: function (eventId) {
             $("#update").modal('show');
             // select a specific event by id and show in the update modal
@@ -81,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     //     title: Utitle,
                     //     start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
                     // });
-                    updateEvent(publicId, {
+                    storeEvent(publicId, {
                         id: publicId,
                         title: Utitle,
                         start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
@@ -129,16 +143,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // export event from localStorage
     document.getElementById("exportEvent").addEventListener("click", function () {
-        if (localStorage.length) {
+        if (eventLengths) {
             navigator.clipboard.writeText(JSON.stringify(JSON.stringify(localStorage)));
-            alert("Events Copied to Clipboard")
+            alert(`${eventLengths} Events Copied to Clipboard`)
         } else {
             alert("Sorry! there is no event found!")
         }
     })
     // delete all event from localStorage
     document.getElementById("clearAllEvent").addEventListener("click", function () {
-        if (localStorage.length) {
+        if (eventLengths) {
             const isclear = window.confirm("Do you want to delete All Events ?");
             if (isclear) {
                 localStorage.clear();
@@ -149,27 +163,17 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // store event in localStorage
+    // update or store event in localStorage
     function storeEvent(id, event) {
         const eventJson = JSON.stringify(event)
         if (id > 0 && event) {
             localStorage.setItem(id, eventJson);
-            alert("Event Stored Successfully");
+            alert("Success");
             window.location.reload()
         } else {
             alert("Event add Failed!")
         }
-    }
-    // update event in localStorage
-    function updateEvent(id, event) {
-        const eventJson = JSON.stringify(event);
-        if (id > 0 && event) {
-            localStorage.setItem(id, eventJson);
-            alert("Event Updated Successfully");
-            window.location.reload();
-        }
-    }
-
+}
 
 });
 
