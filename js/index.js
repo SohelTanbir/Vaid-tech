@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // show total events amount in the UI
     document.getElementById("total-event").innerHTML = `(${localStorage.length})`
 
+    // hide no event message if found event in localStorage
+    if (localStorage.length) {
+        document.querySelector(".no-event-msg").style.display = "none"
+    }
     // handle get user input value
     const submitBtn = document.getElementById("subBtn");
     const calenderElement = document.getElementById("calender");
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
         // include any option here by fullcalendar rules
-        editable:true,
+        editable: true,
         eventClick: function (eventId) {
             $("#update").modal('show');
             // select a specific event by id and show in the update modal
@@ -77,12 +81,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     //     title: Utitle,
                     //     start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
                     // });
-                    updateEvent(publicId,{
+                    updateEvent(publicId, {
                         id: publicId,
                         title: Utitle,
                         start: new Date(`${Uyear}`, `${Umonth}`, `${Udate}`)
-                    } )
-                     // if you want to remove event in  calendar app without localStorage you must uncomment if condition
+                    })
+                    // if you want to remove event in  calendar app without localStorage you must uncomment if condition
                     // if (publicId) {
                     //     const delEvent = calendar.getEventById(publicId);
                     //     delEvent?.remove();
@@ -122,26 +126,51 @@ document.addEventListener('DOMContentLoaded', function () {
         calendar.addEvent(event, true)
         calendar.render();
     }
+
+    // export event from localStorage
+    document.getElementById("exportEvent").addEventListener("click", function () {
+        if (localStorage.length) {
+            navigator.clipboard.writeText(JSON.stringify(JSON.stringify(localStorage)));
+            alert("Events Copied to Clipboard")
+        } else {
+            alert("Sorry! there is no event found!")
+        }
+    })
+    // delete all event from localStorage
+    document.getElementById("clearAllEvent").addEventListener("click", function () {
+        if (localStorage.length) {
+            const isclear = window.confirm("Do you want to delete All Events ?");
+            if (isclear) {
+                localStorage.clear();
+                window.location.reload();
+            }
+        } else {
+            alert("Sorry! There is no event to Delete!")
+        }
+    });
+
+    // store event in localStorage
+    function storeEvent(id, event) {
+        const eventJson = JSON.stringify(event)
+        if (id > 0 && event) {
+            localStorage.setItem(id, eventJson);
+            alert("Event Stored Successfully");
+            window.location.reload()
+        } else {
+            alert("Event add Failed!")
+        }
+    }
+    // update event in localStorage
+    function updateEvent(id, event) {
+        const eventJson = JSON.stringify(event);
+        if (id > 0 && event) {
+            localStorage.setItem(id, eventJson);
+            alert("Event Updated Successfully");
+            window.location.reload();
+        }
+    }
+
+
 });
 
-// store event in localStorage
-function storeEvent(id, event) {
-    const eventJson = JSON.stringify(event)
-    if (id > 0 && event) {
-        localStorage.setItem(id, eventJson);
-        alert("Event Stored Successfully");
-        window.location.reload()
-    } else {
-        alert("Event add Failed!")
-    }
-}
 
-// update event in localStorage
-function updateEvent(id, event){
-    const eventJson = JSON.stringify(event);
-    if(id > 0 && event){
-        localStorage.setItem(id, eventJson);
-        alert("Event Updated Successfully");
-        window.location.reload();
-    }
-}

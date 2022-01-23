@@ -19,13 +19,18 @@
   <!--main css-->
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
   <h2 class="title bg-dark p-2">Event Calendar</h2>
   <div class="event pt-2 container-fluid">
     <div class="events-header d-flex justify-content-between">
-      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">&#43; Add
-        Event</button>
-        <h5 class="text-primary">Total Events<span id="total-event">0</span></h5>
+      <div class="import-export d-flex align-items-center">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">&#43; Add Event</button>
+        <button id="importEvent" class="btn btn-success  mx-3">Import</button>
+        <button id="exportEvent" class="btn btn-info">Export</button>
+        <button id="clearAllEvent" class="btn btn-danger mx-3">Clear All</button>
+      </div>
+      <h5 class="text-primary px-3">Total Events<span id="total-event">0</span></h5>
     </div>
     <hr>
     <div class="container-fluid">
@@ -33,6 +38,10 @@
         <div class="col-lg-10 offset-1 ">
           <!--calender -->
           <div id="calendar">
+          </div>
+          <!--no event message show if there is no event found -->
+          <div class="no-event-msg">
+            <img src="image/no-event.png" alt="No event found!">
           </div>
         </div>
       </div>
