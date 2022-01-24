@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const eventLengths = localStorage.length
     // show total events amount in the UI
-    document.getElementById("total-event").innerHTML = `(${eventLengths <10? '0' +eventLengths: eventLengths })`
+    document.getElementById("total-event").innerHTML = `(${eventLengths > 10? '0' +eventLengths: eventLengths })`
 
     // hide no event message if found event in localStorage
     if (eventLengths) {
@@ -144,8 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // export event from localStorage
     document.getElementById("exportEvent").addEventListener("click", function () {
         if (eventLengths) {
-            navigator.clipboard.writeText(JSON.stringify(JSON.stringify(localStorage)));
-            alert(`${eventLengths} Events Copied to Clipboard`)
+            saveFile(JSON.stringify(localStorage));
         } else {
             alert("Sorry! there is no event found!")
         }
@@ -174,7 +173,27 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Event add Failed!")
         }
 }
+// save or export data when user click export button
+async function saveFile(textContent){
+    if(typeof textContent === 'string'){
+        const pickerOptns = {
+            types:[{
+                description:"Text File/PDF",
+                accept:{"text/plain":['.txt']}
+            }],
+            suggestedName:"myText"
+        };
+        // show file picker
+        const fileHandle = await  window.showSaveFilePicker(pickerOptns)
+        const writable= await fileHandle.createWritable();
+        await writable.write(textContent);
+        await writable.close();
+    }
+};
 
+
+
+// endline
 });
 
 
