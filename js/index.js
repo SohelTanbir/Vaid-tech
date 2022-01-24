@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const eventLengths = localStorage.length
     // show total events amount in the UI
-    document.getElementById("total-event").innerHTML = `(${eventLengths > 10? '0' +eventLengths: eventLengths })`
+    document.getElementById("total-event").innerHTML = `(${eventLengths > 10 ? '0' + eventLengths : eventLengths})`
 
     // hide no event message if found event in localStorage
     if (eventLengths) {
@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let id = 1;
     let publicId = ''
     submitBtn.addEventListener("click", function (e) {
-        id += eventLengths;
+        id *= eventLengths;
+        console.log(id);
         e.preventDefault();
         const inputData = handleInput();
         if (inputData) {
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // include any option here by fullcalendar rules
         droppable: true,
         editable: true,
-        eventDrop:function(eventInfo){
+        eventDrop: function (eventInfo) {
             const event = eventInfo.event;
             const dateString = event._instance.range.start;
             const date = dateString.toLocaleString().split(",");
@@ -57,8 +58,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const stringDate = `${udate[2]}-${udate[0] < 10 ? '0' + udate[0] : udate[0]}-${udate[1] < 10 ? '0' + udate[1] : udate[1]}`;
             console.log(stringDate);
             const updateEvent = {
-                id:event._def.publicId,
-                title:event._def.title,
+                id: event._def.publicId,
+                title: event._def.title,
                 start: new Date(stringDate)
             }
             storeEvent(event._def.publicId, updateEvent)
@@ -113,20 +114,18 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-
     // event show in UI from localStorage
-    for (let i = 1; i <= localStorage.length; i++) {
-        let evnt = JSON.parse(localStorage.getItem(i));
-        if (evnt) {
-            addEvents(evnt);
+    for (var key in localStorage) {
+        if (typeof localStorage[key] == 'string') {
+            addEvents(JSON.parse(localStorage[key]))
         }
     }
     // delete event
     document.getElementById("delete").addEventListener("click", function (e) {
         e.preventDefault();
         if (publicId) {
-            const delEvent = calendar.getEventById(publicId);
-            delEvent?.remove();
+            // const delEvent = calendar.getEventById(publicId);
+            // delEvent?.remove();
             localStorage.removeItem(publicId);
             document.getElementById("utitle").value = '';
             document.getElementById("udescription").value = '';
@@ -140,13 +139,11 @@ document.addEventListener('DOMContentLoaded', function () {
         calendar.addEvent(event, true)
         calendar.render();
     }
-
     // show file picker to open file from user device
     document.getElementById("importEvent").addEventListener("click", function () {
         // call openFile method to open file picker ans open a file
         openFile()
     })
-
     // show saveFilePicker to save or export task data from localStorage
     document.getElementById("exportEvent").addEventListener("click", function () {
         if (eventLengths) {
@@ -167,61 +164,59 @@ document.addEventListener('DOMContentLoaded', function () {
             alert("Sorry! There is no event to Delete!")
         }
     });
-
     // update or store event in localStorage
     function storeEvent(id, event) {
         const eventJson = JSON.stringify(event)
-        if (id > 0 && event) {
+        if (id >= 0 && event) {
             localStorage.setItem(id, eventJson);
             alert("Success");
             window.location.reload()
         } else {
             alert("Event add Failed!")
         }
-}
-// save or export data when user click export button
-async function saveFile(textContent){
-    if(typeof textContent === 'string'){
-        const pickerOptns = {
-            types:[{
-                description:"Text File",
-                accept:{"text/plain":['.txt']}
-            }],
-            suggestedName:"myText"
-        };
-        // show file picker
-        const fileHandle = await  window.showSaveFilePicker(pickerOptns)
-        const writable= await fileHandle.createWritable();
-        await writable.write(textContent);
-        await writable.close();
     }
-};
-// import or open  json file from user device
-async function openFile(){
-    const pickerOptns = {
-        types:[{
-            description:"Text File",
-            accept:{"text/plain":['.txt']}
-        }],
+    // save or export data when user click export button
+    async function saveFile(textContent) {
+        if (typeof textContent === 'string') {
+            const pickerOptns = {
+                types: [{
+                    description: "Text File",
+                    accept: { "text/plain": ['.txt'] }
+                }],
+                suggestedName: "myText"
+            };
+            // show file picker
+            const fileHandle = await window.showSaveFilePicker(pickerOptns)
+            const writable = await fileHandle.createWritable();
+            await writable.write(textContent);
+            await writable.close();
+        }
     };
-    const [fileHandle] = await window.showOpenFilePicker(pickerOptns);
-    const file =await fileHandle.getFile()
-    const contents =await file.text();
-    if(file.type === 'text/plain'){
-        importEvent(contents)
+    // import or open  json file from user device
+    async function openFile() {
+        const pickerOptns = {
+            types: [{
+                description: "Text File",
+                accept: { "text/plain": ['.txt'] }
+            }],
+        };
+        const [fileHandle] = await window.showOpenFilePicker(pickerOptns);
+        const file = await fileHandle.getFile()
+        const contents = await file.text();
+        if (file.type === 'text/plain') {
+            importEvent(contents)
+        }
     }
-}
-// import task or event into localStorage
-function importEvent(events){
-    const eventObjects = JSON.parse(events);
-    for(const id in eventObjects){;
-        localStorage.setItem(id, eventObjects[id]);
-        window.location.reload();
+    // import task or event into localStorage
+    function importEvent(events) {
+        const eventObjects = JSON.parse(events);
+        for (const id in eventObjects) {
+            ;
+            localStorage.setItem(id, eventObjects[id]);
+            window.location.reload();
+        }
+        alert("imported Success");
     }
-    alert("imported Success");
-}
-
-// endline
 });
 
 
