@@ -141,7 +141,13 @@ document.addEventListener('DOMContentLoaded', function () {
         calendar.render();
     }
 
-    // export event from localStorage
+    // show file picker to open file from user device
+    document.getElementById("importEvent").addEventListener("click", function () {
+        // call openFile method to open file picker ans open a file
+        openFile()
+    })
+
+    // show saveFilePicker to save or export task data from localStorage
     document.getElementById("exportEvent").addEventListener("click", function () {
         if (eventLengths) {
             saveFile(JSON.stringify(localStorage));
@@ -178,7 +184,7 @@ async function saveFile(textContent){
     if(typeof textContent === 'string'){
         const pickerOptns = {
             types:[{
-                description:"Text File/PDF",
+                description:"Text File",
                 accept:{"text/plain":['.txt']}
             }],
             suggestedName:"myText"
@@ -190,8 +196,30 @@ async function saveFile(textContent){
         await writable.close();
     }
 };
-
-
+// import or open  json file from user device
+async function openFile(){
+    const pickerOptns = {
+        types:[{
+            description:"Text File",
+            accept:{"text/plain":['.txt']}
+        }],
+    };
+    const [fileHandle] = await window.showOpenFilePicker(pickerOptns);
+    const file =await fileHandle.getFile()
+    const contents =await file.text();
+    if(file.type === 'text/plain'){
+        importEvent(contents)
+    }
+}
+// import task or event into localStorage
+function importEvent(events){
+    const eventObjects = JSON.parse(events);
+    for(const id in eventObjects){;
+        localStorage.setItem(id, eventObjects[id]);
+        window.location.reload();
+    }
+    alert("imported Success");
+}
 
 // endline
 });
