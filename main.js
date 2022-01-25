@@ -41,8 +41,8 @@ new Chart("scatterChart", {
 
 // line graph
 const lineGraph = document.getElementById("lineGraph");
-const x = [10,20,30,40,50,60,70,80,90,100,110,120,130,140]
-const y = [1,2,3,6,5,6,10,8,10,5,11,16,13,14,15,16]
+const x = [10,20,30,40,50,60,70,80,90,100,110,120,130,140];
+const y = [1,2,3,6,5,6,10,8,10,5,11,16,13,14,15,16];
 new Chart("lineGraph", {
     type:"line",
     data:{
@@ -66,7 +66,7 @@ new Chart("lineGraph", {
 
 // Multiple Lines graph 
 const multiLineGraph = document.getElementById("multiLineGraph");
-const xvalue = [100,200,300,400,500,600,700,800,900,1000]
+const xvalue = [100,200,300,400,500,600,700,800,900,1000];
 new Chart("multiLineGraph", {
     type:"line",
     data:{
@@ -96,5 +96,29 @@ new Chart("multiLineGraph", {
     },
     options:{
         legend:{display:false}
+    }
+});
+
+// barChart
+const barChart = document.getElementById("barChart");
+const xTechnology = ["HTML", "CSS", "JavaScript", "Bootsrap", "Jquery", "React","Node", "Redux","firebase","mongodb"];
+const yValues = [90,67, 45, 77, 88,20,32, 40, 54, 38, 6];
+const bgColors = ["blue","green", "tomato", "skyblue", "red", "violet", "crimson", "yellow", "brown", "gray"]
+new Chart("barChart", {
+    type:'bar',
+    data:{
+        labels:xTechnology,
+        datasets:[{
+            backgroundColor:bgColors,
+            data:yValues
+        }]
+
+    },
+    options:{
+        legend:{display:false},
+        title:{
+            display:true,
+            text:"My Skills in 2022"
+        }
     }
 })
