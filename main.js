@@ -127,7 +127,7 @@ new Chart("barChart", {
 const pieChart = document.getElementById("pieChart");
 
 const xvalues = ["Bangladesh", "japan","italy","france","dubai", "england"];
-const yvalues = [60, 55, 45, 34,43, 33];
+const yvalues = [60, 15, 45, 34,43, 33];
 new Chart("pieChart", {
     type:"pie",
     data:{
@@ -135,6 +135,27 @@ new Chart("pieChart", {
         datasets:[{
             backgroundColor: ["green", "blue", "yellow", "tomato","red"],
             data:yvalues,
+        }]
+    },
+    options:{
+        title:{
+            display:true,
+            text:"Most Beautifull Country in the world in 2022"
+        }
+    }
+})
+// doughtnut Charts
+const doughnut = document.getElementById("doughnut");
+
+const doubhnutX = ["Bangladesh", "japan","italy","france","dubai", "england"];
+const doubhnutY = [60, 15, 45, 34,43, 33];
+new Chart("doughnut", {
+    type:"doughnut",
+    data:{
+        labels:doubhnutX,
+        datasets:[{
+            backgroundColor: ["green", "blue", "yellow", "tomato","red"],
+            data:doubhnutY,
         }]
     },
     options:{
