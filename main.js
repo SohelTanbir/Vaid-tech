@@ -125,23 +125,22 @@ new Chart("barChart", {
 
 // Pie Charts
 const pieChart = document.getElementById("pieChart");
-const bgcolors = ["green", "blue", "yellow", "tomato","red"];
+
 const xvalues = ["Bangladesh", "japan","italy","france","dubai", "england"];
 const yvalues = [60, 55, 45, 34,43, 33];
 new Chart("pieChart", {
     type:"pie",
     data:{
-        labels:xvalue,
+        labels:xvalues,
         datasets:[{
-            backgroundColor:bgcolors,
+            backgroundColor: ["green", "blue", "yellow", "tomato","red"],
             data:yvalues,
         }]
     },
     options:{
-        legend:{display:false},
         title:{
             display:true,
-            text:"Most Beautifull Country in the world"
+            text:"Most Beautifull Country in the world in 2022"
         }
     }
 })
