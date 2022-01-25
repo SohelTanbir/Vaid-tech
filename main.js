@@ -121,4 +121,27 @@ new Chart("barChart", {
             text:"My Skills in 2022"
         }
     }
+});
+
+// Pie Charts
+const pieChart = document.getElementById("pieChart");
+const bgcolors = ["green", "blue", "yellow", "tomato","red"];
+const xvalues = ["Bangladesh", "japan","italy","france","dubai", "england"];
+const yvalues = [60, 55, 45, 34,43, 33];
+new Chart("pieChart", {
+    type:"pie",
+    data:{
+        labels:xvalue,
+        datasets:[{
+            backgroundColor:bgcolors,
+            data:yvalues,
+        }]
+    },
+    options:{
+        legend:{display:false},
+        title:{
+            display:true,
+            text:"Most Beautifull Country in the world"
+        }
+    }
 })
