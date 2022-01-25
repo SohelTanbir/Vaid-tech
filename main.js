@@ -62,3 +62,39 @@ new Chart("lineGraph", {
         }
     }
 })
+
+
+// Multiple Lines graph 
+const multiLineGraph = document.getElementById("multiLineGraph");
+const xvalue = [100,200,300,400,500,600,700,800,900,1000]
+new Chart("multiLineGraph", {
+    type:"line",
+    data:{
+        labels:xvalue,
+        datasets:[
+            {
+                fill:false,
+                data:[100,200,300,400,500,600,700,800,900,100],
+                borderColor:"blue"
+            },
+            {
+                fill:false,
+                data:[100, 200, 100, 400, 900, 200,600,700],
+                borderColor:"green"
+            },
+            {
+                fill:false,
+                data:[100, 400, 300, 400, 100,600,700,200],
+                borderColor:"red"
+            },
+            {
+                fill:false,
+                data:[400, 100, 300, 600, 500,600,700,800],
+                borderColor:"skyblue"
+            },
+        ]
+    },
+    options:{
+        legend:{display:false}
+    }
+})
