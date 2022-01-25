@@ -38,3 +38,27 @@ new Chart("scatterChart", {
         }
       },
 })
+
+// line graph
+const lineGraph = document.getElementById("lineGraph");
+const x = [10,20,30,40,50,60,70,80,90,100,110,120,130,140]
+const y = [1,2,3,6,5,6,10,8,10,5,11,16,13,14,15,16]
+new Chart("lineGraph", {
+    type:"line",
+    data:{
+        labels:x,
+        datasets:[{
+            fill:false,
+            lineTensio:0,
+            backgroundColor:"blue",
+            borderColor:"green",
+            data:y
+        }]
+    },
+    options:{
+        legend:{display: false},
+        scales:{
+            yAxes:[{ ticks: {min:1, max: 20}}]
+        }
+    }
+})
