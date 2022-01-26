@@ -1,4 +1,35 @@
 // making 3 type of chart using chart.js
+// covid-19 statistics
+const countries = [];
+const deaths = [];
+const covidStatistic = [];
+fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=", {
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
+		"x-rapidapi-key": "9e9a2ab0b7mshda76194c3c2e7efp13fbfejsn02ab59377104"
+	}
+})
+.then(response => response.json())
+.then(covidData => {
+    for(let i = 10; i<50; i++){
+       if(!countries.includes(covidData.data.covid19Stats[i].country)){
+        countries.push(covidData.data.covid19Stats[i].country);
+        deaths.push(covidData.data.covid19Stats[i].deaths);
+       }
+    }
+    ShowLineChart();
+})
+.catch(err => {
+	console.error(err);
+});
+
+
+
+
+
+
+
 
 // bar chart to show student subject marks
 const barChart = document.getElementById("barChart");
@@ -32,28 +63,37 @@ new Chart("barChart", {
 });
 // line chart to show covid-19 statistics
 const lineChart = document.getElementById("lineChart");
-const months = ["January", "February", "March", "April", "may", "june", "july", "August", "September", "October", "November", "December"]
-new Chart("lineChart", {
-    type: "line",
-    data: {
-        labels: months,
-        datasets: [{
-            fill:false,
-            label:"Line Chart",
-            backgroundColor: "blue",
-            data:[10,60,30,40, 10, 78, 34, 20]
-            
-        }]
-    },
-    options: {
-        plugins: {
-            title: {
-                display: true,
-                text: "Covid-19 Statistics in 2021"
+
+
+function ShowLineChart(){
+        new Chart("lineChart", {
+        type: "line",
+        data: {
+            labels: countries,
+            datasets: [{
+                fill:false,
+                label:"Line Chart",
+                backgroundColor: "skyblue",
+                data:deaths,
+                borderColor: 'blue',
+                pointBorderWidth:8,
+                tension: .2
+            }]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Covid-19 Statistics in the world"
+                },
+                tooltip:{
+                    afterFooter:["sohel"]
+                }
             }
         }
-    }
-})
+    })
+    
+}
 
 
 
@@ -63,21 +103,3 @@ new Chart("lineChart", {
 
 
 
-
-
-
-
-// // covid-19 statistics
-// fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=japan", {
-// 	"method": "GET",
-// 	"headers": {
-// 		"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-// 		"x-rapidapi-key": "9e9a2ab0b7mshda76194c3c2e7efp13fbfejsn02ab59377104"
-// 	}
-// })
-// .then(response => {
-// 	console.log(response);
-// })
-// .catch(err => {
-// 	console.error(err);
-// });
