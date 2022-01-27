@@ -77,6 +77,16 @@ function barChartPopulation(country){
                 title: {
                     display: true,
                     text: `Population Statistics of ${country}`
+                },
+                tooltip:{
+                    callbacks: {
+                        beforeLabel: function(context) {
+                            if (context.parsed.y !== null) {
+                                beforeLabel = "Total deaths";
+                            }
+                            return beforeLabel;
+                        }
+                    }
                 }
             },
             scales: {
