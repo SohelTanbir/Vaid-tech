@@ -45,7 +45,6 @@ const barChart = document.getElementById("barChart");
 
 // population statistics of a country 
 function barChartPopulation(country){
-
     new Chart("barChart", {
         type: "bar",
         data: {
@@ -105,3 +104,28 @@ function ShowLineChart(){
     })
     
 }
+
+
+// doughnut chart 
+const doughnutChart = document.getElementById("doughnutChart");
+const district = ["Thakurgaon", "Panchagar", "Dinajpur", "Ranpur", "Nilphamary", "Gaibandha"];
+const area = [30, 50, 90, 40, 60]
+new Chart("doughnutChart", {
+    type:"doughnut",
+    data:{
+        labels:district,
+        datasets:[{
+            data:area,
+            backgroundColor: ["orange", "blue", "red", "skyblue", "tomato", "green", "pink", "salmon"],
+        }]
+    },
+    options:{
+        plugins:{
+            display:false,
+            title:{
+                display:true,
+                text:"District area of Bangladesh"
+            }
+        }
+    }
+})
