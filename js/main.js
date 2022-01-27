@@ -40,6 +40,22 @@ fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
       barChartPopulation( populationObj.data[0].Nation)
     })
 
+const divisions = [];
+const coordinates = [];
+fetch("  https://bdapis.herokuapp.com/api/v1.1/divisions")
+.then(res => res.json())
+.then(divisionData => {
+    for(let i = 0; i<divisionData.data.length; i++){
+        if(!divisions.includes(divisionData.data[i].division)){
+            divisions.push(divisionData.data[i].division);
+            coordinates.push(parseInt(divisionData.data[i].coordinates));
+        }
+     }
+     divisionOfBD()
+})
+
+
+
 // bar chart to show student subject marks
 const barChart = document.getElementById("barChart");
 
@@ -107,25 +123,24 @@ function ShowLineChart(){
 
 
 // doughnut chart 
-const doughnutChart = document.getElementById("doughnutChart");
-const district = ["Thakurgaon", "Panchagar", "Dinajpur", "Ranpur", "Nilphamary", "Gaibandha"];
-const area = [30, 50, 90, 40, 60]
-new Chart("doughnutChart", {
-    type:"doughnut",
-    data:{
-        labels:district,
-        datasets:[{
-            data:area,
-            backgroundColor: ["orange", "blue", "red", "skyblue", "tomato", "green", "pink", "salmon"],
-        }]
-    },
-    options:{
-        plugins:{
-            display:false,
-            title:{
-                display:true,
-                text:"District area of Bangladesh"
+function divisionOfBD(){
+    new Chart("doughnutChart", {
+        type:"doughnut",
+        data:{
+            labels:divisions,
+            datasets:[{
+                data:coordinates,
+                backgroundColor: ["orange", "blue", "red", "skyblue", "tomato", "green", "pink", "salmon"],
+            }]
+        },
+        options:{
+            plugins:{
+                display:false,
+                title:{
+                    display:true,
+                    text:"District Coordinates of Bangladesh"
+                }
             }
         }
-    }
-})
+    })
+}
