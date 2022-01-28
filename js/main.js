@@ -12,6 +12,7 @@ fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country="
 })
 .then(response => response.json())
 .then(covidData => {
+
     for(let i = 10; i<60; i++){
        if(!countries.includes(covidData.data.covid19Stats[i].country)){
         countries.push(covidData.data.covid19Stats[i].country);
@@ -27,28 +28,27 @@ fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country="
 // get population data of USA
 const years = [];
 const populations = [];
-fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
+fetch("https://raw.githubusercontent.com/SohelTanbir/API-Data/master/population-statistics.json")
     .then(response => response.json())
     .then(populationObj => {
-        for(let i = 0; i<populationObj.data.length; i++){
-            if(!years.includes(populationObj.data[i].Year)){
-                years.push(populationObj.data[i].Year);
-                populations.push(populationObj.data[i].Population);
-                nation = populationObj.data[i].Nation
+        for(let i = 0; i<populationObj.length; i++){
+            if(!years.includes(populationObj[i].year)){
+                years.push(populationObj[i].year);
+                populations.push(populationObj[i].population);
             }
          }
-      barChartPopulation( populationObj.data[0].Nation)
+      barChartPopulation( populationObj[0].country)
     })
 
 const divisions = [];
 const coordinates = [];
-fetch("  https://bdapis.herokuapp.com/api/v1.1/divisions")
+fetch("https://raw.githubusercontent.com/SohelTanbir/API-Data/master/division.json")
 .then(res => res.json())
 .then(divisionData => {
-    for(let i = 0; i<divisionData.data.length; i++){
-        if(!divisions.includes(divisionData.data[i].division)){
-            divisions.push(divisionData.data[i].division);
-            coordinates.push(parseInt(divisionData.data[i].coordinates));
+    for(let i = 0; i<divisionData.length; i++){
+        if(!divisions.includes(divisionData[i].division)){
+            divisions.push(divisionData[i].division);
+            coordinates.push(parseInt(divisionData[i].size));
         }
      }
      divisionOfBD()
@@ -64,7 +64,7 @@ function barChartPopulation(country){
     new Chart("barChart", {
         type: "bar",
         data: {
-            labels: years.reverse(),
+            labels: years,
             datasets: [{
                 label: 'Bar chart',
                 data: populations,
@@ -82,7 +82,7 @@ function barChartPopulation(country){
                     callbacks: {
                         beforeLabel: function(context) {
                             if (context.parsed.y !== null) {
-                                beforeLabel = "Total deaths";
+                                beforeLabel = "Total population";
                             }
                             return beforeLabel;
                         }
@@ -148,7 +148,7 @@ function divisionOfBD(){
                 display:false,
                 title:{
                     display:true,
-                    text:"District Coordinates of Bangladesh"
+                    text:"divisions size of Bangladesh"
                 }
             }
         }
