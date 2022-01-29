@@ -15,3 +15,18 @@ h2 {
 canvas {
     margin-bottom: 40px;
 }
+.select-country{
+    text-align: right;
+   width: 100%;
+    max-width: 1000px; 
+    background: #fbfbfb;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+}
+.select-country select{
+    margin: 20px 20px 0;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background:#fff;
+}

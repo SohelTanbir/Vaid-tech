@@ -1,31 +1,33 @@
 // making 3 type of chart using chart.js
+// handle input change
 // covid-19 statistics
-const countries = [];
 const deaths = [];
-const covidStatistic = [];
-fetch("https://covid-19-coronavirus-statistics.p.rapidapi.com/v1/stats?country=", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "covid-19-coronavirus-statistics.p.rapidapi.com",
-		"x-rapidapi-key": "9e9a2ab0b7mshda76194c3c2e7efp13fbfejsn02ab59377104"
-	}
-})
-.then(response => response.json())
-.then(covidData => {
+const months = [];
+let isdestroy = 0;
+function handleCountryChange(){
+    const  country = document.getElementById("country").value;
+     fetch(`https://raw.githubusercontent.com/SohelTanbir/API-Data/master/covid19-deaths-${country.length? country:'bangladesh'}.json`)
+    .then(response => response.json())
+    .then(covidData => {
+        console.log(covidData);
+        for(let i =0; i<covidData.length; i++){
+           if(!months.includes(covidData[i].month)){
+            months.push(covidData[i].month);
+           }
+           deaths.push(covidData[i].deaths);
+        }
+        isdestroy +=1;
+        LineChart(); 
+    })
+    .catch(err => {
+        console.error(err);
+    });
+    
+}
 
-    for(let i = 10; i<60; i++){
-       if(!countries.includes(covidData.data.covid19Stats[i].country)){
-        countries.push(covidData.data.covid19Stats[i].country);
-        deaths.push(covidData.data.covid19Stats[i].deaths);
-       }
-    }
-    ShowLineChart();
-})
-.catch(err => {
-	console.error(err);
-});
+// destroy chart 
 
-// get population data of USA
+// get population data of a country
 const years = [];
 const populations = [];
 fetch("https://raw.githubusercontent.com/SohelTanbir/API-Data/master/population-statistics.json")
@@ -52,8 +54,40 @@ fetch("https://raw.githubusercontent.com/SohelTanbir/API-Data/master/division.js
         }
      }
      divisionOfBD()
-})
+});
 
+// line chart to show covid-19 statistics
+const lineChart = document.getElementById("lineChart");
+
+function LineChart(){
+     const linechart =   new Chart("lineChart", {
+        type: "line",
+        data: {
+            labels: months,
+            datasets: [
+                {
+                fill:false,
+                label:"Line Chart",
+                backgroundColor: "skyblue",
+                data:deaths,
+                borderColor: 'blue',
+                pointBorderWidth:5,
+            }
+        ]
+        },
+        options: {
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Covid-19 Statistics 2020 and 2021 of Bangladesh"
+                },
+            }
+        }
+    })
+    if(isdestroy > 1){
+        linechart.destroy();
+    }
+}
 
 
 // bar chart to show student subject marks
@@ -98,40 +132,6 @@ function barChartPopulation(country){
         }
     });
 }
-// line chart to show covid-19 statistics
-const lineChart = document.getElementById("lineChart");
-
-function ShowLineChart(){
-        new Chart("lineChart", {
-        type: "line",
-        data: {
-            labels: countries,
-            datasets: [{
-                fill:false,
-                label:"Line Chart",
-                backgroundColor: "skyblue",
-                data:deaths,
-                borderColor: 'blue',
-                pointBorderWidth:8,
-                tension: .2
-            }]
-        },
-        options: {
-            plugins: {
-                title: {
-                    display: true,
-                    text: "Covid-19 Statistics in the world"
-                },
-                tooltip:{
-                    footer:['sohel', "rana"]
-                }
-            }
-        }
-    })
-    
-}
-
-
 // doughnut chart 
 function divisionOfBD(){
     new Chart("doughnutChart", {
