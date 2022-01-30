@@ -23,10 +23,17 @@ canvas {
     padding: 10px 20px;
     margin-bottom: 40px;
 }
-.select-country select{
+form{
+    max-width: 1000px;
+    width: 100%; 
+    text-align: end;
+    background:#fbfbfb;
+}
+select{
     margin: 20px 20px 0;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     outline: none;
-    background:#fff;
+    background: #f7f7f7;
+    border-radius: 5px;
 }

@@ -17,18 +17,17 @@
     <h2>Making 3 types chart using Chart.js</h2>
 
     <canvas id="barChart" style="width: 100%; max-width: 1000px; height: 500px;"></canvas>
-
+    <form>
+        <select name="country" id="country" onchange="handleCountryChange()">
+            <option selected>Select  Country</option>
+            <option value="bangladesh">Bangladesh</option>
+            <option value="japan">Japan</option>
+            <option value="australia">Australia</option>
+            <option value="italy">Italy</option>
+            <option value="brazil">Brazil</option>
+        </select>
+    </form>
     <div class="select-country">
-        <form>
-            <select name="country" id="country" onchange="handleCountryChange()">
-                <option selected>Select  Country</option>
-                <option value="bangladesh">Bangladesh</option>
-                <option value="japan">Japan</option>
-                <option value="australia">Australia</option>
-                <option value="italy">Italy</option>
-                <option value="brazil">Brazil</option>
-            </select>
-        </form>
         <canvas id="lineChart" style="width: 100%; max-width: 1000px; height: 400px;"></canvas>
     </div>
   
