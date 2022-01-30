@@ -6,6 +6,9 @@ let deaths21 = [];
 const months = [];
 const country = [];
 function handleCountryChange() {
+    document.querySelector(".select-country").style.display ="block"
+    document.getElementById("title").style.display ="none"
+    document.querySelector("form").classList.add("alignRight");
    let country = document.getElementById("country").value;
     fetch(`https://raw.githubusercontent.com/SohelTanbir/API-Data/master/covid19-deaths-${country}.json`)
         .then(response => response.json())

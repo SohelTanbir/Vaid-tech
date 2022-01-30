@@ -16,7 +16,6 @@ canvas {
     margin-bottom: 40px;
 }
 .select-country{
-    text-align: right;
    width: 100%;
     max-width: 1000px; 
     background: #fbfbfb;
@@ -26,8 +25,16 @@ canvas {
 form{
     max-width: 1000px;
     width: 100%; 
-    text-align: end;
+    text-align: center;
     background:#fbfbfb;
+    padding: 100px 0;
+}
+#title{
+    color: skyblue;
+}
+.alignRight{
+    text-align: end!important;
+    padding:0;
 }
 select{
     margin: 20px 20px 0;
@@ -36,4 +43,7 @@ select{
     outline: none;
     background: #f7f7f7;
     border-radius: 5px;
+}
+.select-country{
+    display: none   ;
 }

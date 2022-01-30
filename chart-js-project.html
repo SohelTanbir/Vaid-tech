@@ -18,6 +18,7 @@
 
     <canvas id="barChart" style="width: 100%; max-width: 1000px; height: 500px;"></canvas>
     <form>
+        <h4 id="title">Please Select a country to view covid 19 statistics </h4>
         <select name="country" id="country" onchange="handleCountryChange()">
             <option selected>Select  Country</option>
             <option value="bangladesh">Bangladesh</option>
@@ -28,7 +29,7 @@
         </select>
     </form>
     <div class="select-country">
-        <canvas id="lineChart" style="width: 100%; max-width: 1000px; height: 400px;"></canvas>
+    <canvas id="lineChart" style="width: 100%; max-width: 1000px; height: 400px;"></canvas>
     </div>
   
     <canvas id="doughnutChart" style="width: 100%; max-width: 800px; height: 400px;"></canvas>
