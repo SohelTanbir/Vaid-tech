@@ -1,7 +1,8 @@
 // making 3 type of chart using chart.js
 // handle input change
 // covid-19 statistics
-let deaths = [];
+let deaths20 = [];
+let deaths21 = [];
 const months = [];
 const country = [];
 function handleCountryChange() {
@@ -13,14 +14,27 @@ function handleCountryChange() {
                 if (!months.includes(covidData[i].month)) {
                     months.push(covidData[i].month);
                 }
-                deaths.push(covidData[i].deaths);
+                // indentify year
+               const years = covidData[i].year.split("-");
+                let year2020 ='';
+                let year2021 ='';
+             if(years[1] == '2020'){
+                year2020 = years[1] ;
+                deaths20.push(covidData[i].deaths);
+             }else{
+                year2021 = years[1] ;
+                deaths21.push(covidData[i].deaths);
+             }
+
+             
             }
             document.getElementById("lineChart").remove();
             document.querySelector(".select-country").innerHTML =`
             <canvas id="lineChart" style="width: 100%; max-width: 1000px; height: 400px;"></canvas>
             `;
            LineChart(covidData[0].country);
-            deaths = []
+            deaths20 = [];
+            deaths21 = [];
         })
         .catch(err => {
             console.error(err);
@@ -68,8 +82,16 @@ function LineChart(country) {
                     fill: false,
                     label: "Line Chart",
                     backgroundColor: "skyblue",
-                    data: deaths,
+                    data: deaths20,
                     borderColor: 'blue',
+                    pointBorderWidth: 5,
+                },
+                {
+                    fill: false,
+                    label: "Line Chart",
+                    backgroundColor: "skyblue",
+                    data: deaths21,
+                    borderColor: 'skyblue',
                     pointBorderWidth: 5,
                 }
             ]
