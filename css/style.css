@@ -70,3 +70,12 @@ button{
 .finish{
   background: green;
 }
+/* style file input field*/
+input[type='file']::-webkit-file-upload-button{
+    border: none;
+    outline: none;
+    padding: 8px 30px;
+    border-radius: 5px;
+    background: #0987fc;
+    color: #fff;
+}
