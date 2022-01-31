@@ -13,7 +13,7 @@ body{
 h2{
   text-align: center;
   color: #2cb3e9;
-  padding: 10px 0 20px;
+  padding: 20px 0;
 }
 .image-container{
   display: flex;
@@ -56,7 +56,6 @@ button{
   padding:8px 20px;
   border-radius: 5px;
   cursor: pointer;
-  margin-left: auto;
   text-align: right;
   margin-top: 10px;
   color: #fff;
@@ -69,6 +68,17 @@ button{
 }
 .finish{
   background: green;
+  margin-left: auto;
+}
+.action-btn{
+  display: flex;
+  justify-content: flex-end;
+}
+.action-btn button {
+  margin-left: 10px;
+}
+.reload{
+  background: orange;
 }
 /* style file input field*/
 input[type='file']::-webkit-file-upload-button{
@@ -78,4 +88,9 @@ input[type='file']::-webkit-file-upload-button{
     border-radius: 5px;
     background: #0987fc;
     color: #fff;
+    cursor: pointer;
+}
+/*hide image upload img tag by defualt */
+#img{
+  display: none;
 }

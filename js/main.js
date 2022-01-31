@@ -1,39 +1,48 @@
-var canvas  = $("#canvas"),
-    context = canvas.get(0).getContext("2d"),
-    $result = $('#result');
+// wait until load webpage
+window.addEventListener("load", function () {
 
-$('#fileInput').on( 'change', function(){
-    if (this.files && this.files[0]) {
-      if ( this.files[0].type.match(/^image\//) ) {
-        var reader = new FileReader();
-        reader.onload = function(evt) {
-           var img = new Image();
-           img.onload = function() {
-             context.canvas.height = img.height;
-             context.canvas.width  = img.width;
-             context.drawImage(img, 0, 0);
-             var cropper = canvas.cropper({
-               aspectRatio: 16 / 9
-             });
-             $('#btnCrop').click(function() {
-                // Get a string base 64 data url
-                var croppedImageDataURL = canvas.cropper('getCroppedCanvas').toDataURL("image/png"); 
-                $result.append( $('<img>').attr('src', croppedImageDataURL) );
-             });
-             $('#btnRestore').click(function() {
-               canvas.cropper('reset');
-               $result.empty();
-             });
-           };
-           img.src = evt.target.result;
-				};
-        reader.readAsDataURL(this.files[0]);
+  // select input field and add EventLister
+  document.querySelector("input[type='file']").addEventListener("change", uploader);
+
+  // image uploader
+  function uploader() {
+    if (this.files && this.files[0] && this.files[0].type =='image/jpeg' || this.files[0].type =='image/png') {
+
+      document.getElementById("img").style.display = "block"
+      const img = document.getElementById("img");
+      img.onload = ()=>{
+        URL.revokeObjectURL(img.src); 
       }
-      else {
-        alert("Invalid file type! Please select an image file.");
-      }
+      img.src = URL.createObjectURL(this.files[0]);
+    
+      // hide input field after upload image
+      this.style.display ='none'
+    }else{
+      alert("Sorry! only image allow")
     }
-    else {
-      alert('No file(s) selected.');
-    }
+
+// Relaod window 
+document.querySelector(".reload").addEventListener("click", function(){
+  window.location.reload();
+})
+
+
+
+  };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
