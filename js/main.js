@@ -6,19 +6,20 @@ window.addEventListener("load", function () {
 
   // image uploader
   function uploader() {
-    if (this.files && this.files[0] && this.files[0].type == 'image/jpeg' || this.files[0].type == 'image/png') {
+    const files = this.files;
+    if (files && files[0] && files[0].type == 'image/jpeg' || files[0].type == 'image/png') {
 
-      document.getElementById("img").style.display = "block"
+      document.getElementById("img").style.display = "block";
       const img = document.getElementById("img");
       img.onload = () => {
         URL.revokeObjectURL(img.src);
       }
-      img.src = URL.createObjectURL(this.files[0]);
+      img.src = URL.createObjectURL(files[0]);
 
       // hide input field after upload image
       this.style.display = 'none'
     } else {
-      alert("Sorry! only image allow")
+      alert("Sorry! invalid file!")
     }
 
     // Relaod window 
@@ -26,12 +27,26 @@ window.addEventListener("load", function () {
       window.location.reload();
     });
 
-  // crop or select a part of upload image
-document.querySelector(".crop").addEventListener("click", function(){
-    alert("image cropped")
-})
+    // crop or select a part of upload image
+    document.querySelector(".crop").addEventListener("click", function () {
+      cropImage.bind(uploader)();
+    });
+    // crop image 
+    function cropImage() {
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      var image = new Image();
+      image.src =URL.createObjectURL(files[0]);
+    
+      image.onload = function(){
+        ctx.drawImage(image, 0,0, 450, 300);
+      }
+  
+  }
 
 
+
+    // endline if condition
   };
 
 
