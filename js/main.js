@@ -27,21 +27,33 @@ window.addEventListener("load", function () {
       window.location.reload();
     });
 
+// image area selection
+let x = 0;
+let y = 0;
+document.getElementById("img").addEventListener("click", (e)=>{
+      x = e.clientX;
+      y = e.clientY;
+      console.log(x, y);
+      document.getElementById("x").innerHTML = `width = ${x}`;
+      document.getElementById("y").innerHTML = `height = ${y}`;
+
+})
+
+
+
     // crop or select a part of upload image
     document.querySelector(".crop").addEventListener("click", function () {
-      cropImage.bind(uploader)();
+      cropImage();
     });
     // crop image 
     function cropImage() {
       const canvas = document.getElementById('canvas');
-      const ctx = canvas.getContext('2d');
+      const context = canvas.getContext('2d');
       var image = new Image();
       image.src =URL.createObjectURL(files[0]);
-    
       image.onload = function(){
-        ctx.drawImage(image, 0,0, 450, 300);
+        context.drawImage(image,x, y, x, y, 0, 0, x, y);
       }
-  
   }
 
 

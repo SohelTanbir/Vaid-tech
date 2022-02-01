@@ -94,4 +94,5 @@ input[type='file']::-webkit-file-upload-button{
 /*hide image upload img tag by defualt */
 #img{
   display: none;
+  margin-bottom: 10px;
 }
