@@ -27,19 +27,41 @@ window.addEventListener("load", function () {
       window.location.reload();
     });
 
-// image area selection
-let x = 0;
-let y = 0;
-document.getElementById("img").addEventListener("click", (e)=>{
-      x = e.clientX;
-      y = e.clientY;
-      console.log(x, y);
-      document.getElementById("x").innerHTML = `width = ${x}`;
-      document.getElementById("y").innerHTML = `height = ${y}`;
+    // image area selection
+    let sx = 0;
+    let sy = 0;
+    let sw = 0;
+    let sh = 0;
+    const selectArea = document.getElementById("selectArea");
+    document.getElementById("img").addEventListener("mousedown", (e) => {
+      sx = e.clientX;
+      sy = e.clientY;
+      selectArea.style.visibility = 'visible';
+      // set margin left and top
+      selectArea.style.marginLeft = `${sx - 20}` + "px";
+      selectArea.style.marginTop = `${sy - 45}` + "px";
+      document.getElementById("img").addEventListener("mousemove", handleMouseMove);
+    });
+// handle mousemove event
+function handleMouseMove(e){
+  sw = e.clientX;
+  sh = e.clientY;
+  document.getElementById("x").innerHTML = `${sw}x`;
+  document.getElementById("y").innerHTML = `${sh}`;
+  selectArea.style.width = `${sw}` + "px";
+  selectArea.style.height = `${sh}` + "px";
+}
+// remove eventListener
+function removeEvent(){
+  document.getElementById("img").removeEventListener("mousemove", handleMouseMove)
+}
 
-})
-
-
+  document.getElementById("img").addEventListener("mouseup", (e) => {
+    removeEvent();
+      // set width and height
+      selectArea.style.width = `${sw}` + "px";
+      selectArea.style.height = `${sh}` + "px";
+    });
 
     // crop or select a part of upload image
     document.querySelector(".crop").addEventListener("click", function () {
@@ -50,29 +72,14 @@ document.getElementById("img").addEventListener("click", (e)=>{
       const canvas = document.getElementById('canvas');
       const context = canvas.getContext('2d');
       var image = new Image();
-      image.src =URL.createObjectURL(files[0]);
-      image.onload = function(){
-        context.drawImage(image,x, y, x, y, 0, 0, x, y);
+      image.src = URL.createObjectURL(files[0]);
+      image.onload = function () {
+        context.drawImage(image, sx, sy, sw, sh, 0, 0, 200, 200);
       }
-  }
-
-
+    }
 
     // endline if condition
   };
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

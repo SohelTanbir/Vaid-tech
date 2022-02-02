@@ -42,8 +42,9 @@ h2{
   text-align: center;
   margin-bottom: 5px;
 }
-.upload-img {
+.input-img{
   position: relative;
+  overflow: hidden;
 }
 form{
   position: absolute;
@@ -95,4 +96,17 @@ input[type='file']::-webkit-file-upload-button{
 #img{
   display: none;
   margin-bottom: 10px;
+  cursor: move;
+}
+#selectArea{
+  position: absolute;
+  left: 0;
+  top:0;
+  border: 2px dashed #eeff00fd;
+  visibility: hidden;
+  color: #fff;
+  transition: .5s;
+  overflow: hidden;
+  cursor:move;
+  resize: both;
 }
