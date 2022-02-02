@@ -46,8 +46,8 @@ window.addEventListener("load", function () {
 function handleMouseMove(e){
   sw = e.clientX;
   sh = e.clientY;
-  document.getElementById("x").innerHTML = `${sw} x`;
-  document.getElementById("y").innerHTML =`${sh}`;
+  document.getElementById("x").innerHTML =`${sw}x `;
+  document.getElementById("y").innerHTML = ` ${ sh}`;
   selectArea.style.width = `${sw}` + "px";
   selectArea.style.height = `${sh}` + "px";
 }
