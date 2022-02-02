@@ -39,15 +39,15 @@ window.addEventListener("load", function () {
       selectArea.style.visibility = 'visible';
       // set margin left and top
       selectArea.style.marginLeft = `${sx - 20}` + "px";
-      selectArea.style.marginTop = `${sy - 45}` + "px";
+      selectArea.style.marginTop = `${sy - 90}` + "px";
       document.getElementById("img").addEventListener("mousemove", handleMouseMove);
     });
 // handle mousemove event
 function handleMouseMove(e){
   sw = e.clientX;
   sh = e.clientY;
-  document.getElementById("x").innerHTML = `${sw}x`;
-  document.getElementById("y").innerHTML = `${sh}`;
+  document.getElementById("x").innerHTML = `${sw} x`;
+  document.getElementById("y").innerHTML =`${sh}`;
   selectArea.style.width = `${sw}` + "px";
   selectArea.style.height = `${sh}` + "px";
 }
@@ -56,11 +56,13 @@ function removeEvent(){
   document.getElementById("img").removeEventListener("mousemove", handleMouseMove)
 }
 
+  document.getElementById("selectArea").addEventListener("mouseup", (e) => {
+    removeEvent();
+
+    });
   document.getElementById("img").addEventListener("mouseup", (e) => {
     removeEvent();
-      // set width and height
-      selectArea.style.width = `${sw}` + "px";
-      selectArea.style.height = `${sh}` + "px";
+
     });
 
     // crop or select a part of upload image
@@ -74,7 +76,7 @@ function removeEvent(){
       var image = new Image();
       image.src = URL.createObjectURL(files[0]);
       image.onload = function () {
-        context.drawImage(image, sx, sy, sw, sh, 0, 0, 200, 200);
+        context.drawImage(image, sx, sy, sw, sh, 0, 0, sw, sh);
       }
     }
 
