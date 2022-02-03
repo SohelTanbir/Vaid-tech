@@ -20,6 +20,9 @@ h2{
   justify-content: space-between;
   padding: 10px;
 }
+.input-img h4 span{
+  font-size: 12px;
+}
 .output-img,
 .input-img{
   width: 50%;
@@ -31,6 +34,7 @@ h2{
   height: 360px;
   padding: 3px;
   border-radius: 5px;
+  position: relative;
   overflow: hidden;
 }
 .upload-img img{
@@ -44,10 +48,6 @@ h2{
 .image-container h4{
   text-align: center;
   margin-bottom: 5px;
-}
-.input-img{
-  position: relative;
-  overflow: hidden;
 }
 form{
   position: absolute;
@@ -114,4 +114,6 @@ input[type='file']::-webkit-file-upload-button{
   display: flex;
   justify-content: center;
   align-items: center;
+  max-width: 644px;
+  max-height: 350px;
 }

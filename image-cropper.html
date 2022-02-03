@@ -4,46 +4,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
   <script src="js/main.js"></script>
   <link rel="stylesheet" href="css/style.css">
   <title>Image cropper</title>
 </head>
-<body>
-<h2>Simple image Cropper with Vanila JavaScript</h2>
 
-<div class="image-container">
-  
-  <div class="input-img">
-    <h4>input image</h4>
-    <div class="upload-img">
+<body>
+  <h2>Simple image Cropper with Vanila JavaScript</h2>
+
+  <div class="image-container">
+
+    <div class="input-img">
+
+      <h4>input image 
+        [<span id="x2">0</span>
+        <span id="y2">0</span>
+        <span id="xw">0</span>
+        <span id="xy">0</span>]
+      </h4>
+      <div class="upload-img">
         <form>
-          <input type="file" >
+          <input type="file">
         </form>
         <img id="img" src="" alt="image">
-  
+
         <div id="selectArea">
           <span id="x"></span>
           <span id="y"></span>
         </div>
+      </div>
+      <div class="action-btn">
+        <button class="reload">Clear</button>
+        <button class="crop">Crop</button>
+      </div>
     </div>
-    <div class="action-btn">
-      <button class="reload">Clear</button>
-      <button class="crop">Crop</button>
+
+    <div class="output-img">
+      <h4>Output image</h4>
+      <div class="cropped-img">
+        <canvas id="canvas" width="500px" height="500px">
+          Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+      </div>
+      <button class="finish">Finished</button>
     </div>
+
   </div>
 
-  <div class="output-img">
-    <h4>Output image</h4>
-    <div class="cropped-img">
-      <canvas id="canvas" width="500px" height="500px">
-        Your browser doesn't support the <code>canvas</code> element
-      </canvas>
-    </div>
-    <button class="finish">Finished</button>
-  </div>
-
-</div>
 
 
 
@@ -51,7 +60,7 @@
 
 
 
-
-<p style="margin-top: 150px;">endline</p>
+  <p style="margin-top: 150px;">endline</p>
 </body>
+
 </html>
