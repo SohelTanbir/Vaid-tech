@@ -109,11 +109,12 @@ input[type='file']::-webkit-file-upload-button{
   border: 2px dashed #eeff00fd;
   visibility: hidden;
   color: #fff;
-  transition: .5s;
+  transition:all 1s;
   cursor:move;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 644px;
   max-height: 350px;
+  resize: both;
 }
