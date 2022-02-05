@@ -82,40 +82,36 @@ function removeEvent(){
       const context = document.getElementById('canvas').getContext('2d');
       var img = new Image();
       img.src = URL.createObjectURL(files[0]);
+      console.log(URL.createObjectURL(files[0]));
       img.onload = function () {
       const imgWidth = img.width;
       const imgHeight = img.height;
-  
+
       const selectX = sw;
       const selectY = sh;
+      const mr = sx;
+      const mt = sy;
+      // create div element and append in upload-img
       const div = document.createElement("div");
       const uploadImg = document.querySelector(".upload-img");
       div.classList.add("segment");
       div.style.left =sx+'px';
       div.style.top =sy+'px';
       div.style.width = selectX+'px';
-      div.style.height = selectY+'px'
+      div.style.height = selectY+'px';
       uploadImg.appendChild(div)
-
-
 
       sx =Math.floor( (sx/644)*imgWidth);
       sy = Math.floor((sy/350)*imgHeight);
       sw =Math.floor( (sw/644)*imgWidth);
       sh = Math.floor((sh/350)*imgHeight);
 
-
-
-        context.drawImage(img, sx, sy,sw,sh, 0, 0, selectX, selectY);
+        context.drawImage(img, sx, sy,sw,sh, mr, mt, selectX, selectY);
 
       }
-    }
-
+  }
     // endline if condition
-  };
-
-  
-
+};
 
 });
 

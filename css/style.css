@@ -52,7 +52,7 @@ h2{
 }
 .segment{
   position: absolute;
-  background:#2929fa;
+  background:#8f8f8f;
   z-index:1;
   left: 0;
   top: 0;
@@ -114,7 +114,7 @@ input[type='file']::-webkit-file-upload-button{
   transition:all .5s;
   cursor:move;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   max-width: 644px!important;
   max-height: 350px!important;
 }
