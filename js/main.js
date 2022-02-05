@@ -37,8 +37,9 @@ window.addEventListener("load", function () {
 
 // handle mousedown event 
 function mouseDown(e){
-  sx = e.clientX;
-  sy = e.clientY
+  sx = e.clientX-18;
+  sy = e.clientY-110;
+  console.log('sx = ',sx, 'sy = ', sy);
 
 // select to crop image show after mousedown event fired
   selectArea.style.display = 'block';
@@ -80,13 +81,11 @@ function removeEvent(){
     function cropImage() {
       const context = document.getElementById('canvas').getContext('2d');
       var img = new Image();
-
       img.src = URL.createObjectURL(files[0]);
       img.onload = function () {
       const imgWidth = img.width;
       const imgHeight = img.height;
-
-        
+  
       const selectX = sw;
       const selectY = sh;
       const div = document.createElement("div");
@@ -102,7 +101,6 @@ function removeEvent(){
 
       sx =Math.floor( (sx/644)*imgWidth);
       sy = Math.floor((sy/350)*imgHeight);
- 
       sw =Math.floor( (sw/644)*imgWidth);
       sh = Math.floor((sh/350)*imgHeight);
 
