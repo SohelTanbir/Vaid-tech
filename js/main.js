@@ -16,9 +16,6 @@ window.addEventListener("load", function () {
 
       }
       img.src = URL.createObjectURL(files[0]);
-      document.getElementById("img").style.width = '644px';
-      document.getElementById("img").style.height = '350px';
-
       // hide input field after upload image
       this.style.display = 'none'
     } else {
@@ -26,7 +23,7 @@ window.addEventListener("load", function () {
     }
 
     // Relaod window 
-    document.querySelector(".reload").addEventListener("click", function () {
+    document.querySelector(".reload-btn").addEventListener("click", function () {
       window.location.reload();
     });
 
@@ -36,15 +33,16 @@ window.addEventListener("load", function () {
     let sw = 0;
     let sh = 0;
     const selectArea = document.getElementById("selectArea");
-    const overlay = document.querySelector(".overlay");
     document.getElementById("img").addEventListener("mousedown", mouseDown);
 
 // handle mousedown event 
 function mouseDown(e){
-  sx = e.clientX -20;
-  sy = e.clientY-50
-  selectArea.style.visibility = 'visible';
-  overlay.style.display = 'block';
+  sx = e.clientX;
+  sy = e.clientY
+
+// select to crop image show after mousedown event fired
+  selectArea.style.display = 'block';
+
   document.getElementById("x2").innerHTML =`start x:${sx}`;
   document.getElementById("y2").innerHTML = ` start y:${sy}`;
   // set margin left and top
@@ -75,7 +73,7 @@ function removeEvent(){
   document.getElementById("img").addEventListener("mouseup", removeEvent);
 
     // crop or select a part of upload image
-    document.querySelector(".crop").addEventListener("click", function () {
+    document.querySelector(".crop-btn").addEventListener("click", function () {
       cropImage();
     });
     // crop image 
@@ -88,15 +86,30 @@ function removeEvent(){
       const imgWidth = img.width;
       const imgHeight = img.height;
 
-      sx =Math.floor( (sx/644)*imgWidth);
-      sy = Math.floor((sy/350)*imgHeight);
+        
       const selectX = sw;
       const selectY = sh;
+      const div = document.createElement("div");
+      const uploadImg = document.querySelector(".upload-img");
+      div.classList.add("segment");
+      div.style.left =sx+'px';
+      div.style.top =sy+'px';
+      div.style.width = selectX+'px';
+      div.style.height = selectY+'px'
+      uploadImg.appendChild(div)
+
+
+
+      sx =Math.floor( (sx/644)*imgWidth);
+      sy = Math.floor((sy/350)*imgHeight);
+ 
       sw =Math.floor( (sw/644)*imgWidth);
       sh = Math.floor((sh/350)*imgHeight);
 
+
+
         context.drawImage(img, sx, sy,sw,sh, 0, 0, selectX, selectY);
-        selectArea.style.backgroundColor ='#fff';
+
       }
     }
 
