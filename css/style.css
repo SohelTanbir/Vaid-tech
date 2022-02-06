@@ -18,6 +18,7 @@ h2{
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  flex-wrap: wrap;
 }
 .image-container h4{
   text-align: center;
@@ -28,7 +29,6 @@ h2{
 }
 .output-img,
 .input-img{
-  width: 50%;
   margin: 5px;
 }
 .cropped-img,
@@ -52,7 +52,7 @@ h2{
 }
 .segment{
   position: absolute;
-  background:#ecebebf3;
+  background:#ecebeb;
   z-index:1;
   left: 0;
   top: 0;
@@ -125,7 +125,4 @@ input[type='file']::-webkit-file-upload-button{
 }
 #canvas{
   cursor: pointer;
-}
-.item-one{
-  border: 10px solid orange;
 }
