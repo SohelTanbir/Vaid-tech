@@ -36,8 +36,8 @@ $(document).ready(function () {
       $("#x2").innerHTML = `start x:${sx}`;
       $("#y2").innerHTML = ` start y:${sy}`;
       // set margin left and top
-      $("#selectArea").css({ marginLeft: `${sx}` + "px" });
-      $("#selectArea").css({ marginTop: `${sy}` + "px" });
+      $("#selectArea").css({ marginLeft: `${sx}` + "px",  marginTop: `${sy}` + "px" });
+      console.log(sx, sy);
       document.getElementById("img").addEventListener("mousemove", handleMouseMove);
     }
     // handle mousemove event
@@ -70,8 +70,8 @@ $(document).ready(function () {
         const imgHeight = img.height;
         const selectX = sw;
         const selectY = sh;
-        const mr = sx;
-        const mt = sy;
+        const mLeft = sx;
+        const mTop = sy;
         // create div element and append in upload-img
         const div = document.createElement("div");
         div.classList.add("segment");
@@ -85,10 +85,32 @@ $(document).ready(function () {
         sw = Math.floor((sw / 644) * imgWidth);
         sh = Math.floor((sh / 350) * imgHeight);
 
-        context.drawImage(img, sx, sy, sw, sh, mr, mt, selectX, selectY);
+        context.drawImage(img, sx, sy, sw, sh, mLeft, mTop, selectX, selectY);
+
+        // handle drag and drop
+      document.getElementById("canvas").addEventListener("dragstart",function(event) {
+        event.dataTransfer.setData("imageData", event.target.id);
+      });
+      document.querySelector(".upload-img").addEventListener("dragover",function(event) {
+        event.preventDefault();
+        this.style.border = "5px dotted red";
+      });
+      document.querySelector(".upload-img").addEventListener("drop",function(event) {
+        event.preventDefault();
+        var data = event.dataTransfer.getData("imageData");
+        event.target.append(document.getElementById(data));
+        // hide output img countainer when drop the image part
+        $(".output-img").css({display:"none"});
+        $("#canvas").css({marginLeft:-`${mLeft+1}`+'px', marginTop:-`${mTop+1}`+'px'})
+      });
       }
       img.src = URL.createObjectURL(files[0]);
+      
+      
+  
+
     }
+ 
   };
   // jquery ready endline 
 });
