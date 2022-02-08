@@ -100,14 +100,21 @@ $(document).ready(function() {
                 }
                 function drawImageWithPos() {
                     console.log(positionXY);
-                    console.log(positionXY);
                     let pl = 0;
                     let pt = 0
-                    for(let i=1; i<positionXY.length; i++){
-                        pl = positionXY[i-1].w+10;
-                        if(i%2 == 0){
+                    let totalWidth = 0;
+                    let totalHeight = 0;
+                    for(let i=0; i<positionXY.length; i++){
+                        console.log(positionXY);
+                        totalWidth += positionXY[i].w;
+                        totalHeight += positionXY[i].h;
+                         console.log(totalWidth);
+                        if(totalWidth <= 644){
+                            pl =totalWidth-(positionXY[i].w-10);
+                            pt = 0;
+                        }else{
                             pl = 0;
-                            pt =  positionXY[i-1].h+10;
+                            pt =(totalHeight-((positionXY[i].h+positionXY[i-1].h))+10);
                         }
                     }
                     context.drawImage(img, sx, sy, sw, sh,pl, pt, selectX, selectY);
