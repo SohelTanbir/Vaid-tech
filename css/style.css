@@ -24,6 +24,9 @@ h2{
   text-align: center;
   margin-bottom: 5px;
 }
+.input-img{
+  max-width: 650px;
+}
 .input-img h4 span{
   font-size: 12px;
 }
@@ -31,17 +34,20 @@ h2{
 .input-img{
   margin: 5px;
 }
+.cropped-img{
+  min-width: 644px;
+}
 .cropped-img,
 .upload-img{
   border: 2px solid skyblue;
   height: 360px;
   border-radius: 5px;
+  padding: 2px;
+  overflow: hidden;
 }
 .upload-img{
   width:644px;
-  height: 350px;
   position: relative;
-  overflow: hidden;
 }
 .upload-img img{
   width: 100%;
@@ -78,7 +84,6 @@ button{
 }
 .crop-btn{
   background: #070797;
-  
 }
 .finish-btn{
   background: green;
@@ -108,20 +113,24 @@ input[type='file']::-webkit-file-upload-button{
   position: absolute;
   left: 0;
   top: 0;
+  width:0%;
+  height:0%;
   border: 2px dashed #eeff00fd;
   display: none;
   color: #fff;
-  transition:all .5s;
-  cursor:move;
+  transition:all .3s;
   text-align: center;
   z-index: 2;
-  max-width: 644px!important;
+  max-width: 638px!important;
   max-height: 350px!important;
-  padding-top: 10%;
+  resize: both;
 }
-#selectArea span{
-  font-size: 14px;
-  font-weight: bold;
+.show-w-h{
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%, -50%);
+ font-size: 14px;
 }
 #canvas{
   cursor: pointer;
