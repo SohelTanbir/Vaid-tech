@@ -137,7 +137,6 @@ $(document).ready(function() {
                     event.preventDefault();
                     var data = event.dataTransfer.getData("imageData");
                     event.target.appendChild(document.getElementById(data));
-                    $("#canvas").css({ marginLeft: -`${mLeft + 1}` + 'px', marginTop: -`${mTop + 1}` + 'px' });
                     this.style.border = "0px dotted red";
                 });
             }
