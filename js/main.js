@@ -86,8 +86,6 @@ $(document).ready(function() {
                 sy = Math.floor((sy / 350) * imgHeight);
                 sw = Math.floor((sw / 644) * imgWidth);
                 sh = Math.floor((sh / 350) * imgHeight);
-
-
                 // draw image 
                 function drawImg(left = 0, top = 0, callback) {
                     callAmount +=1;
@@ -102,8 +100,7 @@ $(document).ready(function() {
                     let pt = 0
                     let totalWidth = positionXY[0].w;
                     let totalHeight = 0;
-                    console.log(positionXY);
-                    console.log('total width = ', totalWidth);
+
                     for(let i=1; i<positionXY.length; i++){
                         totalWidth += positionXY[i].w;
                         totalHeight += positionXY[i].h;
@@ -113,9 +110,6 @@ $(document).ready(function() {
                         }else if(positionXY[i-1].w+positionXY[i].w > 630){
                             pl =0
                             pt = positionXY[i].h*(positionXY.length -2)+10;
-                            console.log(positionXY[i].h*(positionXY.length -2 ));
-                            console.log('l-2', positionXY.length -2);
-                            console.log('l= ', positionXY.length);
                         }
                     }
                     context.drawImage(img, sx, sy, sw, sh,pl, pt, selectX, selectY);
