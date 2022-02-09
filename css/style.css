@@ -35,18 +35,25 @@ h2{
   margin: 5px;
 }
 .cropped-img{
-  min-width:644px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items: flex-start;
+  width: 644px;
+  min-height: 360px;
 }
-
+.cropped-img canvas{
+  cursor: move;
+}
 .cropped-img,
 .upload-img{
   border: 2px solid skyblue;
   border-radius: 5px;
   padding: 2px;
-  height: 360px;
 }
 .upload-img{
   width:644px;
+  height: 360px;
   position: relative;
   overflow: hidden;
 }

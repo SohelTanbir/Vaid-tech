@@ -64,15 +64,17 @@ $(document).ready(function() {
             let callAmount = 0;
             const positionXY = [];
         function cropImage() {
-            const context = document.getElementById('canvas').getContext('2d');
+            const croppeArea = document.querySelector(".cropped-img");
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext('2d');
+            canvas.id ='img'+Math.floor(Math.random()*50);
+            croppeArea.appendChild(canvas)
             var img = new Image();
             img.onload = function() {
                 const imgWidth = img.width;
                 const imgHeight = img.height;
                 const selectX = sw;
                 const selectY = sh;
-                const mLeft = sx;
-                const mTop = sy;
                 positionXY.push({ x: sx, y: sy, w: sw, h: sh });
                 // create div element and append in upload-img
                 const div = document.createElement("div");
@@ -86,65 +88,24 @@ $(document).ready(function() {
                 sy = Math.floor((sy / 350) * imgHeight);
                 sw = Math.floor((sw / 644) * imgWidth);
                 sh = Math.floor((sh / 350) * imgHeight);
-                // draw image 
-                function drawImg(left = 0, top = 0, callback) {
-                    callAmount +=1;
-                    if(callAmount >1){
-                        callback()
-                    }else{
-                        context.drawImage(img, sx, sy, sw, sh, left, top, selectX, selectY);
-                    }
-                }
-                function drawImageWithPos() {
-                    let pl = 0;
-                    let pt = 0
-                    let totalWidth = positionXY[0].w;
-                    let totalHeight = 0;
-
-                    for(let i=1; i<positionXY.length; i++){
-                        totalWidth += positionXY[i].w;
-                        totalHeight += positionXY[i].h;
-
-                        if(positionXY[i-1].w+positionXY[i].w < 630 && positionXY[i-1].w < 500){
-                            pl = (totalWidth-positionXY[i].w)+10;
-                            pt = 0;
-                            alert('1');
-                        }else if(positionXY[i-1].w+positionXY[i].w > 630 && positionXY.length <3){
-                            pl =0
-                            pt = positionXY[i].h*(positionXY.length -1)+10;
-                            alert('2');
-                        }else if(positionXY[i-1].w+positionXY[i].w > 630 && positionXY.length >=4){
-                            pl =0
-                            pt = positionXY[i].h*(positionXY.length -2)+10;
-                            alert('3');
-                        }
-                        else{
-                            pl =0
-                            pt = positionXY[i].h*(positionXY.length -2)+10;
-                            alert('0');
-                        }
-                    }
-                    context.drawImage(img, sx, sy, sw, sh,pl, pt, selectX, selectY);
-                }
-                drawImg(0, 0, drawImageWithPos);
+                context.drawImage(img, sx, sy, sw, sh,0, 0, selectX, selectY);
 
 
 
-
-                // handle drag and drop
-                document.getElementById("canvas").addEventListener("dragstart", function(event) {
-                    event.dataTransfer.setData("imageData", event.target.id);
-                });
-                document.querySelector(".upload-img .segment").addEventListener("dragover", function(event) {
-                    event.preventDefault();
-                    this.style.border = "2px dashed yellow";
-                });
-                document.querySelector(".upload-img").addEventListener("drop", function(event) {
-                    event.preventDefault();
-                    var data = event.dataTransfer.getData("imageData");
-                    event.target.appendChild(document.getElementById(data));
-                    this.style.border = "0px dotted red";
-                });
+                // // handle drag and drop
+                // document.getElementById("cOne").addEventListener("dragstart", function(event) {
+                //     event.dataTransfer.setData("imageData", event.target.id);
+                // });
+                // document.querySelector(".upload-img .segment").addEventListener("dragover", function(event) {
+                //     event.preventDefault();
+                //     this.style.border = "2px dashed yellow";
+                // });
+                // document.querySelector(".upload-img").addEventListener("drop", function(event) {
+                //     event.preventDefault();
+                //     var data = event.dataTransfer.getData("imageData");
+                //     event.target.appendChild(document.getElementById(data));
+                //     this.style.border = "0px dotted red";
+                // });
             }
             img.src = URL.createObjectURL(files[0]);
 
