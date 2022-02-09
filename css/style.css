@@ -35,19 +35,20 @@ h2{
   margin: 5px;
 }
 .cropped-img{
-  min-width: 644px;
+  min-width:644px;
 }
+
 .cropped-img,
 .upload-img{
   border: 2px solid skyblue;
-  height: 360px;
   border-radius: 5px;
   padding: 2px;
-  overflow: hidden;
+  height: 360px;
 }
 .upload-img{
   width:644px;
   position: relative;
+  overflow: hidden;
 }
 .upload-img img{
   width: 100%;
@@ -113,17 +114,16 @@ input[type='file']::-webkit-file-upload-button{
   position: absolute;
   left: 0;
   top: 0;
-  width:0%;
-  height:0%;
   border: 2px dashed #eeff00fd;
   display: none;
   color: #fff;
   transition:all .3s;
   text-align: center;
   z-index: 2;
+  width: 0;
+  height: 0;
   max-width: 638px!important;
   max-height: 350px!important;
-  resize: both;
 }
 .show-w-h{
  position: absolute;
