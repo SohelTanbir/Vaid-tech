@@ -108,16 +108,20 @@ $(document).ready(function() {
                         if(positionXY[i-1].w+positionXY[i].w < 630 && positionXY[i-1].w < 500){
                             pl = (totalWidth-positionXY[i].w)+10;
                             pt = 0;
-                        }else if(positionXY[i-1].w+positionXY[i].w > 630 && positionXY.length >=2){
+                            alert('1');
+                        }else if(positionXY[i-1].w+positionXY[i].w > 630 && positionXY.length <3){
                             pl =0
-                            pt = positionXY[i].h*(positionXY.length -2)+10;
+                            pt = positionXY[i].h*(positionXY.length -1)+10;
+                            alert('2');
                         }else if(positionXY[i-1].w+positionXY[i].w > 630 && positionXY.length >=4){
                             pl =0
-                            pt = positionXY[i].h*(positionXY.length -3)+10;
+                            pt = positionXY[i].h*(positionXY.length -2)+10;
+                            alert('3');
                         }
                         else{
                             pl =0
-                            pt = positionXY[i].h*(positionXY.length -1)+10;
+                            pt = positionXY[i].h*(positionXY.length -2)+10;
+                            alert('0');
                         }
                     }
                     context.drawImage(img, sx, sy, sw, sh,pl, pt, selectX, selectY);
