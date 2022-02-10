@@ -120,18 +120,20 @@ input[type='file']::-webkit-file-upload-button{
 }
 #selectArea{
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 50px;
+  top: 50px;
   border: 2px dashed #eeff00fd;
   display: none;
   color: #fff;
   transition:all .3s;
   text-align: center;
-  z-index: 99999999999999;
-  width: 0;
-  height: 0;
-  max-width: 638px!important;
-  max-height: 350px!important;
+  z-index: 9999999;
+  width: 30px;
+  height:30px;
+  max-width: 100%;
+  max-height: 100%;
+  resize: both;
+  overflow: auto;
 }
 .show-w-h{
  position: absolute;

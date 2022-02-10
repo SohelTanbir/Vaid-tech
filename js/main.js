@@ -1,5 +1,11 @@
 // wait until load webpage
-$(document).ready(function() {
+
+$(document).ready(function () {
+
+
+
+
+
     // select input field and add EventLister
     $("input[type='file']").change(uploader);
     // image uploader
@@ -18,7 +24,7 @@ $(document).ready(function() {
             alert("Sorry! invalid file!")
         }
         // Relaod window 
-        $(".reload-btn").on("click", function() {
+        $(".reload-btn").on("click", function () {
             window.location.reload();
         });
         // image area selection
@@ -28,7 +34,21 @@ $(document).ready(function() {
         let sh = 0;
         $("#img").on("mousedown", mouseDown);
         // handle mousedown event 
-        function mouseDown(e) {
+function mouseDown(e) {
+
+
+    // detect resize select area to crop image
+    const resize_observe = new ResizeObserver(function(data){
+        sw = data[0].contentRect.width;
+        sh = data[0].contentRect.height;
+        $("#x2").text(`x:${sx}`);
+        $("#y2").text(`y:${sy}`);
+        $("#xw").text(`w:${Math.floor(sw)}`);
+        $("#xy").text(` h:${Math.floor(sh)}`);
+        $("#x").text(`${Math.floor(sw)}`);
+        $("#y").text(`x${Math.floor(sh)}`);
+     })
+     resize_observe.observe(document.getElementById("selectArea"));
             sx = e.clientX - 18;
             sy = e.clientY - 110;
             // select to crop image show after mousedown event fired
@@ -36,44 +56,25 @@ $(document).ready(function() {
             $("#x2").innerHTML = `start x:${sx}`;
             $("#y2").innerHTML = ` start y:${sy}`;
             // set margin left and top
-            $("#selectArea").css({ marginLeft: `${sx}` + "px", marginTop: `${sy}` + "px" });
-            $("#selectArea").css({ width: 0 + "px", height: 10 + "px" });
-            document.getElementById("img").addEventListener("mousemove", handleMouseMove);
+            $("#selectArea").css({ left: `${sx}` + "px", top: `${sy}` + "px" });
+
+     
         }
-        // handle mousemove event
-        function handleMouseMove(e) {
-            sw = e.clientX;
-            sh = e.clientY;
-            $("#x2").text(`x:${sx}`);
-            $("#y2").text(`y:${sy}`);
-            $("#selectArea").css({ width: `${sw}` + "px", height: `${sh}` + "px" });
-            $("#xw").text(`w:${sw}`);
-            $("#xy").text(` h:${sh}`);
-            $("#x").text(`${sw}`);
-            $("#y").text(`x${sh}`);
-        }
-        // remove eventListener
-        function removeEvent() {
-            document.getElementById("img").removeEventListener("mousemove", handleMouseMove);
-            // select to crop image show after mouseup event fired
-        }
-        $("#selectArea").mouseup(removeEvent);
-        $("#img").mouseup(removeEvent);
-        // crop or select a part of upload image
+        // // crop or select a part of upload image
         $(".crop-btn").click(cropImage)
-            // crop image 
+        // crop image 
         function cropImage() {
             const croppeArea = document.querySelector(".cropped-img");
             const canvas = document.createElement("canvas");
             const context = canvas.getContext('2d');
-            canvas.id ='img'+Math.floor(Math.random()*50);
+            canvas.id = 'img' + Math.floor(Math.random() * 50);
             croppeArea.appendChild(canvas);
             canvas.width = sw;
             canvas.height = sh;
             canvas.draggable = true;
-            
+
             var img = new Image();
-            img.onload = function() {
+            img.onload = function () {
                 const imgWidth = img.width;
                 const imgHeight = img.height;
                 const selectX = sw;
@@ -90,45 +91,43 @@ $(document).ready(function() {
                 sy = Math.floor((sy / 350) * imgHeight);
                 sw = Math.floor((sw / 644) * imgWidth);
                 sh = Math.floor((sh / 350) * imgHeight);
-                context.drawImage(img, sx, sy, sw, sh,0, 0, selectX, selectY);
-
+                context.drawImage(img, sx, sy, sw, sh, 0, 0, selectX, selectY);
                 // call drag and drop method here
-                canvas.ondragstart =dragStart;
+                canvas.ondragstart = dragStart;
                 mouseOver();
                 dropItem();
                 dragLeave();
+                // hide selectArea after crop image
+                $("#selectArea").css("display", "none");
             }
             img.src = URL.createObjectURL(files[0]);
-
-         // handle drag and drop
-         function dragStart(event){
-            event.dataTransfer.setData("imageData", event.target.id);
-         }
-         function mouseOver(){
-            $(".upload-img .segment").on("dragover", function(event) {
-                event.preventDefault();
-                event.target.style.border = "5px dashed blue";
-            });
-           
-        }
-        function dropItem(){
-            document.querySelector(".upload-img").addEventListener("drop", function(event) {
-                event.preventDefault();
-                var data = event.dataTransfer.getData("imageData");
-                event.target.style.border = "0px dashed blue";
-                event.target.appendChild(document.getElementById(data));
-                $("#canvas").css({ marginLeft: -2+'px', marginTop: 0+'px' });
-            });
-        }
-    function dragLeave(){
-        $(".upload-img .segment").on("dragleave", function(event) {
-            event.preventDefault();
-            event.target.style.border = "0px dotted red";
-        });
-    }
-        // after crop a part of image selectArea will be hide and reset width and height
-        $("#selectArea").css({ width: 0 + "px", height: 10 + "px" });
-        $("#selectArea").css("display", "none");
+            // handle drag and drop
+            function dragStart(event) {
+                event.dataTransfer.setData("imageData", event.target.id);
+            }
+            function mouseOver() {
+                $(".upload-img .segment").on("dragover", function (event) {
+                    event.preventDefault();
+                    event.target.style.border = "5px dashed blue";
+                });
+            }
+            function dropItem() {
+                document.querySelector(".upload-img").addEventListener("drop", function (event) {
+                    event.preventDefault();
+                    var data = event.dataTransfer.getData("imageData");
+                    event.target.style.border = "0px dashed blue";
+                    event.target.appendChild(document.getElementById(data));
+                    $("#canvas").css({ marginLeft: -2 + 'px', marginTop: 0 + 'px' });
+                });
+            }
+            function dragLeave() {
+                $(".upload-img .segment").on("dragleave", function (event) {
+                    event.preventDefault();
+                    event.target.style.border = "0px dotted red";
+                });
+            }
+            // after crop a part of image selectArea will be hide and reset width and height
+            $("#selectArea").css({ width:30+"px", height: 30+"px" });
         }
 
     };
