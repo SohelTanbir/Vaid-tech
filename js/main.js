@@ -108,7 +108,7 @@ function mouseDown(e) {
             function mouseOver() {
                 $(".upload-img .segment").on("dragover", function (event) {
                     event.preventDefault();
-                    event.target.style.border = "5px dashed blue";
+                    event.target.style.border = "3px dashed blue";
                 });
             }
             function dropItem() {
@@ -127,7 +127,7 @@ function mouseDown(e) {
                 });
             }
             // after crop a part of image selectArea will be hide and reset width and height
-            $("#selectArea").css({ width:30+"px", height: 30+"px" });
+            $("#selectArea").css({ width:50+"px", height: 50+"px" });
         }
 
     };
