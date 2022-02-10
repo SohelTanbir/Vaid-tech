@@ -60,14 +60,7 @@ $(document).ready(function() {
         $("#selectArea").mouseup(removeEvent);
         $("#img").mouseup(removeEvent);
         // crop or select a part of upload image
-        let iscrope = true;
-        $(".crop-btn").click(function(){
-            if(iscrope){
-                cropImage();
-            }else{
-                alert("You didn't select crop area!!")
-            }
-        })
+        $(".crop-btn").click(cropImage)
             // crop image 
         function cropImage() {
             const croppeArea = document.querySelector(".cropped-img");
@@ -114,17 +107,17 @@ $(document).ready(function() {
          function mouseOver(){
             $(".upload-img .segment").on("dragover", function(event) {
                 event.preventDefault();
-                event.target.style.border = "3px dashed yellow";
+                event.target.style.border = "5px dashed blue";
             });
-         }
+           
+        }
         function dropItem(){
             document.querySelector(".upload-img").addEventListener("drop", function(event) {
                 event.preventDefault();
                 var data = event.dataTransfer.getData("imageData");
-                event.target.style.border = "0px dashed yellow";
+                event.target.style.border = "0px dashed blue";
                 event.target.appendChild(document.getElementById(data));
-                $("#canvas").css({ marginLeft: -2+'px', marginTop: -2+'px' });
-            
+                $("#canvas").css({ marginLeft: -2+'px', marginTop: 0+'px' });
             });
         }
     function dragLeave(){
