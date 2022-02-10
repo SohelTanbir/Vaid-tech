@@ -60,7 +60,14 @@ $(document).ready(function() {
         $("#selectArea").mouseup(removeEvent);
         $("#img").mouseup(removeEvent);
         // crop or select a part of upload image
-        $(".crop-btn").click(cropImage)
+        let iscrope = true;
+        $(".crop-btn").click(function(){
+            if(iscrope){
+                cropImage();
+            }else{
+                alert("You didn't select crop area!!")
+            }
+        })
             // crop image 
         function cropImage() {
             const croppeArea = document.querySelector(".cropped-img");
@@ -107,7 +114,7 @@ $(document).ready(function() {
          function mouseOver(){
             $(".upload-img .segment").on("dragover", function(event) {
                 event.preventDefault();
-                event.target.style.border = "5px dashed yellow";
+                event.target.style.border = "3px dashed yellow";
             });
          }
         function dropItem(){
@@ -126,7 +133,8 @@ $(document).ready(function() {
             event.target.style.border = "0px dotted red";
         });
     }
-        // after crop a part of image selectArea will be hide
+        // after crop a part of image selectArea will be hide and reset width and height
+        $("#selectArea").css({ width: 0 + "px", height: 10 + "px" });
         $("#selectArea").css("display", "none");
         }
 
