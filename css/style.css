@@ -36,14 +36,15 @@ h2{
 }
 .cropped-img{
   display: flex;
-  flex-wrap: wrap;
-  justify-content:flex-start;
+  justify-content: flex-start;
   align-items: flex-start;
+  flex-wrap: wrap;
   width: 644px;
   min-height: 360px;
 }
 .cropped-img canvas{
-  cursor: move;
+  cursor: pointer;
+  margin: 2px;
 }
 .cropped-img,
 .upload-img{
@@ -138,7 +139,4 @@ input[type='file']::-webkit-file-upload-button{
  top: 50%;
  transform: translate(-50%, -50%);
  font-size: 14px;
-}
-#canvas{
-  cursor: pointer;
 }

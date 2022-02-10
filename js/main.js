@@ -48,34 +48,36 @@ $(document).ready(function() {
             $("#y2").text(`y:${sy}`);
             $("#selectArea").css({ width: `${sw}` + "px", height: `${sh}` + "px" });
             $("#xw").text(`w:${sw}`);
-            $("#xy").text(` h:${sh - 110}`);
+            $("#xy").text(` h:${sh}`);
             $("#x").text(`${sw}`);
-            $("#y").text(`x${sh - 110}`);
+            $("#y").text(`x${sh}`);
         }
         // remove eventListener
         function removeEvent() {
             document.getElementById("img").removeEventListener("mousemove", handleMouseMove);
+            // select to crop image show after mouseup event fired
         }
         $("#selectArea").mouseup(removeEvent);
         $("#img").mouseup(removeEvent);
         // crop or select a part of upload image
         $(".crop-btn").click(cropImage)
             // crop image 
-            let callAmount = 0;
-            const positionXY = [];
         function cropImage() {
             const croppeArea = document.querySelector(".cropped-img");
             const canvas = document.createElement("canvas");
             const context = canvas.getContext('2d');
             canvas.id ='img'+Math.floor(Math.random()*50);
-            croppeArea.appendChild(canvas)
+            croppeArea.appendChild(canvas);
+            canvas.width = sw;
+            canvas.height = sh;
+            canvas.draggable = true;
+            
             var img = new Image();
             img.onload = function() {
                 const imgWidth = img.width;
                 const imgHeight = img.height;
                 const selectX = sw;
                 const selectY = sh;
-                positionXY.push({ x: sx, y: sy, w: sw, h: sh });
                 // create div element and append in upload-img
                 const div = document.createElement("div");
                 div.classList.add("segment");
@@ -90,28 +92,42 @@ $(document).ready(function() {
                 sh = Math.floor((sh / 350) * imgHeight);
                 context.drawImage(img, sx, sy, sw, sh,0, 0, selectX, selectY);
 
-
-
-                // // handle drag and drop
-                // document.getElementById("cOne").addEventListener("dragstart", function(event) {
-                //     event.dataTransfer.setData("imageData", event.target.id);
-                // });
-                // document.querySelector(".upload-img .segment").addEventListener("dragover", function(event) {
-                //     event.preventDefault();
-                //     this.style.border = "2px dashed yellow";
-                // });
-                // document.querySelector(".upload-img").addEventListener("drop", function(event) {
-                //     event.preventDefault();
-                //     var data = event.dataTransfer.getData("imageData");
-                //     event.target.appendChild(document.getElementById(data));
-                //     this.style.border = "0px dotted red";
-                // });
+                // call drag and drop method here
+                canvas.ondragstart =dragStart;
+                mouseOver();
+                dropItem();
+                dragLeave();
             }
             img.src = URL.createObjectURL(files[0]);
 
-
-
-
+         // handle drag and drop
+         function dragStart(event){
+            event.dataTransfer.setData("imageData", event.target.id);
+         }
+         function mouseOver(){
+            $(".upload-img .segment").on("dragover", function(event) {
+                event.preventDefault();
+                event.target.style.border = "5px dashed yellow";
+            });
+         }
+        function dropItem(){
+            document.querySelector(".upload-img").addEventListener("drop", function(event) {
+                event.preventDefault();
+                var data = event.dataTransfer.getData("imageData");
+                event.target.style.border = "0px dashed yellow";
+                event.target.appendChild(document.getElementById(data));
+                $("#canvas").css({ marginLeft: -2+'px', marginTop: -2+'px' });
+            
+            });
+        }
+    function dragLeave(){
+        $(".upload-img .segment").on("dragleave", function(event) {
+            event.preventDefault();
+            event.target.style.border = "0px dotted red";
+        });
+    }
+        // after crop a part of image selectArea will be hide
+        $("#selectArea").css("display", "none");
         }
 
     };
