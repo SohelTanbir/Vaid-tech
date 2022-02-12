@@ -25,6 +25,7 @@ body{
     background: #f3f4f5;
     border:1px solid #4211a3;
     outline: none;
+    overflow: auto;
 }
 
 .toolbar{
