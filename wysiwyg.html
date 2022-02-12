@@ -12,22 +12,22 @@
 </head>
 <body>
     <div class="wysiwyg-container">
-        <h3>Basic Text Editor in Javascript</h3>
-        <div class="editor-area">
-            <div class="toolbar">
-                <ul>
-                    <li class="tool-item"><i class="fa-solid fa-bold"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-italic"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-underline"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-align-left"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-align-center"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-align-right"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-align-justify"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-text-height"></i></li>
-                    <li class="tool-item"><i class="fa-solid fa-paperclip"></i></li>
-                </ul>
-              </div>
-
+        <h3>Simple Text Editor in Javascript</h3>
+        <div class="toolbar">
+            <ul>
+                <li class="tool-item" id="bold"><i class="fa-solid fa-bold"></i></li>
+                <li class="tool-item" id="italic"><i class="fa-solid fa-italic"></i></li>
+                <li class="tool-item" id="underline"><i class="fa-solid fa-underline"></i></li>
+                <li class="tool-item" id="left"><i class="fa-solid fa-align-left"></i></li>
+                <li class="tool-item" id="center"><i class="fa-solid fa-align-center"></i></li>
+                <li class="tool-item" id="right"><i class="fa-solid fa-align-right"></i></li>
+                <li class="tool-item" id="justify"><i class="fa-solid fa-align-justify"></i></li>
+                <li class="tool-item" id="line-height"><i class="fa-solid fa-text-height"></i></li>
+                <li class="tool-item"><i class="fa-solid fa-paperclip"></i></li>
+            </ul>
+          </div>
+        <div class="editor-area" contenteditable="true">
+            <p id="demo"></p>
         </div>
     </div>
 
