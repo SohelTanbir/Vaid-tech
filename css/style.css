@@ -70,3 +70,10 @@ body{
 .text-justify{
     text-align: justify;
 }
+
+/*responsive for all device*/
+@media all and (max-width:480px){
+    .toolbar ul li {
+        margin-right: 15px;
+    }
+}
