@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple WYSIWYG Editor</title>
+    <title>Simple wysiwyg text editor Editor</title>
     <!--fontawsome cdn-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!--main stylesheet-->
@@ -14,25 +14,27 @@
     <div class="wysiwyg-container">
         <h3>Simple Text Editor using Javascript</h3>
         <div class="toolbar">
-            <ul>
-                <li class="tool-item" id="bold" title="text bold"><i class="fa-solid fa-bold"></i></li>
-                <li class="tool-item" id="italic" title="text italic"><i class="fa-solid fa-italic"></i></li>
-                <li class="tool-item" id="underline" title="text underline"><i class="fa-solid fa-underline"></i></li>
-                <li class="tool-item" id="left" title="align left"><i class="fa-solid fa-align-left"></i></li>
-                <li class="tool-item" id="center" title="align center"><i class="fa-solid fa-align-center"></i></li>
-                <li class="tool-item" id="right" title="align right"><i class="fa-solid fa-align-right"></i></li>
-                <li class="tool-item" id="justify" title="align justify"><i class="fa-solid fa-align-justify"></i></li>
-                <li class="tool-item" id="line-height" title="line height"><i class="fa-solid fa-text-height"></i></li>
-                <li class="tool-item" title="add link"><i class="fa-solid fa-paperclip"></i></li>
-            </ul>
+            <button id="bold" title="text bold"><i class="fa-solid fa-bold"></i></button>
+            <button id="italic" onclick="textItalic()" title="text italic"><i class="fa-solid fa-italic"></i></button>
+            <button id="underline" title="text underline"><i class="fa-solid fa-underline"></i></button>
+            <button id="left" title="align left"><i class="fa-solid fa-align-left"></i></button>
+            <button id="center" title="align center"><i class="fa-solid fa-align-center"></i></button>
+            <button id="right" title="align right"><i class="fa-solid fa-align-right"></i></button>
+            <button id="justify" title="align justify"><i class="fa-solid fa-align-justify"></i></button>
+            <button id="line-height" title="line height"><i class="fa-solid fa-text-height"></i></button>
+            <button id="add-link" title="add link"><i class="fa-solid fa-paperclip"></i></button>
           </div>
-        <div class="editor-area" contenteditable="true"></div>
+        <div class="editor-area" contenteditable="true">
+
+
+            
+        </div>
     </div>
 
 
 
 
 <!--main script file-->
-<script src="js/main.js"></script>
+<!-- <script src="js/main.js"></script> -->
 </body>
 </html>

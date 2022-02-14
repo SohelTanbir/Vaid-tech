@@ -5,6 +5,7 @@
 }
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
 }
 .wysiwyg-container{
     max-width: 1300px;
@@ -21,7 +22,7 @@ body{
 .editor-area{
     width: 100%;
     height: 100vh;
-    padding: 10px;
+    padding: 5px;
     background: #f3f4f5;
     border:1px solid #4211a3;
     outline: none;
@@ -30,23 +31,22 @@ body{
 
 .toolbar{
     width: 100%;
+    display: flex;
     background: #254da7;
     padding: 15px;
     font-weight: 700;
     border-radius: 5px 5px 0 0;
 }
-.toolbar ul {
-    display: flex;
-    padding: 0;
-    margin: 0;
-}
-.toolbar ul li{
-    list-style: none;
-    margin-right:30px;
-    cursor: pointer;
+.toolbar button{
+    border: none;
+    outline: none;
+    background: transparent;
     color: #e5e2e2;
+    margin-right:30px;
+    font-size: 18px;
+    cursor: pointer;
 }
-.toolbar ul li:hover{
+.toolbar button:hover{
     color: #b6b5b5;
 }
 .text-bold{
@@ -69,6 +69,9 @@ body{
 }
 .text-justify{
     text-align: justify;
+}
+.line-height{
+    line-height: 30px;
 }
 
 /*responsive for all device*/
