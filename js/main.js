@@ -1,62 +1,38 @@
-// making a simple editor 
+/*
+--------------------------------------------------------------
+----------- Simple Text Editor using JavaScrip -------------
+------------------ date: 12-02-2022 ------------------------
+---------------------------------------------------------------
+*/
 
-// add event to action user command
-const editoreArea = document.querySelector(".editor-area");
-// document.getElementById("italic").addEventListener("click", textItalic);
-document.getElementById("underline").addEventListener("click", textUnderline);
-document.getElementById("left").addEventListener("click", textLeft);
-document.getElementById("center").addEventListener("click", textCenter);
-document.getElementById("right").addEventListener("click", textRight);
-document.getElementById("justify").addEventListener("click", textJustify);
-document.getElementById("line-height").addEventListener("click", lineHeight);
-document.getElementById("add-link").addEventListener("click", addLink);
+// text bold
+document.getElementById("bold").addEventListener("click", ()=>{
+    document.execCommand("bold", false);
+});
+// text italick
+document.getElementById("italic").addEventListener("click", ()=>{
+    document.execCommand("italic", false);
+});
+// text underline
+document.getElementById("underline").addEventListener("click", ()=>{
+    document.execCommand("underline", false);
+});
 
-// get selected text content
-function selectedText(){
-    const text = window.getSelection();
-    if(text){
-       const span = document.createElement("span");
-        span.innerText = text;
-        editoreArea.appendChild(span);
-    }
-}
-
-editoreArea.addEventListener("mouseup", selectedText);
-// all action methods
-function textBold(){
-    document.querySelector(".editor-area").classList.toggle("text-bold"); 
-}
-function textItalic(){
-    
-    editoreArea.classList.toggle("text-italic");
-}
-function textUnderline(){
-    editoreArea.classList.toggle("text-underline");
-}
-function textLeft(){
-    editoreArea.classList.add("text-left");
-    editoreArea?.classList?.remove("text-center");
-    editoreArea?.classList?.remove("text-right");
-}
-function textCenter(){
-    editoreArea.classList.add("text-center");
-    editoreArea.classList?.remove("text-left");
-    editoreArea.classList?.remove("text-right");
-}
-function textRight(){
-    editoreArea.classList.add("text-right");
-    editoreArea.classList?.remove("text-center");
-    editoreArea.classList?.remove("text-left");
-}
-function textJustify(){
-    editoreArea.classList.toggle("text-justify");
-    editoreArea.classList?.remove("text-center");
-    editoreArea.classList?.remove("text-left");
-      editoreArea?.classList?.remove("text-right");
-}
-function lineHeight(){
-    document.querySelector(".editor-area p").classList.toggle("line-height");
-}
-function addLink(){
+document.getElementById("left").addEventListener("click", ()=>{
+    document.execCommand("justifyLeft", false)
+});
+document.getElementById("center").addEventListener("click", ()=>{
+    document.execCommand("justifyCenter", false)
+});
+document.getElementById("right").addEventListener("click", ()=>{
+    document.execCommand("justifyRight", false)
+});
+document.getElementById("justify").addEventListener("click", ()=>{
+    document.execCommand("justifyFull", false)
+});
+document.getElementById("line-height").addEventListener("click", ()=>{
+    document.querySelector(".editor-area").classList.toggle("line-height");
+});
+document.getElementById("add-link").addEventListener("click", ()=>{
     alert('add link');
-}
+});
