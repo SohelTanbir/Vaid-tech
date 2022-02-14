@@ -33,6 +33,12 @@ document.getElementById("justify").addEventListener("click", ()=>{
 document.getElementById("line-height").addEventListener("click", ()=>{
     document.querySelector(".editor-area").classList.toggle("line-height");
 });
+
+// add url on user selected text
+const input = document.getElementById("url");
 document.getElementById("add-link").addEventListener("click", ()=>{
-    alert('add link');
+    const url = window.prompt("Enter a URL");
+    if(url){
+        document.execCommand("CreateLink", false, url);
+    }
 });
