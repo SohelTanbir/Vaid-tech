@@ -60,6 +60,7 @@ body{
     height: 100%;
     background: rgba(0, 0, 0, .5);
     color: #fff;
+    /* visibility: hidden; */
 }
 .item img{
     width: 100%;
@@ -107,4 +108,41 @@ body{
     to{
         transform: rotateY(360deg);
     }
+}
+
+/*full width image view*/
+
+#fullWidth{
+    position: absolute;
+    left: 10%;
+    top:6%;
+    width: 80vw;
+    height: 90vh;
+    border: 2px solid orange;
+    z-index: 99;
+    visibility: hidden;
+}
+#overlay-bg{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .9);
+    z-index: 10;
+    visibility: hidden;
+}
+#overlay-bg button {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #fff;
+    font-size:40px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+#overlay-bg button:hover{
+    color: red;
 }
