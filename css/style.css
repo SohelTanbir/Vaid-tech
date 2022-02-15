@@ -23,7 +23,7 @@ body{
 }
 
 .container{
-    width: 400px;
+    width: 450px;
     margin:40px auto;
     perspective:400px ;
 }
@@ -50,6 +50,16 @@ body{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    border: 5px solid lightblue;
+}
+.item .overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .5);
+    color: #fff;
 }
 .item img{
     width: 100%;
@@ -58,7 +68,7 @@ body{
     transition: all 1s ease;
 }
 .item img:hover{
-    transform: scale(1.2, 1.2);
+    transform: scale(1.5, 1.5);
   
 }
 .item:first-child{
