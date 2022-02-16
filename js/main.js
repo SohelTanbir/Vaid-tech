@@ -1,12 +1,10 @@
 $(document).ready(function () {
 
-
-
-
   $(".item").click(function () {
     // show full width image 
     $("#fullWidth").css({ visibility: "visible" });
-    $("#fullWidth").animate({ width: '80vw', height: '90vh' });
+    $("#fullWidth").animate({ width: '80vw', height: '90vh', opacity:1 });
+    // add simple animation
     setTimeout(()=>{
       $("#fullWidth").css({
          transform: 'scale(1)',
@@ -25,14 +23,17 @@ $(document).ready(function () {
 
   // hide full view image and overlay
   $(".close").click(function () {
-    $("#fullWidth").css("visibility", "hidden");
+    $("#fullWidth").css({
+      visibility:"hidden",
+      opacity:.2
+    });
     $("#overlay-bg").css("visibility", "hidden");
 
     //  remove width adn height
     $("#fullWidth").animate({ width: '0', height: '0' })
   });
 
-  //controll  slide previous and next 
+  //controll  slide previous and next move 
   const items = ($(".item"));
   let i = 0;
   let prev = items.length;
@@ -62,23 +63,11 @@ $(document).ready(function () {
            transform: 'scale(1)',
            transform:'rotateY(180deg)',
           })
-      },1000)
-  
+      },1000);
     } else {
       i = 0;
     }
-
-  })
-
-
-
-
-
-
-
-
-
-
+  });
 
 
   // jquery endline
