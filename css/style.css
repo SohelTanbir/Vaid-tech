@@ -21,7 +21,12 @@ body{
     background-image: linear-gradient(to bottom, #f5f4a8, #ffc354, #ffdb3d);
     overflow: hidden;
 }
-
+.wrapper{
+    position: fixed;
+    max-width: 1200px;
+    width: 100%;
+    margin:0 auto;
+}
 .container{
     width: 450px;
     margin:40px auto;
@@ -134,8 +139,8 @@ body{
 }
 #overlay-bg button {
     position: absolute;
-    top: 20px;
-    right: 30px;
+    top: 1%;
+    right: 2%;
     color: #fff;
     font-size:40px;
     cursor: pointer;
@@ -172,5 +177,15 @@ body{
     }
     to{
         transform: rotateY(360deg);
+    }
+}
+
+/*responsive css*/
+@media all and (max-width:480px){
+    .container {
+        width: 400px;
+        margin: 16px auto;
+        perspective: 200px;
+        height: 200px;
     }
 }
