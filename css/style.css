@@ -108,15 +108,7 @@ body{
     transform: rotateY(calc(40deg * 9)) translateZ(400px);
 }
 
-/* animation  */
-@keyframes cirlceRun{
-    from{
-        transform: rotateY(0deg);
-    }
-    to{
-        transform: rotateY(360deg);
-    }
-}
+
 
 #fullWidth{
     position: absolute;
@@ -124,10 +116,10 @@ body{
     top:6%;
     width: 0;
     height: 0;
-    border: 2px solid orange;
+    border: 5px solid lightblue;
     z-index: 99;
     visibility: hidden;
-    transform: scale(0);
+    cursor: pointer;
 }
 #overlay-bg{
     position: absolute;
@@ -152,4 +144,40 @@ body{
 }
 #overlay-bg button:hover{
     color: red;
+}
+#overlay-bg .prev, .next{
+    position: absolute;
+    color: #fff;
+    font-size:40px;
+    cursor: pointer;
+}
+#overlay-bg .prev{
+    left: 2%;
+    top: 48%;
+}
+#overlay-bg .next{
+    right: 2%;
+    top: 48%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* animation  */
+@keyframes cirlceRun{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
 }
