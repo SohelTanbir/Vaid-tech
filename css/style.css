@@ -118,8 +118,9 @@ body{
     height: 0;
     border: 5px solid lightblue;
     z-index: 99;
-    visibility: hidden;
     cursor: pointer;
+    visibility: hidden;
+    transition:ease-in 1s;
 }
 #overlay-bg{
     position: absolute;
@@ -162,17 +163,6 @@ body{
 #overlay-bg  span:hover{
     color: lightblue;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* animation  */

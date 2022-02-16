@@ -6,7 +6,13 @@ $(document).ready(function () {
   $(".item").click(function () {
     // show full width image 
     $("#fullWidth").css({ visibility: "visible" });
-    $("#fullWidth").animate({ width: '80vw', height: '90vh' }).fadeIn();
+    $("#fullWidth").animate({ width: '80vw', height: '90vh' });
+    setTimeout(()=>{
+      $("#fullWidth").css({
+         transform: 'scale(1)',
+         transform:'rotateY(180deg)',
+        })
+    },1000)
 
     // show overlay of whole window
     $("#overlay-bg").css("visibility", "visible");
@@ -34,7 +40,13 @@ $(document).ready(function () {
     prev--;
     if (prev >= 0) {
       const url = items[prev].children[0].src;
-      $("#fullWidth").attr("src", url);
+      $("#fullWidth").attr("src", url).fadeIn(1000).css({ transform: 'scale(.3)'});
+      setTimeout(()=>{
+        $("#fullWidth").css({
+           transform: 'scale(1)',
+           transform:'rotateY(180deg)',
+          })
+      },1000)
       if(prev == 0){
         prev = items.length;
       }
@@ -42,16 +54,19 @@ $(document).ready(function () {
   });
   $(".next").click(() => {
     i++;
-    console.log(i);
     if (i <items.length) {
       const url = items[i].children[0].src;
-      $("#fullWidth").attr("src", url);
-      console.log(i);
+      $("#fullWidth").attr("src", url).css({ transform: 'scale(.3)'});
+      setTimeout(()=>{
+        $("#fullWidth").css({
+           transform: 'scale(1)',
+           transform:'rotateY(180deg)',
+          })
+      },1000)
+  
     } else {
       i = 0;
-      console.log(i);
     }
-
 
   })
 
