@@ -159,6 +159,9 @@ body{
     right: 2%;
     top: 48%;
 }
+#overlay-bg  span:hover{
+    color: lightblue;
+}
 
 
 
