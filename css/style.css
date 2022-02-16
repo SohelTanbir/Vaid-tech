@@ -113,25 +113,23 @@ body{
     transform: rotateY(calc(40deg * 9)) translateZ(400px);
 }
 
-
-
 #fullWidth{
     position: absolute;
     left: 10%;
-    top:6%;
+    top:20%;
     width: 0;
     height: 0;
     border: 5px solid lightblue;
     z-index: 99;
     cursor: pointer;
     visibility: hidden;
-    transition:ease-in 1s;
+    transition:ease-in .7s;
 }
 #overlay-bg{
     position: absolute;
     left: 0;
     top: 0;
-    width:100%;
+    width:100vw;
     height: 100vh;
     background: rgba(0, 0, 0, .9);
     z-index: 10;

@@ -40,7 +40,7 @@ $(document).ready(function () {
     prev--;
     if (prev >= 0) {
       const url = items[prev].children[0].src;
-      $("#fullWidth").attr("src", url).fadeIn(1000).css({ transform: 'scale(.3)'});
+      $("#fullWidth").attr("src", url).fadeIn(1000).css({ transform: 'scale(.5)'});
       setTimeout(()=>{
         $("#fullWidth").css({
            transform: 'scale(1)',
@@ -56,7 +56,7 @@ $(document).ready(function () {
     i++;
     if (i <items.length) {
       const url = items[i].children[0].src;
-      $("#fullWidth").attr("src", url).css({ transform: 'scale(.3)'});
+      $("#fullWidth").attr("src", url).css({ transform: 'scale(.5)'});
       setTimeout(()=>{
         $("#fullWidth").css({
            transform: 'scale(1)',
