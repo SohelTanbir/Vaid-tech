@@ -1,0 +1,11 @@
+.countDown{
+    display:flex;
+    justify-content: center;
+    align-items: center ;
+    font-size: 25px;
+}
+
+.countDown  button{
+    padding: 5px 20px;
+    margin: 0 30px;
+}
