@@ -14,6 +14,7 @@ import {
   Avatar,
   AvatarGroup,
   Badge,
+  Card,
   CircularProgress,
   FormControl,
   IconButton,
@@ -197,6 +198,13 @@ const MUI = () => {
           <LinearProgress color="inherit" />
           <CircularProgress disableShrink />
         </Box>
+        <Card variant="outlined">
+            <Typography variant="h3">This is User</Typography>
+            <Typography variant="p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur labore sint inventore similique dignissimos, nesciunt expedita quidem deserunt molestiae maiores iste magnam quam perspiciatis totam tempore nemo nihil consequuntur quasi? Quisquam minima quas, est tempora soluta suscipit fugiat? Officia iure culpa ducimus numquam voluptas, nobis, veniam a modi dignissimos odio quam voluptatibus asperiores recusandae nemo inventore, amet voluptate itaque. Debitis aut ea, qui voluptates quaerat quos laboriosam dolor rerum vero quis similique aliquid quia, hic corporis tempore esse unde soluta quo alias iusto. Saepe, optio ad repudiandae illum soluta totam molestiae id. Totam architecto consectetur id nobis hic facere vero!</Typography>
+        </Card>
+
+
+
       </Stack>
     </div>
   );
