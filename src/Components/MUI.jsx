@@ -10,12 +10,15 @@ import VolumeUp from "@mui/icons-material/VolumeUp";
 import NavigationIcon from "@mui/icons-material/Navigation";
 import MailIcon from "@mui/icons-material/Mail";
 import {
+  Alert,
   Avatar,
   AvatarGroup,
   Badge,
+  CircularProgress,
   FormControl,
   IconButton,
   InputLabel,
+  LinearProgress,
   MenuItem,
   Select,
   Slider,
@@ -26,6 +29,7 @@ import { ButtonGroup, Fab, TextField } from "@mui/material";
 import Rating from "@mui/material/Rating";
 import { Checkbox, Stack, Typography } from "@mui/material";
 import Divider from "@mui/material/Divider";
+import { Box } from "@mui/system";
 
 const MUI = () => {
   const [value, setValue] = React.useState(2);
@@ -165,20 +169,34 @@ const MUI = () => {
         </Badge>
 
         <Tooltip title="Delete data">
-         
           <IconButton>
-          <Typography>What ?</Typography>
+            <Typography>What ?</Typography>
             <DeleteIcon />
           </IconButton>
         </Tooltip>
 
-        <Typography variant="h1">This is Typography  h1</Typography>
-        <Typography variant="h2">This is Typography  h2</Typography>
-        <Typography variant="h3">This is Typography  h3</Typography>
-        <Typography variant="h4">This is Typography  h4</Typography>
+        <Typography variant="h1">This is Typography h1</Typography>
+        <Typography variant="h2">This is Typography h2</Typography>
+        <Typography variant="h3">This is Typography h3</Typography>
+        <Typography variant="h4">This is Typography h4</Typography>
+      </Stack>
 
+      <Stack spacing={3} direction="row" flexWrap="wrap">
+        <Alert severity="error">This is an error alert — check it out!</Alert>
+        <Alert severity="warning">
+          This is a warning alert — check it out!
+        </Alert>
+        <Alert severity="info">This is an info alert — check it out!</Alert>
+        <Alert severity="success">
+          This is a success alert — check it out!
+        </Alert>
 
-        
+        <Box sx={{ width: "80%" }}>
+          <LinearProgress color="secondary" />
+          <LinearProgress color="success" />
+          <LinearProgress color="inherit" />
+          <CircularProgress disableShrink />
+        </Box>
       </Stack>
     </div>
   );
