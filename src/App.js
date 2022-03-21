@@ -8,7 +8,7 @@ import CountDown from './Redux/CountDown';
 function App() {
   return (
     <div className="App">
-       <h2>Redux centralize application State</h2>
+       <h2>Redux is a JavaScript Library that Manage and Centralize Application State</h2>
       <CountDown/>
     </div>
   );

@@ -7,7 +7,7 @@ function CounterReducer(state = 0, action){
            return state+=1;
         }
         case 'decrement':{
-            return state -=1;
+            return state>0?state-=1:0;
         }
         default:{
             return state;
