@@ -5,13 +5,19 @@ import SendIcon from '@mui/icons-material/Send';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import AddIcon from '@mui/icons-material/Add';
 import EditIcon from '@mui/icons-material/Edit';
+import VolumeDown from '@mui/icons-material/VolumeDown';
+import VolumeUp from '@mui/icons-material/VolumeUp';
 import NavigationIcon from '@mui/icons-material/Navigation';
-import { Checkbox, Stack } from '@mui/material';
-import { IconButton } from '@mui/material';
+import { FormControl, IconButton, InputLabel, MenuItem, Select, Slider } from '@mui/material';
 import { ButtonGroup, Fab } from '@mui/material';
+import Rating from '@mui/material/Rating';
+import { Checkbox, Stack, Typography, } from '@mui/material';
 
 
 const MUI = () => {
+    const [value, setValue] = React.useState(2);
+
+
     return (
         <div className='mui-component'>
 
@@ -60,8 +66,41 @@ const MUI = () => {
         <NavigationIcon sx={{ mr: 1 }} />
         Navigate
       </Fab>
+      <Typography component="legend">Controlled</Typography>
+      <Rating
+        name="simple-controlled"
+        value={value}
+        onChange={(event, newValue) => {
+            setValue(newValue);
+        }}
+        />
+<FormControl fullWidth>
+  <InputLabel id="demo-simple-select-label">Select Age</InputLabel>
+  <Select
+    labelId="demo-simple-select-label"
+    id="demo-simple-select"
+    label="Select Age"
+  >
+    <MenuItem value={10}>Ten</MenuItem>
+    <MenuItem value={20}>Twenty</MenuItem>
+    <MenuItem value={30}>Thirty</MenuItem>
+  </Select>
 
 
+</FormControl>
+
+<VolumeDown />
+  <Slider aria-label="Volume" value={3}  />
+  <VolumeUp />
+
+
+
+
+
+
+
+
+        
         </Stack>
 
 
@@ -69,4 +108,4 @@ const MUI = () => {
     );
 };
 
-export default MUI;
+export default MUI; 
