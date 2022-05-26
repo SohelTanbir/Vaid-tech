@@ -9,6 +9,7 @@ img{
 }
 body{
     font-family: 'Lato', sans-serif;
+    background:#ececec
 }
 .container{
     max-width: 1300px;
@@ -24,4 +25,68 @@ a,a:hover{
 }
 ul{
     list-style-type: none;
+}
+/*large title*/
+h2.title{
+    text-align: center;
+    padding:20px 0;
+    color: #6727a3;
+}
+
+/*
+----------------------------------------
+---------- Style Toastify app ----------
+----------------------------------------
+*/
+#toast-container{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    max-width: 280px;
+    width: 100%;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    padding: 20px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px #e2def7;
+    background: #04B10A;
+}
+#toast-container::after{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #226d00, #226d00);
+    left: 0;
+    bottom: 0;
+}
+.toast-icon{
+    width: 30px;
+    height: 30px;
+    line-height:34px;
+    text-align: center;
+    background-color: #f1f1f1;
+    border-radius: 50%;
+}
+.toast-icon i{
+    font-size: 20px;
+    color: #04B10A;
+}
+.toast-message{
+    margin-left: 15px;
+}
+.toast-message h5{
+    font-size: 18px;
+    color: #f1f1f1;
+    text-transform: capitalize;
+}
+.dismiss-icon{
+    font-size: 16px;
+    color: #f1f1f1;
+    position: absolute;
+    top: 2px;
+    right: 6px;
+    cursor: pointer;
 }
