@@ -46,7 +46,7 @@ h2.title{
     max-width: 280px;
     width: 100%;
     position: absolute;
-    left: 100%;
+    left: 70%;
     top: 5%;
     padding: 22px 15px;
     border-radius: 5px;
@@ -76,6 +76,9 @@ h2.title{
     color: #04B10A;
 }
 .toast-message{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     margin-left: 15px;
 }
 .toast-message h5{
