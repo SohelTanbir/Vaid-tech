@@ -54,14 +54,14 @@ h2.title{
     background: #04B10A;
     /* animation: toastOpen 1s ease 5   */
 }
-#toast-container::after{
+#progrees{
     position: absolute;
-    content: "";
     width: 100%;
-    height: 7px;
+    height: 10px;
     background: linear-gradient(to right, #ff06ea, #b62eeb, #f11079);
     left: 0;
     bottom: 0;
+    transition:all 1s;
 }
 .toast-icon{
     width: 30px;
