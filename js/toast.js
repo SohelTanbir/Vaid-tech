@@ -10,59 +10,63 @@
 */
 
 $(document).ready(function(){
-   
+
+    // toast main function
     function Toast(configObject){
-        // initialization and decleration
-        let duration = configObject.duration;
-        const message = configObject.message;
-        const toastContainer = $("#toast-container");
-        let toastWidth = toastContainer[0].clientWidth;
-        let clearTimeId;
-
-// all selector here 
-    // dismiss toast btn
-    $(".dismiss-icon").click(dismissToast);
-    // login btn
-    $("#login-btn").click(toastOpen)
-
-// all controller function here
-function dismissToast(){
-    toastContainer.css("left","100%");
-    // stop setTimeout function
-    if(clearTimeId){
-        clearTimeout(clearTimeId);
-    }
-}
-// toast open
-function toastOpen(){
-    toastContainer.css("left","70%");
-        clearTimeId =  setTimeout(toastHide,5000);
-        // time progreebar 
-        let perSecondWidth = toastWidth/duration
-    const interValId = setInterval(()=>{
-        if(duration >0){
-            duration = duration -1;
-            $("#endTime").text(duration)
-            const percentWidth =( (perSecondWidth/toastWidth)*100)*duration-20;
-            console.log(percentWidth+"%");
-    
-            $("#progrees").css({width:`${percentWidth+"%"}`})
-        }
-     
-    }, 1000)
-    }
-    
-    // toast hide
-    function toastHide(time){
+            // initialization and decleration
+            let duration = configObject?.duration || 3;
+            const minusPercent = 100/duration;
+            const miliSecond =  duration*1000;
+            const message = configObject?.message || "success";
+            console.log(duration, message);
+            const toastContainer = $("#toast-container");
+            let toastWidth = toastContainer[0].clientWidth;
+            let clearTimeId;
+            if(clearTimeId){
+                clearTimeout(clearTimeId);
+            }
+    // all selector here 
+        // dismiss toast btn
+        $(".dismiss-icon").click(dismissToast);
+        // login btn
+        $("#login-btn").click(toastOpen)
+    // all controller function here
+    function dismissToast(){
         toastContainer.css("left","100%");
-        // set default width of progressbar
-        $("#progrees").css({width:'100%!important'})
     }
+    // toast open
+    function toastOpen(){
+            toastContainer.css("left","70%");
+            // call toast progress function
+            toastProgress();
+            // stop the setTimeout function
+            clearTimeId =  setTimeout(toastHide,miliSecond);
+        }
+        // calculation toast progress animation duration
+        function toastProgress(){
+            // time progreebar 
+            let time = duration;
+            let perSecondWidth = toastWidth/time
+            setInterval(()=>{
+            if(time >0){
+                time = time -1;
+                const percentWidth =((perSecondWidth/toastWidth)*100)*time-minusPercent;
+                $("#progrees").css({width:`${percentWidth+"%"}`})
+            }
+        }, 1000)
+        }
+        // toast hide
+        function toastHide(){
+            $("#toast-container").css("left","100%");
+            // // set default width of progressbar
+            $("#progrees").css({width:"100%"})
+        }
+    }
+        // call the main toast function to initialize the toast app
+        Toast({
+            duration:5,
+            message:"Error"
+        });
+    })
     
     
-            
-    }
-    // call the main toast function to initialize the toast app
-    Toast({duration:5, message:'success'});
-})
-
