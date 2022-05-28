@@ -26,12 +26,12 @@ ul{
 }
 body{
     font-family: 'Lato', sans-serif;
-    background: linear-gradient(to left, #83e9f7, #87ceeb);
+    background: linear-gradient(to left, #42b49b, #87ceeb);
 }
 .main-title{
     text-align: center;
     padding: 60px 0 10px;
-    color: #230785;
+    color: #eceaea;
 }
 .stepper-container{
     max-width: 800px;
@@ -47,10 +47,86 @@ body{
     border-radius: 10px;
 }
 .step-items ul li{
+    position: relative;
     width: 30px;
     height: 30px;
-    line-height: 30px;
+    line-height:25px;
     text-align: center;
+    font-size: 16px;
+    color: #cecece;
     border-radius: 50%;
+    cursor: pointer;
     border: 2px solid #cecece   ;
+}
+.step-items ul li:first-child{
+    color: #ffffff;
+    background:#5e8306;
+}
+.step-items ul li::after{
+    position: absolute;
+    content: "";
+    width:204px;
+    left: 100%;
+    top: 45%;
+    height: 3px;
+    background: #cecece;
+}
+.step-items ul li:last-child:after{
+    width:0%;
+}
+.step-actions{
+    text-align: center;
+    padding-top: 70px;
+}
+.step-actions input{
+    border: none;
+    outline: none;
+    width: 90%;
+    margin: 0px 0 25px;
+    padding: 10px;
+    font-size: 18px;
+    color: #ffffff;
+    background: transparent;
+    border-bottom: 1px solid #eceaea;
+
+}
+.step-actions input::placeholder{
+    font-size: 18px;
+    color: #eceaea;
+}
+.action-controller{
+   text-align: end;
+   padding-right: 40px;
+}
+.action-controller
+.continue-btn, 
+.back-btn{
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 8px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.action-controller .continue-btn{
+    background:#337e70;
+    color: #efefef;
+}
+.action-controller .back-btn{
+    background: #4a459ba6;
+    color: #efefef;
+    margin-right: 20px;
+}
+/* .step-actions .actions-one{} */
+.step-actions 
+.actions-two,
+.actions-three,
+.actions-four{
+    display: none;
+}
+.hide{
+    display: none!important;
+}
+.show{
+    display: block!important;
 }
