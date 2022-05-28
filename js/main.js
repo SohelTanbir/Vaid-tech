@@ -3,6 +3,8 @@ $(document).ready(function(){
 // step one -- required email 
 $(".continue-btn").click(nextStep);
 $(".back-btn").click(prevStep);
+$("#submit-btn").click(handleSubmit)
+
 
 // handle next steps
 function nextStep(){
@@ -31,7 +33,11 @@ function prevStep(){
     console.log("cureent ",  currentStep);
     console.log("prv", prevStep);
 }
-
+// handle submit form or last step
+function handleSubmit(e){
+    e.preventDefault();
+    alert('Congratulations! You have completed all steps');
+}
 
 
 
