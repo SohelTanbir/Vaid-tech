@@ -17,9 +17,8 @@ $(document).ready(function(){
             let duration = configObject?.duration || 3;
             const minusPercent = 100/duration;
             const miliSecond =  duration*1000;
-            const message = configObject?.message || "success";
-            console.log(duration, message);
-            const toastContainer = $("#toast-container");
+            const classMessage = configObject?.message || "success";
+            const toastContainer = $(".toast-container");
             let toastWidth = toastContainer[0].clientWidth;
             let clearTimeId;
             if(clearTimeId){
@@ -37,6 +36,9 @@ $(document).ready(function(){
     // toast open
     function toastOpen(){
             toastContainer.css("left","70%");
+            toastContainer.addClass(classMessage)
+            toastContainer[0].style.webkitAnimationPlayState="running";
+            console.log(toastContainer);
             // call toast progress function
             toastProgress();
             // stop the setTimeout function
@@ -51,21 +53,22 @@ $(document).ready(function(){
             if(time >0){
                 time = time -1;
                 const percentWidth =((perSecondWidth/toastWidth)*100)*time-minusPercent;
-                $("#progrees").css({width:`${percentWidth+"%"}`})
+                $(".progrees").css({width:`${percentWidth+"%"}`})
             }
         }, 1000)
         }
         // toast hide
         function toastHide(){
-            $("#toast-container").css("left","100%");
+            toastContainer.css("left","100%");
             // // set default width of progressbar
-            $("#progrees").css({width:"100%"})
+            $(".progrees").css({width:"100%"});
+            toastContainer[0].style.webkitAnimationPlayState="paused";
         }
     }
         // call the main toast function to initialize the toast app
         Toast({
             duration:5,
-            message:"Error"
+            message:"info"
         });
     })
     

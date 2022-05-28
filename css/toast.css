@@ -39,7 +39,7 @@ h2.title{
 ---------- Style Toastify app ----------
 ----------------------------------------
 */
-#toast-container{
+.toast-container{
     display: flex;
     justify-content:flex-start;
     align-items: center;
@@ -51,17 +51,31 @@ h2.title{
     padding: 22px 15px;
     border-radius: 5px;
     box-shadow: 0 0 3px #e2def7;
-    background: #04B10A;
-    /* animation: toastOpen 1s ease 5   */
+
+    animation: toastOpen 2s;  
+    animation-play-state: paused;
 }
-#progrees{
+/*animation types*/
+.success{
+    background: #04B10A;
+}
+.warning{
+     background: #ECB90D;
+}
+.error{
+     background: #E23F33;
+}
+.info{
+     background: #53B0F8;
+}
+.progrees{
     position: absolute;
     width: 100%;
     height: 10px;
     background: linear-gradient(to right, #ff06ea, #b62eeb, #f11079);
     left: 0;
     bottom: 0;
-    transition:all 1s;
+    transition:all 1.5s;
 }
 .toast-icon{
     width: 30px;
@@ -92,32 +106,26 @@ h2.title{
     cursor: pointer;
 }
 .login-box{
-    max-width: 400px;
-    width: 100%;
-    margin:100px auto 10px;
-    background: rgb(202, 202, 202);
-    padding: 40px 20px;
-    box-shadow: 0 0 3px #e2def7;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
-.login-box input{
-    width: 100%;
-    border: none;
-    outline: none;
-    padding: 10px 15px;
-    margin-bottom: 15px;
-}
+
 #login-btn{
     font-size: 18px;
-    width: 100%;
     padding: 8px 30px;
     border: none;
     outline: none;
     background: #5780a1;
     cursor: pointer;
     color: #fff;
+    border-radius: 5px;
 }
 @keyframes toastOpen{
-   
+   0%{
+    left: 1000%;
+   }
     80%{
         left: 70%;
     }
