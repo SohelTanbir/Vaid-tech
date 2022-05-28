@@ -43,7 +43,7 @@ h2.title{
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    max-width: 280px;
+    max-width: 350px;
     width: 100%;
     position: absolute;
     left: 1000%;
@@ -78,6 +78,7 @@ h2.title{
     transition:all 1.5s;
 }
 .toast-icon{
+    position: relative;
     width: 30px;
     height: 30px;
     line-height:34px;
@@ -86,8 +87,29 @@ h2.title{
     border-radius: 50%;
 }
 .toast-icon i{
-    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+}
+.success_icon,
+.error_icon,
+.warning_icon,
+.info_icon{
+    display: none;
+}
+.success_icon{
     color: #04B10A;
+}
+.error_icon{
+    color: #E23F33;
+}
+.warning_icon{
+    color: #ECB90D;
+}
+.info_icon{
+    color: #53B0F8;
 }
 .toast-message{
     margin-left: 15px;
