@@ -14,7 +14,7 @@ $(document).ready(function(){
     // toast main function
     function Toast(configObject){
             // initialization and decleration
-            let duration = configObject?.duration || 3;
+            let duration = configObject?.duration >3?configObject?.duration :3;
             const minusPercent = 100/duration;
             const miliSecond =  duration*1000;
             const toastContainer = $(".toast-container");
@@ -31,7 +31,8 @@ $(document).ready(function(){
    function toastStyle(toastInfo){
     if(toastInfo){
         const toastType =toastInfo.response.toLowerCase();
-        const message = toastInfo.message || "Toast Notification"
+        const message = toastInfo.message || "Toast Notification";
+        console.log(message.length);
         if( toastType== 'info'){
             $("#message").text(message);
             toastContainer.addClass(toastType);
@@ -95,9 +96,9 @@ $(document).ready(function(){
     }
         // call the main toast function to initialize the toast app
         Toast({
-            duration:5,
-            response:"success",
-            message:"Account Created Successfully!"
+            duration:1,
+            response:"error",
+            message:"invalid username!"
         });
     })
     
