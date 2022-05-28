@@ -16,24 +16,24 @@ $(document).ready(function(){
             // initialization and decleration
             let duration = configObject?.duration >3?configObject?.duration :3;
             const minusPercent = 100/duration;
-            const miliSecond =  duration*1000;
+            let miliSecond =  duration*1000;
             const toastContainer = $(".toast-container");
             let toastWidth = toastContainer[0].clientWidth;
-            let clearTimeId;
-            if(clearTimeId){
-                clearTimeout(clearTimeId);
+            let clearTimeOut;
+            // stop setTimeout function
+            if(clearTimeOut){
+                clearTimeout(clearTimeOut);
             }
 // all selector here 
     $(".dismiss-icon").click(dismissToast);
     $("#login-btn").click(toastOpen);
 
+
     // identify alert message type and style toast according to the class
    function toastStyle(toastInfo){
     if(toastInfo.message && toastInfo.response){
-        console.log(toastInfo);
         const toastType =toastInfo?.response?.toLowerCase();
         const message = toastInfo?.message.length <= 30? toastInfo.message: toastInfo.message.trim().slice(0,29) || "welcome";
-        console.log(toastInfo.message.trim().slice(0,29));
         if( toastType== 'info'){
             $("#message").text(message);
             toastContainer.addClass(toastType);
@@ -63,6 +63,7 @@ $(document).ready(function(){
     // all controller function here
     function dismissToast(){
         toastContainer.css("left","100%");
+        $(".progrees").css({width:"100%"});
     }
     // toast open
     function toastOpen(){
@@ -71,7 +72,7 @@ $(document).ready(function(){
             // call toast progress function
             toastProgress();
             // stop the setTimeout function
-            clearTimeId =  setTimeout(toastHide,miliSecond);
+            clearTimeOut =  setTimeout(toastHide,miliSecond);
             toastStyle(configObject);
         }
         // calculation toast progress animation duration
@@ -90,13 +91,16 @@ $(document).ready(function(){
         // toast hide
         function toastHide(){
             toastContainer.css("left","100%");
-            // // set default width of progressbar
+            // set default width of progressbar
             $(".progrees").css({width:"100%"});
             toastContainer[0].style.webkitAnimationPlayState="paused";
         }
     }
         // call the main toast function to initialize the toast app
         Toast({duration:5, response:"success", message:"Success Message!"});
+        // Toast({duration:5, response:"error", message:"Error Message!"});
+        // Toast({duration:5, response:"warning", message:"Warning Message!"});
+        // Toast({duration:5, response:"info", message:"Info Message!"});
     })
     
     
