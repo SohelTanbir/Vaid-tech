@@ -30,7 +30,7 @@ body{
 }
 .main-title{
     text-align: center;
-    padding: 60px 0 10px;
+    padding: 60px 0 20px;
     color: #eceaea;
 }
 .stepper-container{
@@ -62,6 +62,21 @@ body{
     color: #ffffff;
     background:#5e8306;
 }
+/* active step animatin */
+.step-items ul li::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: blue;
+    visibility: hidden;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    animation: activeStepAnimation 1s ease-in infinite;
+}
 .step-items ul li::after{
     position: absolute;
     content: "";
@@ -74,6 +89,7 @@ body{
 .step-items ul li:last-child:after{
     width:0%;
 }
+
 .step-actions{
     text-align: center;
     padding-top: 70px;
@@ -87,7 +103,7 @@ body{
     font-size: 18px;
     color: #ffffff;
     background: transparent;
-    border-bottom: 1px solid #eceaea;
+    border-bottom: 1px solid #d3d3d3;
 
 }
 .step-actions input::placeholder{
@@ -118,6 +134,10 @@ body{
     color: #efefef;
     margin-right: 20px;
 }
+#submit-btn{
+    background: #5e8306;
+    color: #efefef;
+}
 /* .step-actions .actions-one{} */
 .step-actions 
 .actions-two,
@@ -130,4 +150,63 @@ body{
 }
 .show{
     display: block!important;
+}
+
+/* active step animatin */
+@keyframes activeStepAnimation{
+    0%{
+        visibility: visible;
+        opacity: 1;
+        transform: scale(0);
+    }
+    10%{
+        visibility: visible;
+        opacity: .9;
+        transform: scale(.3);
+    }
+    20%{
+         visibility: visible;
+        opacity: .8;
+        transform: scale(.5);
+    }
+    30%{
+         visibility: visible;
+        opacity: .7;
+        transform: scale(.7);
+    }
+    40%{
+         visibility: visible;
+        opacity: .6;
+        transform: scale(.9);
+    }
+    50%{
+         visibility: visible;
+        opacity: .5;
+        transform: scale(1);
+    }
+    60%{
+         visibility: visible;
+        opacity: .4;
+        transform: scale(1.2);
+    }
+    70%{
+         visibility: visible;
+        opacity: .3;
+        transform: scale(1.5);
+    }
+    80%{
+         visibility: visible;
+        opacity: .2;
+        transform: scale(1.7);
+    }
+    90%{
+         visibility: visible;
+        opacity: .1;
+        transform: scale(1.9);
+    }
+    100%{
+         visibility: visible;
+        opacity: 0;
+        transform: scale(2);
+    }
 }
