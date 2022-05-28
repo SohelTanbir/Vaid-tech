@@ -43,7 +43,7 @@ h2.title{
     display: flex;
     justify-content:flex-start;
     align-items: center;
-    max-width: 300px;
+    max-width: 325px;
     width: 100%;
     position: absolute;
     left: 1000%;
@@ -112,7 +112,7 @@ h2.title{
     color: #53B0F8;
 }
 .toast-message{
-    margin-left: 15px;
+    margin-left: 10px;
 }
 .toast-message h5{
     font-size: 18px;

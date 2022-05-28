@@ -29,10 +29,11 @@ $(document).ready(function(){
 
     // identify alert message type and style toast according to the class
    function toastStyle(toastInfo){
-    if(toastInfo){
-        const toastType =toastInfo.response.toLowerCase();
-        const message = toastInfo.message || "Toast Notification";
-        console.log(message.length);
+    if(toastInfo.message && toastInfo.response){
+        console.log(toastInfo);
+        const toastType =toastInfo?.response?.toLowerCase();
+        const message = toastInfo?.message.length <= 30? toastInfo.message: toastInfo.message.trim().slice(0,29) || "welcome";
+        console.log(toastInfo.message.trim().slice(0,29));
         if( toastType== 'info'){
             $("#message").text(message);
             toastContainer.addClass(toastType);
@@ -53,7 +54,7 @@ $(document).ready(function(){
             $(".success_icon").css("display","block")
         }
     }else{
-        $("#message").text(message);
+        $("#message").text("Success Message");
         toastContainer.addClass("success");
         $(".success_icon").css("display","block")
     }
@@ -95,11 +96,7 @@ $(document).ready(function(){
         }
     }
         // call the main toast function to initialize the toast app
-        Toast({
-            duration:1,
-            response:"error",
-            message:"invalid username!"
-        });
+        Toast({duration:5, response:"success", message:"Success Message!"});
     })
     
     
