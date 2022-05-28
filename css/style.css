@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+.container{
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+}
+.row{
+    display: flex;
+    margin: 15px;
+}
+a,a:hover{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+body{
+    font-family: 'Lato', sans-serif;
+    background: linear-gradient(to left, #83e9f7, #87ceeb);
+}
+.main-title{
+    text-align: center;
+    padding: 10px 0 20px;
+    color: #230785;
+}
