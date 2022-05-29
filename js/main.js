@@ -1,9 +1,10 @@
 $(document).ready(function(){
  
-// step one -- required email 
+// all sectors are here
+const allSteps = $(".step-items ul li");
 $(".continue-btn").click(nextStep);
 $(".back-btn").click(prevStep);
-$("#submit-btn").click(handleSubmit)
+$("#submit-btn").click(handleSubmit);
 
 
 // handle next steps
