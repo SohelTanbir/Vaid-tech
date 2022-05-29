@@ -66,15 +66,12 @@ body{
     transform: translate(-50%,-50%);
     display: none;
 }
-.step-items ul li:first-child{
-    color: #ffffff;
-    background:#5e8306;
-}
+
 /* active step animatin */
 .step-items ul li:nth-child(1):before{
     content: "";
     position: absolute;
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
     border-radius: 50%;
     background: #5e8306;
@@ -159,7 +156,11 @@ body{
 .show{
     display: block!important;
 }
-
+/*active step indicator*/
+.active-step{
+    color: #ffffff!important;
+    background:#00BC4C!important;
+}
 /* active step animatin */
 @keyframes activeStepAnimation{
     0%{

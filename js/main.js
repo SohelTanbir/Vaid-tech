@@ -2,6 +2,7 @@ $(document).ready(function(){
  
 // all sectors are here
 const allSteps = $(".step-items ul li");
+const allActions = $(".step-actions form").children();
 $(".continue-btn").click(nextStep);
 $(".back-btn").click(prevStep);
 $("#submit-btn").click(handleSubmit);
@@ -16,6 +17,8 @@ function nextStep(){
     if(currentStep.classList.contains("show")){
         currentStep.classList.remove("show")
     }
+    // active step indecator function 
+    addAciveClass(currentStep)
 }
 
 // handle previous or back steps
@@ -30,16 +33,31 @@ function prevStep(){
     }
     if(prevStep.classList.contains("hide")){
         prevStep.classList.remove("hide")
-    }
-    console.log("cureent ",  currentStep);
-    console.log("prv", prevStep);
+    };
 }
 // handle submit form or last step
 function handleSubmit(e){
     e.preventDefault();
     alert('Congratulations! You have completed all steps');
 }
-
-
+// add active step indecator class on current step
+function addAciveClass(currentStep){
+    const currentClass = currentStep.classList[0];
+       for (let i = 0; i < allActions.length; i++) {
+         if(allActions[i].classList.contains(currentClass)){
+             const activeStep = allSteps[i].children;
+             changeStepStatus(activeStep)
+             const index = i+1;
+             console.log(allSteps[index].classList.add("active-step"));
+            break;
+         }
+         console.log(i);
+       }
+}
+// change active step status
+function changeStepStatus(activeStep){
+    activeStep[0].classList.toggle("hide");
+    activeStep[1].classList.toggle("show");
+}
 
 })
