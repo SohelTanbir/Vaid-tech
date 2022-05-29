@@ -40,10 +40,15 @@ function handleSubmit(e){
     e.preventDefault();
     if(allActions.length){
         const lastActionItem =allActions[allActions.length-1];
+        const lastStepItem = allSteps[allSteps.length-1];
         // hide the last submit section when user submit form data
         lastActionItem.classList.toggle("show");
         // show success message to user when user account created succesfull
         $(".success-message").addClass("show");
+
+        //change last step status when submit the form
+        lastStepItem.children[0].classList.toggle("hide");
+        lastStepItem.children[1].classList.toggle("show");
     }
    
 }

@@ -66,6 +66,14 @@ body{
     transform: translate(-50%,-50%);
     display: none;
 }
+.step-items ul li .step-message {
+    position: absolute;
+    font-size: 14px;
+    left: 0;
+    top: 100%;
+    text-align: left;
+    color: #bbbbbb;
+}
 
 /* active step animatin */
 .step-items ul li.active-step::before{
@@ -163,7 +171,7 @@ body{
 }
 /*Congratulation message*/
 .success-message {
-    padding-top: 50px;
+    padding-top: 40px;
     display:none;
 }
 .success-message h2{
