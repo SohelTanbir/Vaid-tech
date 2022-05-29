@@ -38,7 +38,14 @@ function prevStep(){
 // handle submit form or last step
 function handleSubmit(e){
     e.preventDefault();
-    alert('Congratulations! You have completed all steps');
+    if(allActions.length){
+        const lastActionItem =allActions[allActions.length-1];
+        // hide the last submit section when user submit form data
+        lastActionItem.classList.toggle("show");
+        // show success message to user when user account created succesfull
+        $(".success-message").addClass("show");
+    }
+   
 }
 // add active step indecator class on current step
 function addAciveClass(currentStep){
@@ -48,10 +55,9 @@ function addAciveClass(currentStep){
              const activeStep = allSteps[i].children;
              changeStepStatus(activeStep)
              const index = i+1;
-             console.log(allSteps[index].classList.add("active-step"));
+            allSteps[index].classList.add("active-step");
             break;
          }
-         console.log(i);
        }
 }
 // change active step status
