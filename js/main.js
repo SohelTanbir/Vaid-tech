@@ -27,13 +27,14 @@ function prevStep(){
     const prevStep = this.parentNode.parentNode.previousElementSibling;
     prevStep.classList.add("show");
     currentStep.classList.add("hide");
-
     if(currentStep.classList.contains("show")){
         currentStep.classList.remove("show")
     }
     if(prevStep.classList.contains("hide")){
         prevStep.classList.remove("hide")
     };
+    // remove active class
+    removeAciveClass()
 }
 // handle submit form or last step
 function handleSubmit(e){
@@ -64,6 +65,24 @@ function addAciveClass(currentStep){
             break;
          }
        }
+}
+// add active step indecator class when user click back btn
+function removeAciveClass(){
+    let index;
+       for (let i = 0; i < allSteps.length; i++) {
+         if(allSteps[i].classList.contains("active-step")){
+              index = i;
+         }
+       }
+       if(index > 0){
+          if(allSteps[index].children[1].classList.contains("show")){
+              // set default text
+            allSteps[index].children[0].classList.remove("hide");
+            // remove show class to hide checkmark icon
+            allSteps[index].children[1].classList.remove("show");
+          }
+        allSteps[index].classList.remove("active-step");
+    }
 }
 // change active step status
 function changeStepStatus(activeStep){

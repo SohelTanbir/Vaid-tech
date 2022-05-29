@@ -58,7 +58,7 @@ body{
     cursor: pointer;
     border: 2px solid #cecece   ;
 }
-.step-items ul li .compted-icon{
+.step-items ul li .completed-icon{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -175,7 +175,7 @@ body{
     display:none;
 }
 .success-message h2{
-    font-size: 30px;
+    font-size: 35px;
     font-weight: 700;
     color: #d4006a;
 }
