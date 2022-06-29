@@ -1,0 +1,41 @@
+.banner{
+    width:100%;
+    height: 80vh;
+    background-image: linear-gradient(rgba(0,0,0, .4), rgba(0,0,0,.4)), url('https://wallpapercave.com/wp/wp2711765.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+.form-box{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.form-box form{
+    position: relative;
+    width: 45%;
+}
+.form-box form input{
+    padding: 12px 45px 12px  15px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+.search button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #9d9a9a;
+    font-size: 20px;
+}

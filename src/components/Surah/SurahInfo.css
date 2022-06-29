@@ -1,0 +1,12 @@
+.surah-info img{
+    filter: grayscale(100%);
+}
+.surah-details h6{
+    font-size: 18px;
+}
+.surah-details h6 span{
+    font-weight: 700;   
+}
+.surah-description h2{
+  font-size:20px
+}

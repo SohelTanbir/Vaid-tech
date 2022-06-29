@@ -1,0 +1,41 @@
+.surah-body {
+    width: 100%;
+    min-height:60vh;
+    padding:0 10px ;
+}
+.loader{
+    height: 100vh;
+}
+.surah-info{
+    text-decoration:none;
+    color: #000;
+}
+.surah-body span{ 
+    direction: rtl;
+    padding: 5px;
+    font-size:25px;
+    cursor: pointer;
+    font-weight: 400;
+}
+
+.surah-body span:hover{
+    color: blue;
+}
+.audio-player audio::-webkit-media-controls-enclosure {
+    background-color: transparent;
+}
+.wordplay audio{
+    display: none;
+}
+.surah-header h6{
+    cursor: pointer;
+}
+#arabic-ayath{
+    font-size: 1.5rem;
+    width:100%;
+    direction: rtl;
+    border-bottom: 1px solid #f3f3f3;
+}
+.pagination-container ul li span{
+    cursor:pointer;
+}

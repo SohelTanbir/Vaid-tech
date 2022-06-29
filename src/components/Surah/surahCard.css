@@ -1,0 +1,27 @@
+.surah-card{
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    overflow: hidden;
+}
+.surah-number {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 35px;
+    color: #fff;
+    height: 30px;
+    background: #7d1591;
+    border-radius: 0 0 20px 0;
+}
+.surah-number span{
+    padding: 5px;
+    text-align: center;
+    font-size: 14px;
+}
+.surah-card:hover{
+    border: 1px solid blue!important;
+}
+.surah-info span{
+    font-size: 14px;
+}
